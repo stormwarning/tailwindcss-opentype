@@ -50,7 +50,7 @@
     "@zazen/eslint-config": "2.3.0",
     "eslint": "7.23.0",
     "eslint-config-standard-with-typescript": "20.0.0",
-    "husky": "4.3.8",
+    "husky": "6.0.0",
     "import-sort-style-python": "1.0.2",
     "jest-matcher-css": "1.1.0",
     "lint-staged": "10.5.4",
