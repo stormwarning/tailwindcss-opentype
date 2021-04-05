@@ -31,5 +31,14 @@ export default plugin.withOptions(() => {
             },
             variants('fontVariantCaps', ['responsive']),
         )
+
+        addUtilities(
+            {
+                '.historical-forms': {
+                    'font-variant-alternates': 'historical-forms',
+                },
+            },
+            variants('fontVariantAlternates', ['responsive']),
+        )
     }
 })

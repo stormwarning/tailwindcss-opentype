@@ -34,6 +34,10 @@ describe('Plugin', () => {
             .titling-caps {
                 font-variant-caps: titling-caps
             }
+
+            .historical-forms {
+                font-variant-alternates: historical-forms
+            }
         `)
     })
 })
