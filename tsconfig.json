@@ -1,6 +1,6 @@
 {
   // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
-  "include": ["src", "test", "types"],
+  "include": ["src", "types"],
   "compilerOptions": {
     "declaration": true,
     // interop between ESM and CJS modules. Recommended by TS
@@ -27,6 +27,6 @@
     "skipLibCheck": true,
     "sourceMap": true,
     // stricter type-checking for stronger correctness. Recommended by TS
-    "strict": true,
+    "strict": true
   }
 }

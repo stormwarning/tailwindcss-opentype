@@ -1,7 +1,8 @@
 module.exports = {
     extends: ['@zazen/eslint-config/typescript'],
     rules: {
-        '@typescript-eslint/indent': ['error', 4],
+        // Needed due to old version of Prettier config installed by tsdx :/
+        '@typescript-eslint/space-before-function-paren': 'off',
     },
     overrides: [
         {
