@@ -40,5 +40,17 @@ export default plugin.withOptions(() => {
             },
             variants('fontVariantAlternates', ['responsive']),
         )
+
+        addUtilities(
+            {
+                '.super-position': {
+                    'font-variant-position': 'super',
+                },
+                '.sub-position': {
+                    'font-variant-position': 'sub',
+                },
+            },
+            variants('fontVariantPosition', ['responsive']),
+        )
     }
 })

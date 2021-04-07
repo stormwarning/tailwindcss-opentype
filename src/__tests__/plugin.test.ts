@@ -38,6 +38,14 @@ describe('Plugin', () => {
             .historical-forms {
                 font-variant-alternates: historical-forms
             }
+
+            .super-position {
+                font-variant-position: super
+            }
+
+            .sub-position {
+                font-variant-position: sub
+            }
         `)
     })
 })
