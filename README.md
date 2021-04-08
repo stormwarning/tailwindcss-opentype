@@ -11,6 +11,19 @@
 npm install tailwindcss-opentype
 ```
 
+### Font Variant Ligatures
+
+| Class                        | Properties                                    |
+|------------------------------|-----------------------------------------------|
+| `common-ligatures`           | `font-variant-ligatures: common-ligatures`    |
+| `no-common-ligatures`        | `font-variant-ligatures: no-common-ligatures` |
+| `discretionary-ligatures`    | `font-variant-ligatures: discretionary-ligatures` |
+| `no-discretionary-ligatures` | `font-variant-ligatures: no-discretionary-ligatures` |
+| `contextual`                 | `font-variant-ligatures: contextual`          |
+| `no-contextual`              | `font-variant-ligatures: no-contextual`       |
+
+These utilities are composable so you can enable multiple `font-variant-ligatures` features by combining multiple classes in your HTML.
+
 ## Thanks
 
 - [Utility OpenType](https://github.com/kennethormandy/utility-opentype) by [@kennethormandy](https://github.com/kennethormandy)

@@ -4,17 +4,25 @@ export default plugin.withOptions(() => {
     return function ({ addUtilities, variants }) {
         addUtilities(
             {
-                '.common-ligatures': {
-                    'font-variant-ligatures': 'common-ligatures',
+                '.common-ligatures, .no-common-ligatures, .discretionary-ligatures, .no-discretionary-ligatures, .contextual, .no-contextual': {
+                    '--ot-liga': '/*!*/',
+                    '--ot-dlig': '/*!*/',
+                    '--ot-calt': '/*!*/',
+                    'font-variant-ligatures':
+                        'var(--ot-liga) var(--ot-dlig) var(--ot-calt)',
                 },
+                '.common-ligatures': { '--ot-liga': 'common-ligatures' },
+                '.no-common-ligatures': { '--ot-liga': 'no-common-ligatures' },
                 '.discretionary-ligatures': {
-                    'font-variant-ligatures': 'discretionary-ligatures',
+                    '--ot-dlig': 'discretionary-ligatures',
                 },
-                '.contextual': {
-                    'font-variant-ligatures': 'contextual',
+                '.no-discretionary-ligatures': {
+                    '--ot-dlig': 'no-discretionary-ligatures',
                 },
+                '.contextual': { '--ot-calt': 'contextual' },
+                '.no-contextual': { '--ot-calt': 'no-contextual' },
             },
-            variants('fontVariantLigatures', ['responsive']),
+            variants('fontVariantLigatures', []),
         )
 
         addUtilities(
