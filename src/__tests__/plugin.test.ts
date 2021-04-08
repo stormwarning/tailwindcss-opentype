@@ -11,16 +11,35 @@ describe('Plugin', () => {
     it('generates utility classes', async () => {
         let css = await generateCss(opentypePlugin)
         expect(css).toMatchCss(`
+            .common-ligatures, .no-common-ligatures, .discretionary-ligatures, .no-discretionary-ligatures, .contextual, .no-contextual {
+                --ot-liga: /*!*/;
+                --ot-dlig: /*!*/;
+                --ot-calt: /*!*/;
+                font-variant-ligatures: var(--ot-liga) var(--ot-dlig) var(--ot-calt)
+            }
+
             .common-ligatures {
-                font-variant-ligatures: common-ligatures
+                --ot-liga: common-ligatures
+            }
+
+            .no-common-ligatures {
+                --ot-liga: no-common-ligatures
             }
 
             .discretionary-ligatures {
-                font-variant-ligatures: discretionary-ligatures
+                --ot-dlig: discretionary-ligatures
+            }
+
+            .no-discretionary-ligatures {
+                --ot-dlig: no-discretionary-ligatures
             }
 
             .contextual {
-                font-variant-ligatures: contextual
+                --ot-calt: contextual
+            }
+
+            .no-contextual {
+                --ot-calt: no-contextual
             }
 
             .small-caps {
