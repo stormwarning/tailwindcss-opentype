@@ -13,7 +13,7 @@ Use the `font-variant-ligatures` utilities to enable ligatures and contextual fo
 
 These utilities are composable so you can enable multiple `font-variant-ligatures` features by combining multiple classes in your HTML:
 
-### Common ligatures (`liga`)
+### Common ligatures <span class="ml-3 mt-1.5 align-top inline-flex items-center px-3 py-1 rounded text-sm font-medium leading-4 bg-blue-100 text-blue-900 tracking-tight">`liga`</span>
 
 Most common ligatures mitigate spacing issues between specific combinations of letters within a typeface, often by connecting glyphs that might otherwise collide. Common ligatures are usually enabled by default in fonts that support them, and can be disabled if needed.
 
