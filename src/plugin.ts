@@ -5,9 +5,9 @@ export default plugin.withOptions(() => {
         addUtilities(
             {
                 '.common-ligatures, .no-common-ligatures, .discretionary-ligatures, .no-discretionary-ligatures, .contextual, .no-contextual': {
-                    '--ot-liga': '/*!*/',
-                    '--ot-dlig': '/*!*/',
-                    '--ot-calt': '/*!*/',
+                    '--ot-liga': 'var(--tw-empty, /*!*/)',
+                    '--ot-dlig': 'var(--tw-empty, /*!*/)',
+                    '--ot-calt': 'var(--tw-empty, /*!*/)',
                     'font-variant-ligatures':
                         'var(--ot-liga) var(--ot-dlig) var(--ot-calt)',
                 },
