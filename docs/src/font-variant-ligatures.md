@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: page
 title: Font Variant Ligatures
 description: Utilities for controlling ligatures and contextual forms.
 eleventyNavigation:

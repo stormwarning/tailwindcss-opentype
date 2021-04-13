@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+        name="description"
+        content=""
+    />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/styles.css' | url }}" />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+<body class="text-grey-500 antialiased bg-white" x-data="{ navIsOpen: false }">
+    {% include 'menu-button.njk' %}
+    <div class="w-full max-w-8xl mx-auto">
+        <div class="lg:flex">
+            <aside
+                class="fixed z-40 inset-0 flex-none h-full bg-black bg-opacity-25 w-full lg:bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block"
+                :class="{ hidden: !navIsOpen }"
+                id="sidebar"
+                @click="navIsOpen = false"
+            >
+                <div
+                    class="h-full overflow-y-auto scrolling-touch lg:h-auto lg:block relative lg:sticky lg:bg-transparent overflow-hidden lg:top-18 bg-white mr-24 lg:mr-0"
+                    id="navWrapper"
+                    @click="$event.stopPropagation()"
+                >
+                    <nav
+                        class="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)"
+                        id="nav"
+                    >
+                        <h5 class="px-3 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs text-gray-900">
+                            OpenType Utilities
+                        </h5>
+                        {% set navPages = collections.all | eleventyNavigation %}
+                        <ul>
+                        {%- for entry in navPages %}
+                            {% set isActive = entry.url == page.url %}
+                            <li>
+                                <a
+                                    class="px-3 py-2 transition-colors duration-200 relative block {{ 'text-blue-700' if isActive else 'hover:text-gray-900 text-gray-500' }}"
+                                    href="{{ entry.url | url }}"
+                                >
+                                    <span class="rounded-md absolute inset-0 bg-blue-50 {{ 'opacity-0' if not isActive }}"></span>
+                                    <span class="relative">{{ entry.title }}</span>
+                                </a>
+                            </li>
+                        {%- endfor %}
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+            <main class="min-w-0 w-full flex-auto lg:static lg:max-h-full lg:overflow-visible">
+                <div class="w-full flex">
+                    <div class="min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16">
+                        {{ content | safe }}
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

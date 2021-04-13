@@ -1,0 +1,9 @@
+---
+layout: base
+---
+{% from 'page-header.njk' import header with context %}
+{{ header(title=title, description=description) }}
+<div class="prose">
+    {# Classes table goes here. #}
+    {{ content | safe }}
+</div>

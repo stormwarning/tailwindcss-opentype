@@ -8,6 +8,8 @@ module.exports = function (eleventyConfig) {
     return {
         dir: {
             input: 'docs/src',
+            includes: 'includes',
+            layouts: 'layouts',
             output: 'docs/dist',
         },
         pathPrefix:

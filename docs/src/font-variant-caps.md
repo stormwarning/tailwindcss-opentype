@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: page
 title: Font Variant Caps
 description: Description goes here.
 eleventyNavigation:
