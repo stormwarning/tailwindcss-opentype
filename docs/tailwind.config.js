@@ -6,7 +6,7 @@ const opentypePlugin = require('../dist/index')
 module.exports = {
     mode: 'jit',
     purge: {
-        content: ['./src/**/*.@{html,md,njk}'],
+        content: ['./src/**/*.@{html,md,njk,js}'],
     },
     darkMode: false, // or 'media' or 'class'
     theme: {

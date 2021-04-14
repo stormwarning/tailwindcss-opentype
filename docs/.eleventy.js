@@ -1,7 +1,15 @@
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation')
+const markdownIt = require('markdown-it')
+const markdownItAnchor = require('markdown-it-anchor')
+const markdownItClass = require('@toycode/markdown-it-class')
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(eleventyNavigationPlugin)
+
+    eleventyConfig.setLibrary("md", markdownIt({
+        html: true,
+        breaks: true,
+    }).use(markdownItAnchor, { permalink: true, permalinkClass: 'absolute -ml-[1em] opacity-0 group-hover:opacity-100' }).use(markdownItClass, { h2: 'group flex whitespace-pre-wrap'}));
 
     return {
         dir: {
