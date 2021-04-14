@@ -5,9 +5,7 @@ const opentypePlugin = require('../dist/index')
 
 module.exports = {
     mode: 'jit',
-    purge: {
-        content: ['./src/**/*.@{html,md,njk,js}'],
-    },
+    purge: ['./docs/src/**/*.{html,md,njk}', './docs/.eleventy.js'],
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
@@ -20,6 +18,12 @@ module.exports = {
             typography: (theme) => ({
                 DEFAULT: {
                     css: {
+                        maxWidth: 'none',
+                        color: theme('colors.grey.500'),
+                        '> :first-child': { marginTop: '-' },
+                        '> :last-child': { marginBottom: '-' },
+                        '&:first-child > :first-child': { marginTop: '0' },
+                        '&:last-child > :last-child': { marginBottom: '0' },
                         'h1, h2': {
                             letterSpacing: '-0.025em',
                         },
@@ -60,6 +64,32 @@ module.exports = {
                     },
                 },
             }),
+
+            spacing: {
+                18: '4.5rem',
+                88: '22rem',
+                '15px': '0.9375rem',
+                '23px': '1.4375rem',
+                full: '100%',
+            },
+
+            width: {
+                xl: '36rem',
+            },
+
+            maxWidth: {
+                '4.5xl': '60rem',
+                '8xl': '90rem',
+            },
+
+            maxHeight: (theme) => ({
+                sm: '30rem',
+                '(screen-18)': `calc(100vh - ${theme('spacing.18')})`,
+            }),
+
+            scale: {
+                80: '0.8',
+            },
         },
     },
     variants: {},
