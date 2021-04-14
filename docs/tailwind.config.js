@@ -13,6 +13,8 @@ module.exports = {
         extend: {
             colors: {
                 grey: colors.coolGray,
+                'light-blue': colors.lightBlue,
+                violet: colors.violet,
             },
 
             typography: (theme) => ({
@@ -26,7 +28,7 @@ module.exports = {
                         },
                         code: {
                             fontWeight: '400',
-                            color: colors.violet[600],
+                            color: theme('colors.violet.600'),
                         },
                         'h3 code': {
                             fontWeight: 'inherit',
@@ -39,15 +41,15 @@ module.exports = {
                             lineHeight: theme('fontSize.sm')[1].lineHeight,
                         },
                         thead: {
-                            color: theme('colors.gray.600'),
-                            borderBottomColor: theme('colors.gray.200'),
+                            color: theme('colors.grey.600'),
+                            borderBottomColor: theme('colors.grey.200'),
                         },
                         'thead th': {
                             paddingTop: 0,
                             fontWeight: theme('fontWeight.semibold'),
                         },
                         'tbody tr': {
-                            borderBottomColor: theme('colors.gray.200'),
+                            borderBottomColor: theme('colors.grey.200'),
                         },
                         'tbody tr:last-child': {
                             borderBottomWidth: '1px',
