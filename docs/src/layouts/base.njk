@@ -30,16 +30,17 @@
                         class="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)"
                         id="nav"
                     >
-                        <h5 class="px-3 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs text-gray-900">
+                        <h5 class="px-3 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs text-grey-900">
                             OpenType Utilities
                         </h5>
                         {% set navPages = collections.all | eleventyNavigation %}
                         <ul>
                         {%- for entry in navPages %}
+                            {{ entry | log }}
                             {% set isActive = entry.url == page.url %}
                             <li>
                                 <a
-                                    class="px-3 py-2 transition-colors duration-200 relative block {{ 'text-blue-700' if isActive else 'hover:text-gray-900 text-gray-500' }}"
+                                    class="px-3 py-2 transition-colors duration-200 relative block {{ 'text-blue-700' if isActive }}{{ 'text-grey-400' if entry.inactive and not isActive }}{{ 'hover:text-grey-900 text-grey-500' if not entry.inactive and not isActive }}"
                                     href="{{ entry.url | url }}"
                                 >
                                     <span class="rounded-md absolute inset-0 bg-blue-50 {{ 'opacity-0' if not isActive }}"></span>

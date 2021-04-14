@@ -11,6 +11,7 @@ module.exports = {
         extend: {
             colors: {
                 grey: colors.coolGray,
+                teal: colors.teal,
                 'light-blue': colors.lightBlue,
                 violet: colors.violet,
             },
@@ -18,7 +19,7 @@ module.exports = {
             typography: (theme) => ({
                 DEFAULT: {
                     css: {
-                        maxWidth: 'none',
+                        // maxWidth: 'none',
                         color: theme('colors.grey.500'),
                         '> :first-child': { marginTop: '-' },
                         '> :last-child': { marginBottom: '-' },
