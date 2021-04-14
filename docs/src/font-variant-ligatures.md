@@ -5,6 +5,7 @@ description: Utilities for controlling ligatures and contextual forms.
 eleventyNavigation:
     key: Font Variant Ligatures
     order: 1
+classData: ligatures
 ---
 
 ## Usage
@@ -23,7 +24,7 @@ Most common ligatures mitigate spacing issues between specific combinations of l
 
 ### Discretionary ligatures (`dlig`)
 
-Discretionary ligatures’ defining characteristic is that they are available to enable at your discretion: they are disabled by default. Often, these are additional ligatures that might be considered too attention-grabbing or unconventional to be enabled in many situations. 
+Discretionary ligatures’ defining characteristic is that they are available to enable at your discretion: they are disabled by default. Often, these are additional ligatures that might be considered too attention-grabbing or unconventional to be enabled in many situations.
 
 ```
 <p class="discretionary-ligatures">ct sp st</p>

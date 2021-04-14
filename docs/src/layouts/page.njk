@@ -2,8 +2,9 @@
 layout: base
 ---
 {% from 'page-header.njk' import header with context %}
+{% from 'class-table.njk' import table with context %}
 {{ header(title=title, description=description) }}
+{{ table(classes[classData]) }}
 <div class="prose">
-    {# Classes table goes here. #}
     {{ content | safe }}
 </div>
