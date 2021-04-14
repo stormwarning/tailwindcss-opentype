@@ -5,6 +5,7 @@ description: Utilities for controlling alternate glyphs for capital letters.
 eleventyNavigation:
     key: Font Variant Caps
     order: 2
+classData: caps
 ---
 
 ## Usage
@@ -31,7 +32,7 @@ Like `small-caps` but transforms uppercase characters into small capitals as wel
 
 Uppercase letter glyphs are often designed for use with lowercase letters. When used in all uppercase titling sequences they can appear too strong. Titling capitals are designed specifically for this situation.
 
-Note: This feature is not *exclusively* for capital letters, but for any forms better suited for large type, as in titles. It is included with these utilities due to how it is applied in the W3C spec.
+Note: This feature is not _exclusively_ for capital letters, but for any forms better suited for large type, as in titles. It is included with these utilities due to how it is applied in the W3C spec.
 
 ```
 <p class="titling-caps">Quick Brown Lazy Grumpy</p>
