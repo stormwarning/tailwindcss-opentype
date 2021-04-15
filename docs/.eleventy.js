@@ -40,9 +40,9 @@ module.exports = function (eleventyConfig) {
             layouts: 'layouts',
             output: 'docs/dist',
         },
-        pathPrefix:
-            process.env.NODE_ENV === 'production'
-                ? '/tailwindcss-opentype/'
-                : '',
+        // pathPrefix:
+        //     process.env.NODE_ENV === 'production'
+        //         ? '/tailwindcss-opentype/'
+        //         : '',
     }
 }
