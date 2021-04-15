@@ -30,13 +30,15 @@
                         class="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)"
                         id="nav"
                     >
+                        <a class="block px-3" href="{{ '/' | url }}">
+                            <div class="w-12 h-12 rounded-xl mb-8 bg-gradient-to-br flex items-center justify-center from-green-400 to-cyan-500"></div>
+                        </a>
                         <h5 class="px-3 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs text-grey-900">
                             OpenType Utilities
                         </h5>
                         {% set navPages = collections.all | eleventyNavigation %}
                         <ul>
                         {%- for entry in navPages %}
-                            {{ entry | log }}
                             {% set isActive = entry.url == page.url %}
                             <li>
                                 <a

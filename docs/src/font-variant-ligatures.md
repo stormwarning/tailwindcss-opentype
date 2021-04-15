@@ -14,7 +14,7 @@ Use the `font-variant-ligatures` utilities to enable ligatures and contextual fo
 
 These utilities are composable so you can enable multiple `font-variant-ligatures` features by combining multiple classes in your HTML:
 
-### Common ligatures <span class="ml-3 mt-1.5 align-top inline-flex items-center px-3 py-1 rounded text-sm font-medium leading-4 bg-blue-100 text-blue-900 tracking-tight">`liga`</span>
+### Common ligatures {{ 'liga' | badge }}
 
 Most common ligatures mitigate spacing issues between specific combinations of letters within a typeface, often by connecting glyphs that might otherwise collide. Common ligatures are usually enabled by default in fonts that support them, and can be disabled if needed.
 
@@ -22,7 +22,7 @@ Most common ligatures mitigate spacing issues between specific combinations of l
 <p class="common-ligatures">fi ff fl ffi Th</p>
 ```
 
-### Discretionary ligatures (`dlig`)
+### Discretionary ligatures {{ 'dlig' | badge }}
 
 Discretionary ligatures’ defining characteristic is that they are available to enable at your discretion: they are disabled by default. Often, these are additional ligatures that might be considered too attention-grabbing or unconventional to be enabled in many situations.
 
@@ -30,7 +30,7 @@ Discretionary ligatures’ defining characteristic is that they are available to
 <p class="discretionary-ligatures">ct sp st</p>
 ```
 
-### Contextual alternates (`calt`)
+### Contextual alternates {{ 'calt' | badge }}
 
 Like ligatures (though not strictly a ligature feature), contextual alternates are commonly used to harmonize the shapes of glyphs with the surrounding context. This feature is also enabled by default, except in Chrome, and cannot be disabled in Safari.
 

@@ -1,10 +1,19 @@
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation')
+const markdownItClass = require('@toycode/markdown-it-class')
+const dedent = require('dedent')
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
-const markdownItClass = require('@toycode/markdown-it-class')
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(eleventyNavigationPlugin)
+
+    eleventyConfig.addFilter('badge', function (content) {
+        return dedent`
+        <span aria-hidden="true" class="inline-flex self-center mx-4 h-6 w-px align-middle bg-grey-700 bg-opacity-20"></span>
+        <span class="align-middle inline-flex items-center px-3 py-1 rounded-full text-sm font-medium leading-4 bg-teal-100 text-teal-900 tracking-tight">
+            <kbd>${content}</kbd>
+        </span>`.replace(/\n/g, '')
+    })
 
     eleventyConfig.setLibrary(
         'md',
