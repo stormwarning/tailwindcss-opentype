@@ -7,7 +7,7 @@
         name="description"
         content=""
     />
-    <title>{{ title }}</title>
+    <title>{% if isHome %}{{ title }}{% else %}{{ title }} — TailwindCSS OpenType{% endif %}</title>
     <link rel="stylesheet" href="{{ '/assets/styles.css' | url }}" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>

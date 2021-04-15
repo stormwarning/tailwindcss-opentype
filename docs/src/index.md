@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Home
+title: TailwindCSS OpenType — utility classes for advanced typographic features.
 ---
 
 > OpenType features are like secret compartments in fonts. Unlock them and you'll find ways to make fonts look and behave differently in subtle and dramatic ways. Not all OpenType features are appropriate to use all of the time, but some features are critical for great typography.
