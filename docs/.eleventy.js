@@ -5,6 +5,7 @@ const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
 
 module.exports = function (eleventyConfig) {
+    eleventyConfig.addPassthroughCopy({ 'docs/src/public': '.' })
     eleventyConfig.addPlugin(eleventyNavigationPlugin)
 
     eleventyConfig.addFilter('badge', function (content) {

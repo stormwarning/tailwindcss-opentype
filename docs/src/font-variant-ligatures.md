@@ -18,7 +18,7 @@ These utilities are composable so you can enable multiple `font-variant-ligature
 
 Most common ligatures mitigate spacing issues between specific combinations of letters within a typeface, often by connecting glyphs that might otherwise collide. Common ligatures are usually enabled by default in fonts that support them, and can be disabled if needed.
 
-```
+```html
 <p class="common-ligatures">fi ff fl ffi Th</p>
 ```
 

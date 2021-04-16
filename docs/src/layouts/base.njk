@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
         name="description"
-        content=""
+        content="{{ description }}"
     />
     <title>{% if isHome %}{{ title }}{% else %}{{ title }} — TailwindCSS OpenType{% endif %}</title>
     <link rel="stylesheet" href="{{ '/assets/styles.css' | url }}" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
 </head>
 <body class="text-grey-500 antialiased bg-white" x-data="{ navIsOpen: false }">
     {% include 'menu-button.njk' %}
@@ -31,7 +34,9 @@
                         id="nav"
                     >
                         <a class="block px-3" href="{{ '/' | url }}">
-                            <div class="w-12 h-12 rounded-xl mb-8 bg-gradient-to-br flex items-center justify-center from-green-400 to-cyan-500"></div>
+                            <div class="w-12 h-12 rounded-xl mb-8 bg-gradient-to-br flex items-center justify-center from-cyan-400 to-light-blue-500">
+                                {% include 'logo.njk' %}
+                            </div>
                         </a>
                         <h5 class="px-3 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs text-grey-900">
                             OpenType Utilities
@@ -42,10 +47,10 @@
                             {% set isActive = entry.url == page.url %}
                             <li>
                                 <a
-                                    class="px-3 py-2 transition-colors duration-200 relative block {{ 'text-blue-700' if isActive }}{{ 'text-grey-400' if entry.inactive and not isActive }}{{ 'hover:text-grey-900 text-grey-500' if not entry.inactive and not isActive }}"
+                                    class="px-3 py-2 transition-colors duration-200 relative block {{ 'text-light-blue-700' if isActive }}{{ 'text-grey-400' if entry.inactive and not isActive }}{{ 'hover:text-grey-900 text-grey-500' if not entry.inactive and not isActive }}"
                                     href="{{ entry.url | url }}"
                                 >
-                                    <span class="rounded-md absolute inset-0 bg-blue-50 {{ 'opacity-0' if not isActive }}"></span>
+                                    <span class="rounded-md absolute inset-0 bg-light-blue-50 {{ 'opacity-0' if not isActive }}"></span>
                                     <span class="relative">{{ entry.title }}</span>
                                 </a>
                             </li>
