@@ -19,9 +19,9 @@
   ],
   "scripts": {
     "build": "tsdx build --format cjs",
-    "build:docs": "NODE_ENV=production eleventy --config=docs/.eleventy.js",
+    "build:docs": "NODE_ENV=production npm run build && eleventy --config=docs/.eleventy.js",
     "changeset": "changeset add",
-    "dev": "eleventy --config=docs/.eleventy.js --serve",
+    "dev": "npm run build && eleventy --config=docs/.eleventy.js --serve",
     "lint": "tsdx lint",
     "prepare": "npm run build",
     "release": "npm run build && changeset publish",
