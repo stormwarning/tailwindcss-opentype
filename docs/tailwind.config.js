@@ -75,6 +75,10 @@ module.exports = {
                 full: '100%',
             },
 
+            fontFamily: {
+                historical: 'Sorts Mill Goudy, serif',
+            },
+
             width: {
                 xl: '36rem',
             },

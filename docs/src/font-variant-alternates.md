@@ -16,6 +16,8 @@ Use the `font-variant-alternates` utilities to access alternative styles for dif
 
 Historical glyph variants aren’t likely to be useful in everyday typesetting situations, but may prove useful when referencing the past.
 
+<p class="font-historical historical-forms text-4xl">Blasphemous</p>
+
 ```
 <p class="historical-forms">Blasphemous</p>
 ```
