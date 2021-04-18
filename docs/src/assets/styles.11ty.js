@@ -22,6 +22,18 @@ const css = `
             font-display: swap;
         }
         @font-face {
+            font-family: "Allan";
+            font-weight: 400;
+            src: url(/assets/fonts/allan-regular.woff2) format("woff2");
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Caflisch Script";
+            font-weight: 400;
+            src: url(/assets/fonts/caflisch-script-pro-regular.woff2) format("woff2");
+            font-display: swap;
+        }
+        @font-face {
             font-family: "Sorts Mill Goudy";
             font-weight: 400;
             src: url(/assets/fonts/sorts-mill-goudy-regular.woff2) format("woff2");
@@ -33,6 +45,15 @@ const css = `
             src: url(/assets/fonts/warnock-pro-bold.woff2) format("woff2");
             font-display: swap;
         }
+    }
+
+    @layer utilities {
+        .accent-amber { --accent-color: theme('colors.amber.600') }
+        .accent-orange { --accent-color: theme('colors.orange.600') }
+        .accent-rose { --accent-color: theme('colors.rose.600') }
+        .accent-fuchsia { --accent-color: theme('colors.fuchsia.600') }
+        .accent-indigo { --accent-color: theme('colors.indigo.600') }
+        .accent-emerald { --accent-color: theme('colors.emerald.600') }
     }
 `
 

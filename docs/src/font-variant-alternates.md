@@ -16,15 +16,12 @@ Use the `font-variant-alternates` utilities to access alternative styles for dif
 
 Historical glyph variants aren’t likely to be useful in everyday typesetting situations, but may prove useful when referencing the past.
 
-```html cyan
+```html fuchsia
 <template preview>
     <div class="text-grey-600 mix-blend-multiply">
         <p class="font-goudy text-4xl opacity-70">Blasphemous</p>
         <p class="font-goudy historical-forms text-4xl">
-            Bla<mark class="text-cyan-600">s</mark>phemou<mark
-                class="text-cyan-600"
-                >s</mark
-            >
+            Bla<mark>s</mark>phemou<mark>s</mark>
         </p>
     </div>
 </template>

@@ -16,6 +16,12 @@ module.exports = {
         extend: {
             colors: {
                 grey: colors.coolGray,
+                amber: colors.amber,
+                orange: colors.orange,
+                rose: colors.rose,
+                fuchsia: colors.fuchsia,
+                indigo: colors.indigo,
+                emerald: colors.emerald,
                 teal: colors.teal,
                 cyan: colors.cyan,
                 'light-blue': colors.lightBlue,
@@ -48,7 +54,10 @@ module.exports = {
                         'h3 code::before': { content: 'none' },
                         'h3 code::after': { content: 'none' },
                         '.code-sample p': { margin: 0 },
-                        '.code-sample mark': { background: 'none' },
+                        '.code-sample mark': {
+                            color: 'var(--accent-color)',
+                            background: 'none',
+                        },
                         table: {
                             fontSize: theme('fontSize.sm')[0],
                             lineHeight: theme('fontSize.sm')[1].lineHeight,
@@ -84,6 +93,8 @@ module.exports = {
 
             fontFamily: {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+                allan: 'Allan',
+                caflisch: 'Caflisch Script',
                 goudy: 'Sorts Mill Goudy, serif',
                 warnock: 'Warnock Pro, serif',
             },
