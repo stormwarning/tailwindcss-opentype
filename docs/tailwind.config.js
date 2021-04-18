@@ -5,7 +5,11 @@ const opentypePlugin = require('../dist/index')
 
 module.exports = {
     mode: 'jit',
-    purge: ['./docs/src/**/*.{html,md,njk}', './docs/.eleventy.js'],
+    purge: [
+        './docs/src/**/*.{html,md,njk}',
+        './docs/.eleventy.js',
+        './docs/remark/*.js',
+    ],
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
@@ -42,6 +46,7 @@ module.exports = {
                         },
                         'h3 code::before': { content: 'none' },
                         'h3 code::after': { content: 'none' },
+                        '.code-sample p': { margin: 0 },
                         table: {
                             fontSize: theme('fontSize.sm')[0],
                             lineHeight: theme('fontSize.sm')[1].lineHeight,

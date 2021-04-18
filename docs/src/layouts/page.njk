@@ -3,10 +3,13 @@ layout: base
 ---
 {% from 'page-header.njk' import header with context %}
 {% from 'class-table.njk' import table with context %}
+
 {{ header(title=title, description=description) }}
+
 {% if classData %}
 {{ table(classes[classData]) }}
 {% endif %}
+
 <div class="prose">
     {{ content | safe }}
 </div>
