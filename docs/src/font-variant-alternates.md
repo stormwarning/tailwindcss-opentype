@@ -18,9 +18,15 @@ Historical glyph variants aren’t likely to be useful in everyday typesetting s
 
 ```html cyan
 <template preview>
-    <p class="font-historical historical-forms text-4xl text-cyan-600">
-        Blasphemous
-    </p>
+    <div class="text-grey-600 mix-blend-multiply">
+        <p class="font-goudy text-4xl opacity-70">Blasphemous</p>
+        <p class="font-goudy historical-forms text-4xl">
+            Bla<mark class="text-cyan-600">s</mark>phemou<mark
+                class="text-cyan-600"
+                >s</mark
+            >
+        </p>
+    </div>
 </template>
 
 <p class="historical-forms">Blasphemous</p>

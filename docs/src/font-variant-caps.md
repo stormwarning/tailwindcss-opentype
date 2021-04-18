@@ -16,7 +16,22 @@ Use the `font-variant-caps` utilities to transform letters into optimised capita
 
 This feature turns lowercase characters into small capitals.
 
-```
+```html cyan
+<template preview>
+    <div class="text-grey-600 mix-blend-multiply">
+        <p class="font-warnock text-4xl opacity-70">
+            Not all caps are Small Caps.
+        </p>
+        <p class="font-warnock small-caps text-4xl">
+            N<mark class="text-cyan-600">ot all caps are</mark> S<mark
+                class="text-cyan-600"
+                >mall</mark
+            >
+            C<mark class="text-cyan-600">aps</mark>.
+        </p>
+    </div>
+</template>
+
 <p class="small-caps">Not all caps are Small Caps.</p>
 ```
 
@@ -24,7 +39,16 @@ This feature turns lowercase characters into small capitals.
 
 Like `small-caps` but transforms uppercase characters into small capitals as well.
 
-```
+```html cyan
+<template preview>
+    <div class="text-grey-600 mix-blend-multiply">
+        <p class="font-warnock text-4xl opacity-70">All caps are Small Caps.</p>
+        <p class="font-warnock all-small-caps text-4xl">
+            <mark class="text-cyan-600">All caps are Small Caps</mark>.
+        </p>
+    </div>
+</template>
+
 <p class="all-small-caps">All caps are Small Caps.</p>
 ```
 

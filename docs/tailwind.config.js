@@ -1,5 +1,6 @@
 const typographyPlugin = require('@tailwindcss/typography')
 const colors = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 const opentypePlugin = require('../dist/index')
 
@@ -47,6 +48,7 @@ module.exports = {
                         'h3 code::before': { content: 'none' },
                         'h3 code::after': { content: 'none' },
                         '.code-sample p': { margin: 0 },
+                        '.code-sample mark': { background: 'none' },
                         table: {
                             fontSize: theme('fontSize.sm')[0],
                             lineHeight: theme('fontSize.sm')[1].lineHeight,
@@ -81,7 +83,9 @@ module.exports = {
             },
 
             fontFamily: {
-                historical: 'Sorts Mill Goudy, serif',
+                sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+                goudy: 'Sorts Mill Goudy, serif',
+                warnock: 'Warnock Pro, serif',
             },
 
             width: {
