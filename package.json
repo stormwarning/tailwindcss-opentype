@@ -9,6 +9,7 @@
     "font features",
     "typography"
   ],
+  "homepage": "https://tailwindcss-opentype.netlify.app",
   "repository": "stormwarning/tailwindcss-opentype",
   "license": "ISC",
   "author": "Jeff Nelson <rustyangel@gmail.com> (https://tidaltheory.io)",
