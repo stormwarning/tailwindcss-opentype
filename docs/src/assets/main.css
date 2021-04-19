@@ -1,0 +1,140 @@
+@tailwind base;
+
+/*! purgecss start ignore */
+.token.tag,
+.token.class-name,
+.token.selector,
+.token.selector .class,
+.token.function {
+    @apply text-fuchsia-400;
+}
+
+.token.attr-name,
+.token.keyword,
+.token.rule,
+.token.operator,
+.token.pseudo-class,
+.token.important {
+    @apply text-cyan-400;
+}
+
+.token.attr-value,
+.token.class,
+.token.string,
+.token.number,
+.token.unit,
+.token.color {
+    @apply text-lime-300;
+}
+
+.token.punctuation,
+.token.module,
+.token.property {
+    @apply text-light-blue-200;
+}
+
+.token.atapply .token:not(.rule):not(.important) {
+    color: inherit;
+}
+
+.language-shell .token:not(.comment) {
+    color: inherit;
+}
+
+.language-css .token.function {
+    color: inherit;
+}
+
+.token.comment {
+    @apply text-gray-400;
+}
+
+.token.deleted:not(.prefix) {
+    @apply relative block -mx-4 px-4;
+}
+
+.token.deleted:not(.prefix)::after {
+    content: '';
+    @apply pointer-events-none absolute inset-0 block bg-rose-400 bg-opacity-25;
+}
+
+.token.deleted.prefix {
+    @apply text-gray-400 select-none;
+}
+
+.token.inserted:not(.prefix) {
+    @apply block bg-emerald-700 bg-opacity-50 -mx-4 px-4;
+}
+
+.token.inserted.prefix {
+    @apply text-emerald-200 text-opacity-75 select-none;
+}
+/*! purgecss end ignore */
+
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'Inter var';
+        font-weight: 100 900;
+        font-style: normal;
+        font-named-instance: 'Regular';
+        src: url(/assets/fonts/Inter-roman.var.woff2) format('woff2');
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Inter var';
+        font-weight: 100 900;
+        font-style: italic;
+        font-named-instance: 'Italic';
+        src: url(/assets/fonts/Inter-italic.var.woff2) format('woff2');
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Allan';
+        font-weight: 400;
+        src: url(/assets/fonts/allan-regular.woff2) format('woff2');
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Caflisch Script';
+        font-weight: 400;
+        src: url(/assets/fonts/caflisch-script-pro-regular.woff2)
+            format('woff2');
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Sorts Mill Goudy';
+        font-weight: 400;
+        src: url(/assets/fonts/sorts-mill-goudy-regular.woff2) format('woff2');
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Warnock Pro';
+        font-weight: 400;
+        src: url(/assets/fonts/warnock-pro-bold.woff2) format('woff2');
+        font-display: swap;
+    }
+}
+
+@layer utilities {
+    .accent-amber {
+        --accent-color: theme('colors.amber.600');
+    }
+    .accent-orange {
+        --accent-color: theme('colors.orange.600');
+    }
+    .accent-rose {
+        --accent-color: theme('colors.rose.600');
+    }
+    .accent-fuchsia {
+        --accent-color: theme('colors.fuchsia.600');
+    }
+    .accent-indigo {
+        --accent-color: theme('colors.indigo.600');
+    }
+    .accent-emerald {
+        --accent-color: theme('colors.emerald.600');
+    }
+}

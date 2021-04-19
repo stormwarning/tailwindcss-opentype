@@ -1,6 +1,11 @@
+const Prism = require('prismjs')
+const loadLanguages = require('prismjs/components/')
+loadLanguages()
+// require('./prism-diff-highlight')(Prism)
 const visit = require('unist-util-visit')
 const unified = require('unified')
 const parse = require('rehype-parse')
+const dedent = require('dedent')
 
 const previewBackground = {
     amber: 'bg-gradient-to-r from-amber-50 to-amber-100 accent-amber',
@@ -9,6 +14,28 @@ const previewBackground = {
     fuchsia: 'bg-gradient-to-r from-fuchsia-50 to-fuchsia-100 accent-fuchsia',
     indigo: 'bg-gradient-to-r from-indigo-50 to-indigo-100 accent-indigo',
     emerald: 'bg-gradient-to-r from-emerald-50 to-teal-100 accent-emerald',
+}
+
+function highlightCode(code, prismLanguage) {
+    let isDiff = prismLanguage.startsWith('diff-')
+    let language = isDiff ? prismLanguage.substr(5) : prismLanguage
+    let grammar = Prism.languages[isDiff ? 'diff' : language]
+
+    if (!grammar) {
+        // eslint-disable-next-line no-console
+        console.warn(`Unrecognised language: ${prismLanguage}`)
+        return Prism.util.encode(code)
+    }
+
+    let highlighted = Prism.highlight(code, grammar, prismLanguage)
+
+    return language === 'html'
+        ? highlighted.replace(
+              /\*\*(.*?)\*\*/g,
+              (_, text) =>
+                  `<span class="code-highlight bg-code-highlight">${text}</span>`,
+          )
+        : highlighted
 }
 
 function codeSample() {
@@ -33,6 +60,9 @@ function codeSample() {
 
             if (!hasPreview) return
             if (!snippetCode) snippetCode = previewCode
+
+            snippetCode = highlightCode(dedent(snippetCode).trim(), 'html')
+            let snippetHast = unified().use(parse).parse(snippetCode)
 
             let meta = node.meta ? node.meta.trim().split(/\s+/) : []
             let color = meta.find((x) => !/^resizable(:|$)/.test(x))
@@ -68,10 +98,7 @@ function codeSample() {
                                 properties: { class: 'language-html' },
                                 children: (node.data &&
                                     node.data.hChildren) || [
-                                    {
-                                        type: 'text',
-                                        value: snippetCode,
-                                    },
+                                    snippetHast.children[0].children[1],
                                 ],
                             },
                         ],
