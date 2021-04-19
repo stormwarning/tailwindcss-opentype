@@ -1,0 +1,16 @@
+{% macro header(title='', description, border) %}
+<header class="pb-10 {{ 'border-b border-grey-200 mb-10' if border }}">
+    <div class="flex items-center">
+        <h1 class="text-3xl font-extrabold text-grey-900 tracking-tight">{{ title }}</h1>
+        {# {badge.key && badge.value && (
+          <dl class="mt-0 mb-1 ml-3 flex-none inline-flex items-center px-3 py-1 rounded-full text-sm font-medium leading-4 bg-green-150 text-green-900 tracking-tight">
+            <dt class="sr-only">{badge.key}</dt>
+            <dd>{badge.value}</dd>
+          </dl>
+        )} #}
+    </div>
+    {% if description -%}
+    <p class="mt-1 text-lg text-grey-500">{{ description }}</p>
+    {%- endif %}
+</header>
+{% endmacro %}

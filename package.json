@@ -9,6 +9,7 @@
     "font features",
     "typography"
   ],
+  "homepage": "https://tailwindcss-opentype.netlify.app",
   "repository": "stormwarning/tailwindcss-opentype",
   "license": "ISC",
   "author": "Jeff Nelson <rustyangel@gmail.com> (https://tidaltheory.io)",
@@ -19,7 +20,9 @@
   ],
   "scripts": {
     "build": "tsdx build --format cjs",
+    "build:docs": "NODE_ENV=production npm run build && eleventy --config=docs/.eleventy.js",
     "changeset": "changeset add",
+    "dev": "eleventy --config=docs/.eleventy.js --serve",
     "lint": "tsdx lint",
     "prepare": "npm run build",
     "release": "npm run build && changeset publish",
@@ -41,25 +44,38 @@
     "trailingComma": "all"
   },
   "devDependencies": {
+    "@11ty/eleventy": "0.12.1",
+    "@11ty/eleventy-navigation": "0.1.6",
+    "@11ty/eleventy-plugin-syntaxhighlight": "3.1.0",
     "@changesets/changelog-github": "0.3.0",
     "@changesets/cli": "2.15.0",
+    "@fec/eleventy-plugin-remark": "2.2.1",
     "@navith/tailwindcss-plugin-author-types": "1.8.1-0.1",
+    "@tailwindcss/typography": "0.4.0",
     "@typescript-eslint/eslint-plugin": "4.20.0",
     "@typescript-eslint/parser": "4.20.0",
     "@zazen/eslint-config": "2.3.0",
+    "autoprefixer": "10.2.5",
+    "dedent": "0.7.0",
     "eslint": "7.23.0",
     "eslint-config-standard-with-typescript": "20.0.0",
     "husky": "4.3.8",
     "import-sort-style-python": "1.0.2",
     "jest-matcher-css": "1.1.0",
     "lint-staged": "10.5.4",
+    "postcss": "8.2.9",
+    "postcss-cli": "8.3.1",
     "prettier": "2.2.1",
     "prettier-plugin-import-sort": "0.0.6",
     "prettier-plugin-packagejson": "2.2.10",
-    "tailwindcss": "2.0.4",
+    "prismjs": "1.23.0",
+    "rehype-parse": "7.0.1",
+    "remark-autolink-headings": "6.0.1",
+    "tailwindcss": "2.1.1",
     "tsdx": "0.14.1",
     "tslib": "2.1.0",
-    "typescript": "4.2.3"
+    "typescript": "4.2.3",
+    "unified": "9.2.1"
   },
   "peerDependencies": {
     "tailwindcss": ">= 1.5"
