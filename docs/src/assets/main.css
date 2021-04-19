@@ -137,4 +137,13 @@
     .accent-emerald {
         --accent-color: theme('colors.emerald.600');
     }
+
+    .code-highlight {
+        border-radius: 0.1875rem;
+        padding: 0.0625rem 0.1875rem;
+        margin: 0 -0.1875rem;
+    }
+    .bg-code-highlight {
+        background-color: rgba(134, 239, 172, 0.25);
+    }
 }

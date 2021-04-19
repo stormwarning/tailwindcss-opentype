@@ -29,7 +29,7 @@ This feature turns lowercase characters into small capitals.
     </div>
 </template>
 
-<p class="small-caps">Not all caps are Small Caps.</p>
+<p class="**small-caps**">Not all caps are Small Caps.</p>
 ```
 
 ### All small caps {{ 'smcp' | badge }}{{ 'c2sc' | badge }}
@@ -46,7 +46,7 @@ Like `small-caps` but transforms uppercase characters into small capitals as wel
     </div>
 </template>
 
-<p class="all-small-caps">All caps are Small Caps.</p>
+<p class="**all-small-caps**">All caps are Small Caps.</p>
 ```
 
 ### Titling caps {{ 'titl' | badge }}
@@ -66,5 +66,5 @@ Note: This feature is not _exclusively_ for capital letters, but for any forms b
     </div>
 </template>
 
-<p class="titling-caps">Quick Brown Lazy Grumpy</p>
+<p class="**titling-caps**">Quick Brown Lazy Grumpy</p>
 ```

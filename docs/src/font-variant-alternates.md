@@ -26,5 +26,5 @@ Historical glyph variants aren’t likely to be useful in everyday typesetting s
     </div>
 </template>
 
-<p class="historical-forms">Blasphemous</p>
+<p class="**historical-forms**">Blasphemous</p>
 ```

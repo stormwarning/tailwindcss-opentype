@@ -1,7 +1,7 @@
 const Prism = require('prismjs')
 const loadLanguages = require('prismjs/components/')
 loadLanguages()
-// require('./prism-diff-highlight')(Prism)
+require('./prism-diff-highlight')(Prism)
 const visit = require('unist-util-visit')
 const unified = require('unified')
 const parse = require('rehype-parse')

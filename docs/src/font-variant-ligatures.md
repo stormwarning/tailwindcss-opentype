@@ -34,7 +34,7 @@ Most common ligatures mitigate spacing issues between specific combinations of l
     </div>
 </template>
 
-<p class="common-ligatures">fi ff fl ffi Th</p>
+<p class="**common-ligatures**">fi ff fl ffi Th</p>
 ```
 
 ### Discretionary ligatures {{ 'dlig' | badge }}
@@ -55,7 +55,7 @@ Discretionary ligatures’ defining characteristic is that they are available to
     </div>
 </template>
 
-<p class="discretionary-ligatures">ct sp st</p>
+<p class="**discretionary-ligatures**">ct sp st</p>
 ```
 
 ### Contextual alternates {{ 'calt' | badge }}
@@ -75,5 +75,5 @@ Like ligatures (though not strictly a ligature feature), contextual alternates a
     </div>
 </template>
 
-<p class="contextual">The bloom has gone off the rose</p>
+<p class="**contextual**">The bloom has gone off the rose</p>
 ```

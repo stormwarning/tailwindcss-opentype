@@ -10,7 +10,6 @@ module.exports = class {
 
     async render() {
         return await postcss([
-            require('postcss-import'),
             require('tailwindcss')('./docs/tailwind.config.js'),
             require('autoprefixer'),
         ])
