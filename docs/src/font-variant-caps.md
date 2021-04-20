@@ -12,7 +12,7 @@ classData: caps
 
 Use the `font-variant-caps` utilities to transform letters into optimised capital forms. Small Caps are less distracting than all capitals for longer form text settings. They also provide an additional way to apply emphasis within text.
 
-### Small caps {{ 'cmcp' | badge }}
+### Small caps :feat[cmcp]
 
 This feature turns lowercase characters into small capitals.
 
@@ -32,7 +32,7 @@ This feature turns lowercase characters into small capitals.
 <p class="**small-caps**">Not all caps are Small Caps.</p>
 ```
 
-### All small caps {{ 'smcp' | badge }}{{ 'c2sc' | badge }}
+### All small caps :feat[smcp,c2sc]
 
 Like `small-caps` but transforms uppercase characters into small capitals as well.
 
@@ -49,7 +49,7 @@ Like `small-caps` but transforms uppercase characters into small capitals as wel
 <p class="**all-small-caps**">All caps are Small Caps.</p>
 ```
 
-### Titling caps {{ 'titl' | badge }}
+### Titling caps :feat[titl]
 
 Uppercase letter glyphs are often designed for use with lowercase letters. When used in all uppercase titling sequences they can appear too strong. Titling capitals are designed specifically for this situation.
 

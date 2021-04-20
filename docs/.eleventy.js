@@ -14,6 +14,8 @@ module.exports = function (eleventyConfig) {
                 plugin: 'remark-autolink-headings',
                 options: {},
             },
+            require('remark-directive'),
+            require('./remark/directives'),
             require('./remark/sample'),
             // require('./remark/prose'),
         ],
