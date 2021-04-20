@@ -20,18 +20,16 @@ Most common ligatures mitigate spacing issues between specific combinations of l
 
 ```html orange
 <template preview>
-    <div class="text-grey-600 mix-blend-multiply">
-        <p class="font-warnock no-common-ligatures text-4xl opacity-70">
-            fi ff fl ffi Th
-        </p>
-        <p class="font-warnock common-ligatures text-4xl">
-            <mark>fi</mark>
-            <mark>ff</mark>
-            <mark>fl</mark>
-            <mark>ffi</mark>
-            <mark>Th</mark>
-        </p>
-    </div>
+    <p class="font-warnock no-common-ligatures text-4xl opacity-70">
+        fi ff fl ffi Th
+    </p>
+    <p class="font-warnock common-ligatures text-4xl">
+        <mark>fi</mark>
+        <mark>ff</mark>
+        <mark>fl</mark>
+        <mark>ffi</mark>
+        <mark>Th</mark>
+    </p>
 </template>
 
 <p class="**common-ligatures**">fi ff fl ffi Th</p>
@@ -43,16 +41,14 @@ Discretionary ligatures’ defining characteristic is that they are available to
 
 ```html rose
 <template preview>
-    <div class="text-grey-600 mix-blend-multiply">
-        <p class="font-warnock no-discretionary-ligatures text-4xl opacity-70">
-            ct sp st
-        </p>
-        <p class="font-warnock discretionary-ligatures text-4xl">
-            <mark>ct</mark>
-            <mark>sp</mark>
-            <mark>st</mark>
-        </p>
-    </div>
+    <p class="font-warnock no-discretionary-ligatures text-4xl opacity-70">
+        ct sp st
+    </p>
+    <p class="font-warnock discretionary-ligatures text-4xl">
+        <mark>ct</mark>
+        <mark>sp</mark>
+        <mark>st</mark>
+    </p>
 </template>
 
 <p class="**discretionary-ligatures**">ct sp st</p>
@@ -64,15 +60,13 @@ Like ligatures (though not strictly a ligature feature), contextual alternates a
 
 ```html indigo
 <template preview>
-    <div class="text-grey-600 mix-blend-multiply">
-        <p class="font-caflisch no-contextual text-4xl opacity-70">
-            The bloom has gone off the rose
-        </p>
-        <p class="font-caflisch contextual text-4xl opacity-70">
-            The <mark>bloom</mark> has g<mark>one</mark> off the
-            <mark>rose</mark>
-        </p>
-    </div>
+    <p class="font-caflisch no-contextual text-4xl opacity-70">
+        The bloom has gone off the rose
+    </p>
+    <p class="font-caflisch contextual text-4xl opacity-70">
+        The <mark>bloom</mark> has g<mark>one</mark> off the
+        <mark>rose</mark>
+    </p>
 </template>
 
 <p class="**contextual**">The bloom has gone off the rose</p>

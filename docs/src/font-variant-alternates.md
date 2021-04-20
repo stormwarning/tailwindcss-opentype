@@ -18,12 +18,10 @@ Historical glyph variants aren’t likely to be useful in everyday typesetting s
 
 ```html fuchsia
 <template preview>
-    <div class="text-grey-600 mix-blend-multiply">
-        <p class="font-goudy text-4xl opacity-70">Blasphemous</p>
-        <p class="font-goudy historical-forms text-4xl">
-            Bla<mark>s</mark>phemou<mark>s</mark>
-        </p>
-    </div>
+    <p class="font-goudy text-4xl opacity-70">Blasphemous</p>
+    <p class="font-goudy historical-forms text-4xl">
+        Bla<mark>s</mark>phemou<mark>s</mark>
+    </p>
 </template>
 
 <p class="**historical-forms**">Blasphemous</p>

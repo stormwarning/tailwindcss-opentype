@@ -73,11 +73,32 @@ function codeSample() {
                 tagName: 'div',
                 properties: {
                     class: [
-                        'rounded-t-xl overflow-hidden p-10 code-sample',
+                        'rounded-t-xl overflow-hidden code-sample',
                         previewBackground[color],
                     ],
                 },
-                children: [previewHast.children[0].children[1].children[0]],
+                children: [
+                    {
+                        type: 'element',
+                        tagName: 'div',
+                        properties: {
+                            class: 'flex overflow-x-auto',
+                        },
+                        children: [
+                            {
+                                type: 'element',
+                                tagName: 'div',
+                                properties: {
+                                    class:
+                                        'p-10 text-grey-600 mix-blend-multiply whitespace-nowrap',
+                                },
+                                children:
+                                    previewHast.children[0].children[1]
+                                        .children,
+                            },
+                        ],
+                    },
+                ],
             }
 
             let snippet = {
