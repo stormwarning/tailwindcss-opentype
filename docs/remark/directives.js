@@ -7,6 +7,7 @@ const visit = require('unist-util-visit')
 function htmlDirectives() {
     function ondirective(node) {
         let data = node.data || (node.data = {})
+        let hast = h(node.name, node.attributes)
         let children = []
 
         if (node.name === 'feat') {
@@ -26,13 +27,12 @@ function htmlDirectives() {
 
             children = unified().use(parse).parse(features).children[0]
                 .children[1].children
+            hast = h(node.name, node.attributes, [children])
+            data.hChildren = hast.children
         }
-
-        let hast = h(node.name, node.attributes, [children])
 
         data.hName = hast.tagName
         data.hProperties = hast.properties
-        data.hChildren = hast.children
     }
 
     function transform(tree) {

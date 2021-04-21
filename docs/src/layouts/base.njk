@@ -54,6 +54,9 @@
                         {%- for entry in navPages %}
                             {% set isActive = entry.url == page.url %}
                             <li>
+                                {% if entry.inactive %}
+                                <span class="px-3 py-2 relative block text-grey-400">{{ entry.title }}</span>
+                                {% else  %}
                                 <a
                                     class="px-3 py-2 transition-colors duration-200 relative block {{ 'text-light-blue-700' if isActive }}{{ 'text-grey-400' if entry.inactive and not isActive }}{{ 'hover:text-grey-900 text-grey-500' if not entry.inactive and not isActive }}"
                                     href="{{ entry.url | url }}"
@@ -61,6 +64,7 @@
                                     <span class="rounded-md absolute inset-0 bg-light-blue-50 {{ 'opacity-0' if not isActive }}"></span>
                                     <span class="relative">{{ entry.title }}</span>
                                 </a>
+                                {% endif %}
                             </li>
                         {%- endfor %}
                         </ul>
