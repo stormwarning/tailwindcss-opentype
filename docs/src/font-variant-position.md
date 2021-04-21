@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Font Variant Position
-description: Utilities for controlling alternate glyphs for capital letters.
+title: Font Variant East Asian
+description: Utilities for controlling alternate glyphs for East Asian scripts, like Japanese and Chinese.
 eleventyNavigation:
-    key: Font Variant Position
+    key: Font Variant East Asian
     order: 4
     inactive: true
 ---

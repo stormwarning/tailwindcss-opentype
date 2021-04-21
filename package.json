@@ -71,6 +71,8 @@
     "prismjs": "1.23.0",
     "rehype-parse": "7.0.1",
     "remark-autolink-headings": "6.0.1",
+    "remark-directive": "1.0.1",
+    "remark-slug": "6.0.0",
     "tailwindcss": "2.1.1",
     "tsdx": "0.14.1",
     "tslib": "2.1.0",
