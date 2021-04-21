@@ -1,28 +1,20 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-        name="description"
-        content="{{ description }}"
-    />
-    <title>{% if isHome %}{{ title }}{% else %}{{ title }} — TailwindCSS OpenType{% endif %}</title>
-    <link rel="stylesheet" href="{{ '/assets/styles.css' | url }}" />
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5RLKV9QZ6"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-Y5RLKV9QZ6');
-    </script>
+    {% include 'site-head.njk' %}
 </head>
 <body class="font-sans text-grey-500 antialiased bg-white" x-data="{ navIsOpen: false }">
+    <script>
+        (function() {
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                var icons = document.getElementsByClassName('js-favicon')
+                for (var i = 0; i < icons.length; i++) {
+                    icons[i].setAttribute('href', icons[i].getAttribute('href').replace('favicon', 'favicon-dark'))
+                }
+                document.getElementById('mask-icon').setAttribute('color', '#fff')
+            }
+        })()
+    </script>
     {% include 'menu-button.njk' %}
     <div class="w-full max-w-8xl mx-auto">
         <div class="lg:flex">

@@ -1,0 +1,37 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>
+    {% if isHome %}{{ title }}{% else %}{{ title }} — TailwindCSS OpenType{% endif %}
+</title>
+<meta
+    name="description"
+    content="{{ description }}"
+/>
+
+<link rel="preload" href="/assets/fonts/Inter-roman.var.woff2?v=3.18" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="{{ '/assets/styles.css' | url }}" />
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link id="mask-icon" rel="mask-icon" href="/pinned-tab.svg" color="#000">
+<link class="js-favicon" rel="alternate icon" type="image/png" href="/favicon.png" />
+<link class="js-favicon" rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TailwindCSS OpenType">
+<meta name="twitter:description" content="Tailwind CSS utility classes for advanced typographic features.">
+<meta name="twitter:image" content="https://tailwindcss-opentype.netlify.app/assets/images/og-image.png">
+<meta name="twitter:creator" content="@stormwarning">
+<meta property="og:url" content="https://tailwindcss-opentype.netlify.app/">
+<meta property="og:type" content="object">
+<meta property="og:title" content="TailwindCSS OpenType">
+<meta property="og:description" content="Tailwind CSS utility classes for advanced typographic features.">
+<meta property="og:image" content="https://tailwindcss-opentype.netlify.app/assets/images/og-image.png">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5RLKV9QZ6"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y5RLKV9QZ6');
+</script>
