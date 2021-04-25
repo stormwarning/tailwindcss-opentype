@@ -64,6 +64,9 @@ export default plugin.withOptions(() => {
                 '.sub-position': {
                     '--ot-subs': '"subs"',
                 },
+                '.inferior-position': {
+                    '--ot-sinf': '"sinf"',
+                },
             },
             variants('fontFeatureSettings', []),
         )
