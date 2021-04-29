@@ -11,7 +11,7 @@ classData: position
 
 ## Usage
 
-**Remember:** these utilities rely on the `.font-features` class to activate (until browser support for `font-variant-position` is better).
+**Remember:** these utilities rely on the `.font-features` class to activate (until [browser support](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-position#browser_compatibility) for `font-variant-position` is better).
 
 While it is possible to use the `font-variant-position` utilities at the "block" level, depending on the typeface this may result in other characters being substituted for the repositioned glyphs. To avoid this, wrap the appropriate characters in an inline element, such as `<sup>` or `<sub>`.
 
