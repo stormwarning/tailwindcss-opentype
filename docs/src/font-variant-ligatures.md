@@ -20,10 +20,10 @@ Most common ligatures mitigate spacing issues between specific combinations of l
 
 ```html orange
 <template preview>
-    <p class="font-warnock no-common-ligatures text-4xl opacity-70">
+    <p class="font-warnock common-ligatures text-4xl opacity-70">
         fi ff fl ffi Th
     </p>
-    <p class="font-warnock common-ligatures text-4xl">
+    <p class="font-warnock no-common-ligatures text-4xl">
         <mark>fi</mark>
         <mark>ff</mark>
         <mark>fl</mark>
@@ -32,7 +32,7 @@ Most common ligatures mitigate spacing issues between specific combinations of l
     </p>
 </template>
 
-<p class="**common-ligatures**">fi ff fl ffi Th</p>
+<p class="**no-common-ligatures**">fi ff fl ffi Th</p>
 ```
 
 ### Discretionary ligatures :feat[dlig]

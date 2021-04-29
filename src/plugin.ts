@@ -37,7 +37,7 @@ export default plugin.withOptions(() => {
                     'font-variant-caps': 'titling-caps',
                 },
             },
-            variants('fontVariantCaps', ['responsive']),
+            variants('fontVariantCaps', []),
         )
 
         addUtilities(
@@ -46,19 +46,29 @@ export default plugin.withOptions(() => {
                     'font-variant-alternates': 'historical-forms',
                 },
             },
-            variants('fontVariantAlternates', ['responsive']),
+            variants('fontVariantAlternates', []),
         )
 
         addUtilities(
             {
-                '.super-position': {
-                    'font-variant-position': 'super',
+                '.font-features': {
+                    'font-feature-settings': `
+                        var(--ot-sups, "sups" 0),
+                        var(--ot-subs, "subs" 0),
+                        var(--ot-sinf, "sinf" 0)
+                    `,
                 },
-                '.sub-position': {
-                    'font-variant-position': 'sub',
+                '.sups': {
+                    '--ot-sups': '"sups"',
+                },
+                '.subs': {
+                    '--ot-subs': '"subs"',
+                },
+                '.sinf': {
+                    '--ot-sinf': '"sinf"',
                 },
             },
-            variants('fontVariantPosition', ['responsive']),
+            variants('fontFeatureSettings', []),
         )
     }
 })
