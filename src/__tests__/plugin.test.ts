@@ -58,12 +58,23 @@ describe('Plugin', () => {
                 font-variant-alternates: historical-forms
             }
 
-            .super-position {
-                font-variant-position: super
+            .font-features {
+                font-feature-settings:
+                    var(--ot-sups, "sups" 0),
+                    var(--ot-subs, "subs" 0),
+                    var(--ot-sinf, "sinf" 0)
             }
 
-            .sub-position {
-                font-variant-position: sub
+            .sups {
+                --ot-sups: "sups"
+            }
+
+            .subs {
+                --ot-subs: "subs"
+            }
+
+            .sinf {
+                --ot-sinf: "sinf"
             }
         `)
     })

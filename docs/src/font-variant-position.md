@@ -27,18 +27,17 @@ This feature replaces lining or oldstyle figures with superscript figures, often
         M<sup>me</sup> <sup>3</sup>He <sup>$</sup>2
     </p>
     <p class="font-warnock text-4xl">
-        M<span class="font-features super-position"><mark>me</mark></span>
-        <span class="font-features super-position"><mark>3</mark></span
-        >He <span class="font-features super-position"><mark>$</mark></span
-        >2
+        M<mark class="font-features sups">me</mark>
+        <mark class="font-features sups">3</mark>He
+        <mark class="font-features sups">$</mark>2
     </p>
 </template>
 
-<p>M<sub class="font-features **super-position**">me</sub></p>
+<p>M<sup class="font-features **sups**">me</sup></p>
 ```
 
 This illustrates a case where blanket application of the feature wouldn't work:
-in **:span[3]{.font-features.super-position}He** we want the :kbd[3] superscripted, but not the lowercase :kbd[e].
+in **:span[3]{.font-features.sups}He** we want the :kbd[3] superscripted, but not the lowercase :kbd[e].
 
 ### Subscript :feat[subs]
 
@@ -48,12 +47,14 @@ Perhaps the most familiar example of subscripts is in chemical formulas.
 <template preview>
     <p class="font-hypatia text-4xl opacity-70">H<sub>2</sub>O x<sub>0</sub></p>
     <p class="font-hypatia text-4xl">
-        H<span class="font-features sub-position"><mark>2</mark></span
-        >O x<span class="font-features sub-position"><mark>0</mark></span>
+        H<mark class="font-features subs">2</mark>O x<mark
+            class="font-features subs"
+            >0</mark
+        >
     </p>
 </template>
 
-<p>H<sub class="font-features **sub-position**">2</sub>O</p>
+<p>H<sub class="font-features **subs**">2</sub>O</p>
 ```
 
 ### Scientific inferior :feat[sinf]
@@ -66,15 +67,15 @@ Scientific inferior are for chemical and mathematical typesetting, and include o
         H<sub>2</sub>O YC<sub>b</sub>C<sub>r</sub> ν<sub>μ</sub>
     </p>
     <p class="font-warnock text-4xl">
-        H<mark class="font-features inferior-position">2</mark>O YC<mark
-            class="font-features inferior-position"
+        H<mark class="font-features sinf">2</mark>O YC<mark
+            class="font-features sinf"
             >b</mark
-        >C<mark class="font-features inferior-position">r</mark> ν<mark
-            class="font-features inferior-position"
+        >C<mark class="font-features sinf">r</mark> ν<mark
+            class="font-features sinf"
             >μ</mark
         >
     </p>
 </template>
 
-<p class="font-features **inferior-position**">H2O YCbCr νμ</p>
+<p class="font-features **sinf**">H2O YCbCr νμ</p>
 ```

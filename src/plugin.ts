@@ -58,13 +58,13 @@ export default plugin.withOptions(() => {
                         var(--ot-sinf, "sinf" 0)
                     `,
                 },
-                '.super-position': {
+                '.sups': {
                     '--ot-sups': '"sups"',
                 },
-                '.sub-position': {
+                '.subs': {
                     '--ot-subs': '"subs"',
                 },
-                '.inferior-position': {
+                '.sinf': {
                     '--ot-sinf': '"sinf"',
                 },
             },
