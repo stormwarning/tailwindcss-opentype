@@ -57,7 +57,7 @@
     "@zazen/eslint-config": "2.3.0",
     "autoprefixer": "10.2.5",
     "dedent": "0.7.0",
-    "eslint": "7.23.0",
+    "eslint": "7.30.0",
     "eslint-config-standard-with-typescript": "20.0.0",
     "husky": "4.3.8",
     "import-sort-style-python": "1.0.2",
