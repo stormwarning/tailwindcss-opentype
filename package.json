@@ -75,7 +75,7 @@
     "remark-slug": "6.0.0",
     "tailwindcss": "2.1.1",
     "tsdx": "0.14.1",
-    "tslib": "2.1.0",
+    "tslib": "2.3.0",
     "typescript": "4.3.5",
     "unified": "9.2.1"
   },
