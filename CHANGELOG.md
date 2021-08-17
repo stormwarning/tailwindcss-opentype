@@ -1,5 +1,12 @@
 # tailwindcss-opentype
 
+## 0.2.0
+
+### Minor Changes
+
+- [#10](https://github.com/stormwarning/tailwindcss-opentype/pull/10) [`f91e455`](https://github.com/stormwarning/tailwindcss-opentype/commit/f91e45552735523c45b9141e6c6252bbd35e24c4) Thanks [@stormwarning](https://github.com/stormwarning)! - Add `position` utility classes
+  Uses the low-level `font-feature-settings` property under the hood.
+
 ## 0.1.0 — 2021-04-19
 
 ### ♻️ Changed
