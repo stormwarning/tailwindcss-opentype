@@ -1,5 +1,10 @@
 import plugin from 'tailwindcss/plugin'
 
+const JIT_FONT_FEATURE_DEFAULTS = {
+    '@defaults font-feature-settings': {},
+    'font-feature-settings': 'var(--ot-features)',
+}
+
 export default plugin.withOptions(() => {
     return function ({ addBase, addUtilities, config, variants }) {
         addUtilities(
@@ -52,48 +57,51 @@ export default plugin.withOptions(() => {
 
         if (config('mode', '') === 'jit') {
             addBase({
-                '@defaults font-features': {
-                    '--ot-sups': 'var(--tw-empty, "sups" 0)',
-                    '--ot-subs': 'var(--tw-empty, "subs" 0)',
-                    '--ot-sinf': 'var(--tw-empty, "sinf" 0)',
+                '@defaults font-feature-settings': {
+                    '--ot-sups': '"sups" 0',
+                    '--ot-subs': '"subs" 0',
+                    '--ot-sinf': '"sinf" 0',
                     '--ot-features': [
                         'var(--ot-sups)',
                         'var(--ot-subs)',
                         'var(--ot-sinf)',
-                    ].join(' '),
+                    ].join(', '),
                 },
             })
-            addUtilities(
-                {
-                    '.font-features': {
-                        '@defaults font-features': {},
-                        'font-feature-settings': 'var(--ot-features)',
-                    },
-                },
-                variants('fontFeatureSettings', []),
-            )
-        } else {
-            addUtilities(
-                {
-                    '.font-features': {
-                        'font-feature-settings': `
-                            var(--ot-sups, "sups" 0),
-                            var(--ot-subs, "subs" 0),
-                            var(--ot-sinf, "sinf" 0)
-                        `,
-                    },
-                    '.sups': {
-                        '--ot-sups': '"sups"',
-                    },
-                    '.subs': {
-                        '--ot-subs': '"subs"',
-                    },
-                    '.sinf': {
-                        '--ot-sinf': '"sinf"',
-                    },
-                },
-                variants('fontFeatureSettings', []),
-            )
         }
+
+        addUtilities(
+            {
+                '.font-features':
+                    config('mode', '') === 'jit'
+                        ? JIT_FONT_FEATURE_DEFAULTS
+                        : {
+                              'font-feature-settings': [
+                                  'var(--ot-sups, "sups" 0)',
+                                  'var(--ot-subs, "subs" 0)',
+                                  'var(--ot-sinf, "sinf" 0)',
+                              ].join(', '),
+                          },
+                '.sups': {
+                    '--ot-sups': '"sups" 1',
+                    ...(config('mode', '') === 'jit'
+                        ? JIT_FONT_FEATURE_DEFAULTS
+                        : {}),
+                },
+                '.subs': {
+                    '--ot-subs': '"subs" 1',
+                    ...(config('mode', '') === 'jit'
+                        ? JIT_FONT_FEATURE_DEFAULTS
+                        : {}),
+                },
+                '.sinf': {
+                    '--ot-sinf': '"sinf" 1',
+                    ...(config('mode', '') === 'jit'
+                        ? JIT_FONT_FEATURE_DEFAULTS
+                        : {}),
+                },
+            },
+            variants('fontFeatureSettings', []),
+        )
     }
 })
