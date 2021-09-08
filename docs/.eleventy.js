@@ -17,8 +17,7 @@ module.exports = function (eleventyConfig) {
                 plugin: 'remark-autolink-headings',
                 options: {
                     linkProperties: {
-                        class:
-                            'absolute ml-[-0.75em] md:ml-[-1em] pr-[0.5em] !no-underline !text-grey-400 opacity-0 group-hover:opacity-100',
+                        class: 'absolute ml-[-0.75em] md:ml-[-1em] pr-[0.5em] !no-underline !text-grey-400 opacity-0 group-hover:opacity-100',
                     },
                     content: {
                         type: 'text',

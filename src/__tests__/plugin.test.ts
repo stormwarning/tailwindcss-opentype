@@ -66,15 +66,15 @@ describe('Plugin', () => {
             }
 
             .sups {
-                --ot-sups: "sups"
+                --ot-sups: "sups" 1
             }
 
             .subs {
-                --ot-subs: "subs"
+                --ot-subs: "subs" 1
             }
 
             .sinf {
-                --ot-sinf: "sinf"
+                --ot-sinf: "sinf" 1
             }
         `)
     })

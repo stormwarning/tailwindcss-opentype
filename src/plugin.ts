@@ -1,16 +1,22 @@
 import plugin from 'tailwindcss/plugin'
 
+const JIT_FONT_FEATURE_DEFAULTS = {
+    '@defaults font-feature-settings': {},
+    'font-feature-settings': 'var(--ot-features)',
+}
+
 export default plugin.withOptions(() => {
-    return function ({ addUtilities, variants }) {
+    return function ({ addBase, addUtilities, config, variants }) {
         addUtilities(
             {
-                '.common-ligatures, .no-common-ligatures, .discretionary-ligatures, .no-discretionary-ligatures, .contextual, .no-contextual': {
-                    '--ot-liga': 'var(--tw-empty, /*!*/)',
-                    '--ot-dlig': 'var(--tw-empty, /*!*/)',
-                    '--ot-calt': 'var(--tw-empty, /*!*/)',
-                    'font-variant-ligatures':
-                        'var(--ot-liga) var(--ot-dlig) var(--ot-calt)',
-                },
+                '.common-ligatures, .no-common-ligatures, .discretionary-ligatures, .no-discretionary-ligatures, .contextual, .no-contextual':
+                    {
+                        '--ot-liga': 'var(--tw-empty, /*!*/)',
+                        '--ot-dlig': 'var(--tw-empty, /*!*/)',
+                        '--ot-calt': 'var(--tw-empty, /*!*/)',
+                        'font-variant-ligatures':
+                            'var(--ot-liga) var(--ot-dlig) var(--ot-calt)',
+                    },
                 '.common-ligatures': { '--ot-liga': 'common-ligatures' },
                 '.no-common-ligatures': { '--ot-liga': 'no-common-ligatures' },
                 '.discretionary-ligatures': {
@@ -49,23 +55,50 @@ export default plugin.withOptions(() => {
             variants('fontVariantAlternates', []),
         )
 
+        if (config('mode', '') === 'jit') {
+            addBase({
+                '@defaults font-feature-settings': {
+                    '--ot-sups': '"sups" 0',
+                    '--ot-subs': '"subs" 0',
+                    '--ot-sinf': '"sinf" 0',
+                    '--ot-features': [
+                        'var(--ot-sups)',
+                        'var(--ot-subs)',
+                        'var(--ot-sinf)',
+                    ].join(', '),
+                },
+            })
+        }
+
         addUtilities(
             {
-                '.font-features': {
-                    'font-feature-settings': `
-                        var(--ot-sups, "sups" 0),
-                        var(--ot-subs, "subs" 0),
-                        var(--ot-sinf, "sinf" 0)
-                    `,
-                },
+                '.font-features':
+                    config('mode', '') === 'jit'
+                        ? JIT_FONT_FEATURE_DEFAULTS
+                        : {
+                              'font-feature-settings': [
+                                  'var(--ot-sups, "sups" 0)',
+                                  'var(--ot-subs, "subs" 0)',
+                                  'var(--ot-sinf, "sinf" 0)',
+                              ].join(', '),
+                          },
                 '.sups': {
-                    '--ot-sups': '"sups"',
+                    '--ot-sups': '"sups" 1',
+                    ...(config('mode', '') === 'jit'
+                        ? JIT_FONT_FEATURE_DEFAULTS
+                        : {}),
                 },
                 '.subs': {
-                    '--ot-subs': '"subs"',
+                    '--ot-subs': '"subs" 1',
+                    ...(config('mode', '') === 'jit'
+                        ? JIT_FONT_FEATURE_DEFAULTS
+                        : {}),
                 },
                 '.sinf': {
-                    '--ot-sinf': '"sinf"',
+                    '--ot-sinf': '"sinf" 1',
+                    ...(config('mode', '') === 'jit'
+                        ? JIT_FONT_FEATURE_DEFAULTS
+                        : {}),
                 },
             },
             variants('fontFeatureSettings', []),

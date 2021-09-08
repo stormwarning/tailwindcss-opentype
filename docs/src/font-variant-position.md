@@ -5,13 +5,16 @@ description: Utilities for controlling alternate, smaller glyphs that are positi
 eleventyNavigation:
     key: Font Variant Position
     order: 5
-    # inactive: true
 classData: position
 ---
 
 ## Usage
 
-**Remember:** these utilities rely on the `.font-features` class to activate (until [browser support](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-position#browser_compatibility) for `font-variant-position` is better).
+:::reminder
+
+**Remember:** these utilities rely on the `.font-features` class to activate (until [browser support](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-position#browser_compatibility) for `font-variant-position` is better). If you're using Tailwind's [JIT mode](https://tailwindcss.com/docs/just-in-time-mode), the extra class is _not_ required.
+
+:::
 
 While it is possible to use the `font-variant-position` utilities at the "block" level, depending on the typeface this may result in other characters being substituted for the repositioned glyphs. To avoid this, wrap the appropriate characters in an inline element, such as `<sup>` or `<sub>`.
 
@@ -29,9 +32,8 @@ This feature replaces lining or oldstyle figures with superscript figures, often
         M<sup>me</sup> <sup>3</sup>He <sup>$</sup>2
     </p>
     <p class="font-warnock text-4xl">
-        M<mark class="font-features sups">me</mark>
-        <mark class="font-features sups">3</mark>He
-        <mark class="font-features sups">$</mark>2
+        M<mark class="sups">me</mark> <mark class="sups">3</mark>He
+        <mark class="sups">$</mark>2
     </p>
 </template>
 
@@ -39,7 +41,7 @@ This feature replaces lining or oldstyle figures with superscript figures, often
 ```
 
 This illustrates a case where blanket application of the feature wouldn't work:
-in **:span[3]{.font-features.sups}He** we want the :kbd[3] superscripted, but not the lowercase :kbd[e].
+in **:span[3]{.sups}He** we want the :kbd[3] superscripted, but not the lowercase :kbd[e].
 
 ### Subscript :feat[subs]
 
@@ -49,10 +51,7 @@ Perhaps the most familiar example of subscripts is in chemical formulas.
 <template preview>
     <p class="font-hypatia text-4xl opacity-70">H<sub>2</sub>O x<sub>0</sub></p>
     <p class="font-hypatia text-4xl">
-        H<mark class="font-features subs">2</mark>O x<mark
-            class="font-features subs"
-            >0</mark
-        >
+        H<mark class="subs">2</mark>O x<mark class="subs">0</mark>
     </p>
 </template>
 
@@ -69,13 +68,11 @@ Scientific inferior are for chemical and mathematical typesetting, and include o
         H<sub>2</sub>O YC<sub>b</sub>C<sub>r</sub> ν<sub>μ</sub>
     </p>
     <p class="font-warnock text-4xl">
-        H<mark class="font-features sinf">2</mark>O YC<mark
-            class="font-features sinf"
-            >b</mark
-        >C<mark class="font-features sinf">r</mark> ν<mark
-            class="font-features sinf"
-            >μ</mark
+        H<mark class="sinf">2</mark>O YC<mark class="sinf">b</mark>C<mark
+            class="sinf"
+            >r</mark
         >
+        ν<mark class="sinf">μ</mark>
     </p>
 </template>
 
