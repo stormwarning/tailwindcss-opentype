@@ -69,7 +69,7 @@
     "prettier-plugin-import-sort": "0.0.7",
     "prettier-plugin-packagejson": "2.2.11",
     "prismjs": "1.24.0",
-    "rehype-parse": "7.0.1",
+    "rehype-parse": "8.0.3",
     "remark-autolink-headings": "6.1.0",
     "remark-directive": "1.0.1",
     "remark-slug": "6.1.0",
