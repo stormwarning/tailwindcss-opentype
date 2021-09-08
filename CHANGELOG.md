@@ -1,5 +1,11 @@
 # tailwindcss-opentype
 
+## 0.3.0
+
+### Minor Changes
+
+- [#57](https://github.com/stormwarning/tailwindcss-opentype/pull/57) [`8ae6a28`](https://github.com/stormwarning/tailwindcss-opentype/commit/8ae6a28fad3c193596470596ddf3bc5d1f993362) Thanks [@stormwarning](https://github.com/stormwarning)! - Simplify `font-feature-settings` use in JIT-mode
+
 ## 0.2.0 — 2021-08-20
 
 #### 🎁 Added
