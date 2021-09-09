@@ -1,5 +1,12 @@
 # tailwindcss-opentype
 
+## 0.3.0 — 2021-09-08
+
+#### 🎁 Added
+
+- Simplify `font-feature-settings` use in JIT-mode [#57](https://github.com/stormwarning/tailwindcss-opentype/pull/57)  
+  Allows use of low-level font feature utilities without requiring the `.font-features` class to activate.
+
 ## 0.2.0 — 2021-08-20
 
 #### 🎁 Added
