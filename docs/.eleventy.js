@@ -9,6 +9,7 @@ module.exports = function (eleventyConfig) {
         'docs/src/assets/images': './assets/images',
     })
     eleventyConfig.addPassthroughCopy({ 'docs/src/public': '.' })
+
     eleventyConfig.addPlugin(eleventyNavigationPlugin)
     eleventyConfig.addPlugin(eleventyRemark, {
         plugins: [

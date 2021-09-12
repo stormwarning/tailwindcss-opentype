@@ -2,6 +2,7 @@
 layout: page
 title: Font Variant Ligatures
 description: Utilities for controlling ligatures and contextual forms.
+tags: font-variant
 eleventyNavigation:
     key: Font Variant Ligatures
     order: 1

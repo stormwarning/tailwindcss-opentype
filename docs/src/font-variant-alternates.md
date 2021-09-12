@@ -2,6 +2,7 @@
 layout: page
 title: Font Variant Alternates
 description: Utilities for controlling the usage of alternate glyphs.
+tags: font-variant
 eleventyNavigation:
     key: Font Variant Alternates
     order: 3
