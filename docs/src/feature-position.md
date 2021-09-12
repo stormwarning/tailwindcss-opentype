@@ -1,9 +1,10 @@
 ---
 layout: page
-title: Font Variant Position
+title: Position
 description: Utilities for controlling alternate, smaller glyphs that are positioned as superscript or subscript.
+tags: ot-feature
 eleventyNavigation:
-    key: Font Variant Position
+    key: Position
     order: 5
 classData: position
 ---
