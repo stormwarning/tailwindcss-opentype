@@ -11,6 +11,18 @@ describe('Plugin', () => {
     it('generates utility classes', async () => {
         let css = await generateCss(opentypePlugin)
         expect(css).toMatchCss(`
+            .kerning {
+                font-kerning: auto
+            }
+
+            .kerning-normal {
+                font-kerning: normal
+            }
+
+            .kerning-none {
+                font-kerning: none
+            }
+
             .common-ligatures, .no-common-ligatures, .discretionary-ligatures, .no-discretionary-ligatures, .contextual, .no-contextual {
                 --ot-liga: var(--tw-empty, /*!*/);
                 --ot-dlig: var(--tw-empty, /*!*/);

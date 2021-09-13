@@ -9,6 +9,15 @@ export default plugin.withOptions(() => {
     return function ({ addBase, addUtilities, config, variants }) {
         addUtilities(
             {
+                '.kerning': { 'font-kerning': 'auto' },
+                '.kerning-normal': { 'font-kerning': 'normal' },
+                '.kerning-none': { 'font-kerning': 'none' },
+            },
+            variants('fontVariantLigatures', []),
+        )
+
+        addUtilities(
+            {
                 '.common-ligatures, .no-common-ligatures, .discretionary-ligatures, .no-discretionary-ligatures, .contextual, .no-contextual':
                     {
                         '--ot-liga': 'var(--tw-empty, /*!*/)',
