@@ -1,10 +1,33 @@
-import cssMatcher from 'jest-matcher-css'
+import { diffStringsUnified } from 'jest-diff'
+import { format } from 'prettier'
 
 import opentypePlugin from '../../dist'
 import { generateCss } from './helpers'
 
 expect.extend({
-    toMatchCss: cssMatcher,
+    toMatchCss: (receivedCss: string, expectedCss: string) => {
+        let strip = (str: string): string => str.replace(/[;\s]/g, '')
+
+        if (strip(receivedCss) === strip(expectedCss)) {
+            return {
+                message: () =>
+                    `expected ${receivedCss} not to match CSS ${expectedCss}`,
+                pass: true,
+            }
+        } else {
+            let receivedCssFormatted = format(receivedCss, { parser: 'css' })
+            let expectedCssFormatted = format(expectedCss, { parser: 'css' })
+            let diff = diffStringsUnified(
+                receivedCssFormatted,
+                expectedCssFormatted,
+            )
+
+            return {
+                message: () => `expected CSS to match:\n${diff}`,
+                pass: false,
+            }
+        }
+    },
 })
 
 describe('Plugin', () => {
