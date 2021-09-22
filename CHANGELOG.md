@@ -1,5 +1,12 @@
 # tailwindcss-opentype
 
+## 0.4.0 — 2021-09-21
+
+#### 🎁 Added
+
+- Add historical ligatures — `hlig` — utility [#69](https://github.com/stormwarning/tailwindcss-opentype/pull/69)
+- Add `font-kerning` utilities [#67](https://github.com/stormwarning/tailwindcss-opentype/pull/67)
+
 ## 0.3.0 — 2021-09-08
 
 #### 🎁 Added
