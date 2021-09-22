@@ -105,6 +105,12 @@
         font-display: swap;
     }
     @font-face {
+        font-family: 'EB Garamond';
+        font-weight: 400;
+        src: url(/assets/fonts/ebgaramond-semibold.woff2) format('woff2');
+        font-display: swap;
+    }
+    @font-face {
         font-family: 'Hypatia Sans Pro';
         font-weight: 400;
         src: url(/assets/fonts/hypatia-sans-pro-bold.woff2) format('woff2');

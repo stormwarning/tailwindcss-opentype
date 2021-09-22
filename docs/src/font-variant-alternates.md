@@ -15,15 +15,15 @@ Use the `font-variant-alternates` utilities to access alternative styles for dif
 
 ### Historical forms :feat[hist]
 
-Historical glyph variants aren’t likely to be useful in everyday typesetting situations, but may prove useful when referencing the past.
+Historical glyph variants may not be useful in everyday typesetting situations, but can prove useful when referencing the past.
 
 ```html fuchsia
 <template preview>
-    <p class="font-goudy text-4xl opacity-70">Blasphemous</p>
-    <p class="font-goudy historical-forms text-4xl">
-        Bla<mark>s</mark>phemou<mark>s</mark>
+    <p class="font-garamond text-4xl opacity-70">Jesuit</p>
+    <p class="font-garamond historical-forms text-4xl">
+        <mark>J</mark>e<mark>s</mark>uit
     </p>
 </template>
 
-<p class="**historical-forms**">Blasphemous</p>
+<p class="**historical-forms**">Jesuit</p>
 ```

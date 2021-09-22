@@ -70,10 +70,12 @@ export default plugin.withOptions(() => {
                     '--ot-sups': '"sups" 0',
                     '--ot-subs': '"subs" 0',
                     '--ot-sinf': '"sinf" 0',
+                    '--ot-hlig': '"hlig" 0',
                     '--ot-features': [
                         'var(--ot-sups)',
                         'var(--ot-subs)',
                         'var(--ot-sinf)',
+                        'var(--ot-hlig)',
                     ].join(', '),
                 },
             })
@@ -89,6 +91,7 @@ export default plugin.withOptions(() => {
                                   'var(--ot-sups, "sups" 0)',
                                   'var(--ot-subs, "subs" 0)',
                                   'var(--ot-sinf, "sinf" 0)',
+                                  'var(--ot-hlig, "hlig" 0)',
                               ].join(', '),
                           },
                 '.sups': {
@@ -105,6 +108,12 @@ export default plugin.withOptions(() => {
                 },
                 '.sinf': {
                     '--ot-sinf': '"sinf" 1',
+                    ...(config('mode', '') === 'jit'
+                        ? JIT_FONT_FEATURE_DEFAULTS
+                        : {}),
+                },
+                '.hlig': {
+                    '--ot-hlig': '"hlig" 1',
                     ...(config('mode', '') === 'jit'
                         ? JIT_FONT_FEATURE_DEFAULTS
                         : {}),

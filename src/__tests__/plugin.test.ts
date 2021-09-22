@@ -97,7 +97,8 @@ describe('Plugin', () => {
                 font-feature-settings:
                     var(--ot-sups, "sups" 0),
                     var(--ot-subs, "subs" 0),
-                    var(--ot-sinf, "sinf" 0)
+                    var(--ot-sinf, "sinf" 0),
+                    var(--ot-hlig, "hlig" 0)
             }
 
             .sups {
@@ -110,6 +111,10 @@ describe('Plugin', () => {
 
             .sinf {
                 --ot-sinf: "sinf" 1
+            }
+
+            .hlig {
+                --ot-hlig: "hlig" 1
             }
         `)
     })
