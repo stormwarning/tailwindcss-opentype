@@ -5,17 +5,15 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const opentypePlugin = require('../dist/index')
 
 module.exports = {
-    mode: 'jit',
-    purge: [
+    content: [
         './docs/src/**/*.{html,md,njk}',
         './docs/.eleventy.js',
         './docs/remark/*.js',
     ],
-    darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
             colors: {
-                grey: colors.coolGray,
+                grey: colors.gray,
                 amber: colors.amber,
                 orange: colors.orange,
                 rose: colors.rose,
@@ -25,7 +23,7 @@ module.exports = {
                 emerald: colors.emerald,
                 teal: colors.teal,
                 cyan: colors.cyan,
-                'light-blue': colors.lightBlue,
+                sky: colors.sky,
                 violet: colors.violet,
             },
 

@@ -21,12 +21,12 @@ module.exports = function (eleventyConfig) {
             } else {
                 let linkClass = [
                     'px-3 py-2 transition-colors duration-200 relative block',
-                    isSelected && 'text-light-blue-700',
+                    isSelected && 'text-sky-700',
                     !isSelected && 'hover:text-grey-900 text-grey-500',
                 ].join(' ')
 
                 tag = dedent`<a class="${linkClass}" href="${url}">
-                    <span class="rounded-md absolute inset-0 bg-light-blue-50 ${
+                    <span class="rounded-md absolute inset-0 bg-sky-50 ${
                         !isSelected && 'opacity-0'
                     }"></span>
                     <span class="relative">${content}</span>
