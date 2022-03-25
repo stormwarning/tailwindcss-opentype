@@ -1,5 +1,13 @@
 # tailwindcss-opentype
 
+## 1.0.0 — 2022-03-25
+
+#### 💣 Breaking changes
+
+- Drop support for legacy AOT mode in order to support v3 [#87](https://github.com/stormwarning/tailwindcss-opentype/pull/87)
+
+  Plugin no longer supports v1, may still work in v2 as long as JIT mode is enabled.
+
 ## 0.5.0 — 2022-03-24
 
 #### 🎁 Added
