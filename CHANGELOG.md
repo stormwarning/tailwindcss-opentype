@@ -1,5 +1,11 @@
 # tailwindcss-opentype
 
+## 0.5.0 — 2022-03-24
+
+#### 🎁 Added
+
+- Add stylistic sets utilities [#84](https://github.com/stormwarning/tailwindcss-opentype/pull/84)
+
 ## 0.4.0 — 2021-09-21
 
 #### 🎁 Added
