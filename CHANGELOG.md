@@ -1,5 +1,11 @@
 # tailwindcss-opentype
 
+## 0.5.0
+
+### Minor Changes
+
+- [#84](https://github.com/stormwarning/tailwindcss-opentype/pull/84) [`d738a58`](https://github.com/stormwarning/tailwindcss-opentype/commit/d738a58807aed246b3b639a183dc66081a2064b2) Thanks [@stormwarning](https://github.com/stormwarning)! - Add stylistic sets utilities
+
 ## 0.4.0 — 2021-09-21
 
 #### 🎁 Added
