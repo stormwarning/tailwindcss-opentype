@@ -11,12 +11,6 @@ classData: position
 
 ## Usage
 
-:::reminder
-
-**Remember:** these utilities rely on the `.font-features` class to activate (until [browser support](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-position#browser_compatibility) for `font-variant-position` is better). If you're using Tailwind's [JIT mode](https://tailwindcss.com/docs/just-in-time-mode), the extra class is _not_ required.
-
-:::
-
 While it is possible to use the `font-variant-position` utilities at the "block" level, depending on the typeface this may result in other characters being substituted for the repositioned glyphs. To avoid this, wrap the appropriate characters in an inline element, such as `<sup>` or `<sub>`.
 
 Using `<sup>` or `<sub>` elements has its own pitfalls, however. Common "reset" styles and even browser default styles often try to approximate superscript or subscript glyphs, which should be disabled if you are using a font designed with these features. These resets and defaults vary, so these utilities don't attempt to disable any default styles for these elements. Either account for this in your own baseline styles, or use a more neutral wrapper, like `<span>`.

@@ -93,43 +93,39 @@ describe('Plugin', () => {
                 font-variant-alternates: historical-forms
             }
 
-            .font-features {
-                font-feature-settings:
-                    var(--ot-sups, "sups" 0),
-                    var(--ot-subs, "subs" 0),
-                    var(--ot-sinf, "sinf" 0),
-                    var(--ot-hlig, "hlig" 0),
-                    var(--ot-ss01, "ss01" 0),
-                    var(--ot-ss02, "ss02" 0),
-                    var(--ot-ss03, "ss03" 0)
-            }
-
             .sups {
-                --ot-sups: "sups" 1
+                --ot-sups: "sups" 1;
+                font-feature-settings: var(--ot-features);
             }
 
             .subs {
-                --ot-subs: "subs" 1
+                --ot-subs: "subs" 1;
+                font-feature-settings: var(--ot-features);
             }
 
             .sinf {
-                --ot-sinf: "sinf" 1
+                --ot-sinf: "sinf" 1;
+                font-feature-settings: var(--ot-features);
             }
 
             .hlig {
-                --ot-hlig: "hlig" 1
+                --ot-hlig: "hlig" 1;
+                font-feature-settings: var(--ot-features);
             }
 
             .ss-01 {
                 --ot-ss01: "ss01" 1;
+                font-feature-settings: var(--ot-features);
             }
 
             .ss-named {
                 --ot-ss02: "ss02" 1;
+                font-feature-settings: var(--ot-features);
             }
 
             .ss-03 {
                 --ot-ss03: "ss03" 1;
+                font-feature-settings: var(--ot-features);
             }
         `)
     })

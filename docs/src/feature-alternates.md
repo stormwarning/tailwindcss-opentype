@@ -11,13 +11,7 @@ classData: ot-alternates
 
 ## Usage
 
-:::reminder
-
-**Remember:** Unless you're using Tailwind's [JIT mode](https://tailwindcss.com/docs/just-in-time-mode) — enabled in v3+, optional in v2.1+ — these utilities rely on the `.font-features` class to activate.
-
 These utilities provide access to OpenType alternate glyph features not currently available via the higher-level CSS properties. For other alternate glyph features, use the [Font Variant Alternates](/font-variant-alternates) utilities.
-
-:::
 
 ### Stylistic sets :feat[ss01–ss20]
 
