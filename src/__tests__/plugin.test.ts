@@ -98,7 +98,10 @@ describe('Plugin', () => {
                     var(--ot-sups, "sups" 0),
                     var(--ot-subs, "subs" 0),
                     var(--ot-sinf, "sinf" 0),
-                    var(--ot-hlig, "hlig" 0)
+                    var(--ot-hlig, "hlig" 0),
+                    var(--ot-ss01, "ss01" 0),
+                    var(--ot-ss02, "ss02" 0),
+                    var(--ot-ss03, "ss03" 0)
             }
 
             .sups {
@@ -115,6 +118,18 @@ describe('Plugin', () => {
 
             .hlig {
                 --ot-hlig: "hlig" 1
+            }
+
+            .ss-01 {
+                --ot-ss01: "ss01" 1;
+            }
+
+            .ss-named {
+                --ot-ss02: "ss02" 1;
+            }
+
+            .ss-03 {
+                --ot-ss03: "ss03" 1;
             }
         `)
     })

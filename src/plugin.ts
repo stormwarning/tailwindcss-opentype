@@ -6,7 +6,15 @@ const JIT_FONT_FEATURE_DEFAULTS = {
 }
 
 export default plugin.withOptions(() => {
-    return function ({ addBase, addUtilities, config, variants }) {
+    return function ({
+        addBase,
+        addUtilities,
+        config,
+        // @ts-expect-error -- `matchUtilities` exists.
+        matchUtilities,
+        theme,
+        variants,
+    }) {
         addUtilities(
             {
                 '.kerning': { 'font-kerning': 'auto' },
@@ -64,6 +72,21 @@ export default plugin.withOptions(() => {
             variants('fontVariantAlternates', []),
         )
 
+        let stylisticSetsValues =
+            theme('stylisticSets', {
+                '01': 'ss01',
+                '02': 'ss02',
+                '03': 'ss03',
+                '04': 'ss04',
+            }) ?? {}
+        let stylisticSetsProperties = Object.values(stylisticSetsValues).map(
+            (tag: string) => `var(--ot-${tag})`,
+        )
+        let stylisticSetsDefaults: Record<string, string> = {}
+        for (let tag of Object.values(stylisticSetsValues) as string[]) {
+            stylisticSetsDefaults[`--ot-${tag}`] = `"${tag}" 0`
+        }
+
         if (config('mode', '') === 'jit') {
             addBase({
                 '@defaults font-feature-settings': {
@@ -71,11 +94,13 @@ export default plugin.withOptions(() => {
                     '--ot-subs': '"subs" 0',
                     '--ot-sinf': '"sinf" 0',
                     '--ot-hlig': '"hlig" 0',
+                    ...stylisticSetsDefaults,
                     '--ot-features': [
                         'var(--ot-sups)',
                         'var(--ot-subs)',
                         'var(--ot-sinf)',
                         'var(--ot-hlig)',
+                        ...stylisticSetsProperties,
                     ].join(', '),
                 },
             })
@@ -92,6 +117,10 @@ export default plugin.withOptions(() => {
                                   'var(--ot-subs, "subs" 0)',
                                   'var(--ot-sinf, "sinf" 0)',
                                   'var(--ot-hlig, "hlig" 0)',
+                                  ...Object.values(stylisticSetsValues).map(
+                                      (tag: string) =>
+                                          `var(--ot-${tag}, "${tag}" 0)`,
+                                  ),
                               ].join(', '),
                           },
                 '.sups': {
@@ -120,6 +149,20 @@ export default plugin.withOptions(() => {
                 },
             },
             variants('fontFeatureSettings', []),
+        )
+
+        matchUtilities(
+            {
+                ss: (value: string) => ({
+                    [`--ot-${value}`]: `"${value}" 1`,
+                    ...(config('mode', '') === 'jit'
+                        ? JIT_FONT_FEATURE_DEFAULTS
+                        : {}),
+                }),
+            },
+            {
+                values: stylisticSetsValues,
+            },
         )
     }
 })

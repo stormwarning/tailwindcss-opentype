@@ -18,7 +18,14 @@ export async function generateCss(
     let result = await postcss(
         tailwindcss({
             ...config,
-            theme,
+            theme: {
+                stylisticSets: {
+                    '01': 'ss01',
+                    named: 'ss02',
+                    '03': 'ss03',
+                },
+                ...theme,
+            },
             variants,
             corePlugins: plugins,
             plugins: [plugin],
