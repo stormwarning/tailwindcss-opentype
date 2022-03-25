@@ -11,12 +11,6 @@ classData: ot-ligatures
 
 ## Usage
 
-:::reminder
-
-**Remember:** these utilities rely on the `.font-features` class to activate. If you're using Tailwind's [JIT mode](https://tailwindcss.com/docs/just-in-time-mode), the extra class is _not_ required.
-
-:::
-
 These utilities provide access to OpenType ligature features not currently available via the higher-level CSS properties. For other ligature features, use the [Font Variant Ligatures](/font-variant-ligatures) utilities.
 
 ### Historical ligatures :feat[hlig]

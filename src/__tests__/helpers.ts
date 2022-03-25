@@ -18,6 +18,7 @@ export async function generateCss(
     let result = await postcss(
         tailwindcss({
             ...config,
+            content: ['./**/*.test.ts'],
             theme: {
                 stylisticSets: {
                     '01': 'ss01',

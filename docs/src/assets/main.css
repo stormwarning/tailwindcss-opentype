@@ -30,7 +30,7 @@
 .token.punctuation,
 .token.module,
 .token.property {
-    @apply text-light-blue-200;
+    @apply text-sky-200;
 }
 
 .token.atapply .token:not(.rule):not(.important) {

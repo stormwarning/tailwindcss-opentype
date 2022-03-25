@@ -9,7 +9,7 @@ export default plugin.withOptions(() => {
     return function ({
         addBase,
         addUtilities,
-        config,
+        // config,
         // @ts-expect-error -- `matchUtilities` exists.
         matchUtilities,
         theme,
@@ -87,65 +87,40 @@ export default plugin.withOptions(() => {
             stylisticSetsDefaults[`--ot-${tag}`] = `"${tag}" 0`
         }
 
-        if (config('mode', '') === 'jit') {
-            addBase({
-                '@defaults font-feature-settings': {
-                    '--ot-sups': '"sups" 0',
-                    '--ot-subs': '"subs" 0',
-                    '--ot-sinf': '"sinf" 0',
-                    '--ot-hlig': '"hlig" 0',
-                    ...stylisticSetsDefaults,
-                    '--ot-features': [
-                        'var(--ot-sups)',
-                        'var(--ot-subs)',
-                        'var(--ot-sinf)',
-                        'var(--ot-hlig)',
-                        ...stylisticSetsProperties,
-                    ].join(', '),
-                },
-            })
-        }
+        addBase({
+            '@defaults font-feature-settings': {
+                '--ot-sups': '"sups" 0',
+                '--ot-subs': '"subs" 0',
+                '--ot-sinf': '"sinf" 0',
+                '--ot-hlig': '"hlig" 0',
+                ...stylisticSetsDefaults,
+                '--ot-features': [
+                    'var(--ot-sups)',
+                    'var(--ot-subs)',
+                    'var(--ot-sinf)',
+                    'var(--ot-hlig)',
+                    ...stylisticSetsProperties,
+                ].join(', '),
+            },
+        })
 
         addUtilities(
             {
-                '.font-features':
-                    config('mode', '') === 'jit'
-                        ? JIT_FONT_FEATURE_DEFAULTS
-                        : {
-                              'font-feature-settings': [
-                                  'var(--ot-sups, "sups" 0)',
-                                  'var(--ot-subs, "subs" 0)',
-                                  'var(--ot-sinf, "sinf" 0)',
-                                  'var(--ot-hlig, "hlig" 0)',
-                                  ...Object.values(stylisticSetsValues).map(
-                                      (tag: string) =>
-                                          `var(--ot-${tag}, "${tag}" 0)`,
-                                  ),
-                              ].join(', '),
-                          },
                 '.sups': {
                     '--ot-sups': '"sups" 1',
-                    ...(config('mode', '') === 'jit'
-                        ? JIT_FONT_FEATURE_DEFAULTS
-                        : {}),
+                    ...JIT_FONT_FEATURE_DEFAULTS,
                 },
                 '.subs': {
                     '--ot-subs': '"subs" 1',
-                    ...(config('mode', '') === 'jit'
-                        ? JIT_FONT_FEATURE_DEFAULTS
-                        : {}),
+                    ...JIT_FONT_FEATURE_DEFAULTS,
                 },
                 '.sinf': {
                     '--ot-sinf': '"sinf" 1',
-                    ...(config('mode', '') === 'jit'
-                        ? JIT_FONT_FEATURE_DEFAULTS
-                        : {}),
+                    ...JIT_FONT_FEATURE_DEFAULTS,
                 },
                 '.hlig': {
                     '--ot-hlig': '"hlig" 1',
-                    ...(config('mode', '') === 'jit'
-                        ? JIT_FONT_FEATURE_DEFAULTS
-                        : {}),
+                    ...JIT_FONT_FEATURE_DEFAULTS,
                 },
             },
             variants('fontFeatureSettings', []),
@@ -155,9 +130,7 @@ export default plugin.withOptions(() => {
             {
                 ss: (value: string) => ({
                     [`--ot-${value}`]: `"${value}" 1`,
-                    ...(config('mode', '') === 'jit'
-                        ? JIT_FONT_FEATURE_DEFAULTS
-                        : {}),
+                    ...JIT_FONT_FEATURE_DEFAULTS,
                 }),
             },
             {
