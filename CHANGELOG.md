@@ -1,5 +1,11 @@
 # tailwindcss-opentype
 
+## 1.1.0
+
+### Minor Changes
+
+- [#90](https://github.com/stormwarning/tailwindcss-opentype/pull/90) [`36a85a6`](https://github.com/stormwarning/tailwindcss-opentype/commit/36a85a6aa0a27cb6594f2c3e825a9fa8066cecb2) Thanks [@stormwarning](https://github.com/stormwarning)! - Add stylistic alternates — `salt` — utility
+
 ## 1.0.0 — 2022-03-25
 
 #### 💣 Breaking changes
