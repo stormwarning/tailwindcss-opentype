@@ -13,6 +13,21 @@ classData: ot-alternates
 
 These utilities provide access to OpenType alternate glyph features not currently available via the higher-level CSS properties. For other alternate glyph features, use the [Font Variant Alternates](/font-variant-alternates) utilities.
 
+### Stylistic alternates :feat[salt]
+
+Sometimes a significant portion of a typeface’s unique character comes from a few specific glyphs. Stylistic Alternates offer an opportunity to change these, and change the tone of the typeface.
+
+```html amber
+<template preview>
+    <p class="font-exo text-4xl opacity-70">Easy like Sunday morning & fox</p>
+    <p class="font-exo salt text-4xl">
+        E<mark>a</mark>sy like S<mark>unda</mark>y <mark>m</mark>o<mark>rn</mark>i<mark>ng</mark> <mark>&</mark> <mark>f</mark>o<mark>x</mark>
+    </p>
+</template>
+
+<p class="**salt**">Easy like Sunday morning & fox</p>
+```
+
 ### Stylistic sets :feat[ss01–ss20]
 
 This feature replaces sets of default character glyphs with stylistic variants. Glyphs in stylistic sets may be designed to harmonise visually, interact in particular ways, or otherwise work together.
