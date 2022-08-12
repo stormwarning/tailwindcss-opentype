@@ -94,6 +94,7 @@ module.exports = {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
                 allan: 'Allan',
                 caflisch: 'Caflisch Script',
+                exo: 'Exo',
                 garamond: 'EB Garamond, serif',
                 hypatia: 'Hypatia Sans Pro, sans-serif',
                 goudy: 'Sorts Mill Goudy, serif',

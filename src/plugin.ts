@@ -93,12 +93,14 @@ export default plugin.withOptions(() => {
                 '--ot-subs': '"subs" 0',
                 '--ot-sinf': '"sinf" 0',
                 '--ot-hlig': '"hlig" 0',
+                '--ot-salt': '"salt" 0',
                 ...stylisticSetsDefaults,
                 '--ot-features': [
                     'var(--ot-sups)',
                     'var(--ot-subs)',
                     'var(--ot-sinf)',
                     'var(--ot-hlig)',
+                    'var(--ot-salt)',
                     ...stylisticSetsProperties,
                 ].join(', '),
             },
@@ -120,6 +122,10 @@ export default plugin.withOptions(() => {
                 },
                 '.hlig': {
                     '--ot-hlig': '"hlig" 1',
+                    ...JIT_FONT_FEATURE_DEFAULTS,
+                },
+                '.salt': {
+                    '--ot-salt': '"salt" 1',
                     ...JIT_FONT_FEATURE_DEFAULTS,
                 },
             },
