@@ -1,3 +1,3 @@
 module.exports = {
-    hlig: '--ot-hlig: "hlig" 1',
+	hlig: '--ot-hlig: "hlig" 1',
 }
