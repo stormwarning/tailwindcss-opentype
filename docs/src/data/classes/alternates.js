@@ -1,3 +1,3 @@
 module.exports = {
-    'historical-forms': 'font-variant-alternates: historical-forms;',
+	'historical-forms': 'font-variant-alternates: historical-forms;',
 }

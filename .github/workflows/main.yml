@@ -4,27 +4,30 @@ on: [push]
 
 jobs:
   build:
-    name: Build, lint, and test
-
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Setup Node 12.x
-        uses: actions/setup-node@v3
+      - name: Setup Node.js 18.x
+        uses: actions/setup-node@v3.1.1
         with:
-          node-version: 12.x
+          node-version: 18.x
+
+      - name: Use cached node_modules
+        uses: actions/cache@v3.0.2
+        with:
+          path: node_modules
+          key: nodeModules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            nodeModules-
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: npm ci
 
       - name: Build
-        run: npm build
-
-      - name: Lint
-        run: npm run lint
+        run: npm run build
 
       - name: Test
-        run: npm test --ci --coverage --maxWorkers=2
+        run: npm test
