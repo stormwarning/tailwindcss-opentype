@@ -8,7 +8,6 @@
 		"module": "nodenext",
 		"moduleResolution": "nodenext",
 		"resolveJsonModule": true,
-		"typeRoots": ["./types"],
 
 		// Emit
 		"outDir": "dist",
@@ -16,6 +15,8 @@
 		// JavaScript Support
 		"allowJs": true,
 		"checkJs": true,
+		// Fix 11ty JSDoc types.
+		"maxNodeModuleJsDepth": 2,
 
 		// Interop Constraints
 		"allowSyntheticDefaultImports": true,
@@ -32,14 +33,6 @@
 		// Completeness
 		"skipLibCheck": true
 	},
-	"include": [
-		"__tests__",
-		"docs",
-		"src",
-		"types",
-		".eslintrc.cjs",
-		"docs/.eleventy.js",
-		"*.config.js"
-	],
+	"include": ["docs", "plugin", ".eslintrc.cjs", "*.config.js"],
 	"exclude": ["node_modules", "dist"]
 }

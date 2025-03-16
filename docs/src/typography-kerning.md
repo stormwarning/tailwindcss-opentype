@@ -4,8 +4,8 @@ title: Font Kerning
 description: Utilities to set the use of the kerning information stored in a font.
 tags: typography
 eleventyNavigation:
-    key: Font Kerning
-    order: 1
+  key: Font Kerning
+  order: 1
 classData: kerning
 ---
 
@@ -17,10 +17,10 @@ Although a well-designed typeface has consistent inter-glyph spacing overall, so
 
 ```html emerald
 <template preview>
-    <p class="font-warnock text-4xl opacity-70 kerning-none">You Will Try</p>
-    <p class="font-warnock text-4xl kerning">
-        <mark>Yo</mark>u <mark>Wi</mark>ll <mark>Try</mark>
-    </p>
+	<p class="font-warnock text-4xl opacity-70 kerning-none">You Will Try</p>
+	<p class="font-warnock text-4xl kerning">
+		<mark>Yo</mark>u <mark>Wi</mark>ll <mark>Try</mark>
+	</p>
 </template>
 
 <p class="**kerning**">You Will Try</p>

@@ -4,8 +4,8 @@ title: Alternates
 description: Utilities for controlling the usage of alternate glyphs.
 tags: ot-feature
 eleventyNavigation:
-    key: Alternates
-    order: 3
+  key: Alternates
+  order: 3
 classData: ot-alternates
 ---
 
@@ -19,10 +19,12 @@ Sometimes a significant portion of a typeface’s unique character comes from a 
 
 ```html amber
 <template preview>
-    <p class="font-exo text-4xl opacity-70">Easy like Sunday morning & fox</p>
-    <p class="font-exo salt text-4xl">
-        E<mark>a</mark>sy like S<mark>unda</mark>y <mark>m</mark>o<mark>rn</mark>i<mark>ng</mark> <mark>&</mark> <mark>f</mark>o<mark>x</mark>
-    </p>
+	<p class="font-exo text-4xl opacity-70">Easy like Sunday morning & fox</p>
+	<p class="font-exo salt text-4xl">
+		E<mark>a</mark>sy like S<mark>unda</mark>y
+		<mark>m</mark>o<mark>rn</mark>i<mark>ng</mark> <mark>&</mark>
+		<mark>f</mark>o<mark>x</mark>
+	</p>
 </template>
 
 <p class="**salt**">Easy like Sunday morning & fox</p>
@@ -34,10 +36,10 @@ This feature replaces sets of default character glyphs with stylistic variants. 
 
 ```html emerald
 <template preview>
-    <p class="font-sans font-semibold text-4xl opacity-70">Illegal</p>
-    <p class="font-sans font-semibold ss-02 text-4xl">
-        <mark>Ill</mark>ega<mark>l</mark>
-    </p>
+	<p class="font-sans font-semibold text-4xl opacity-70">Illegal</p>
+	<p class="font-sans font-semibold ss-02 text-4xl">
+		<mark>Ill</mark>ega<mark>l</mark>
+	</p>
 </template>
 
 <p class="**ss-02**">Illegal</p>
@@ -50,17 +52,17 @@ The OpenType spec allows for as many as 20 different sets to be defined in a fon
 ```js
 // tailwind.config.js
 module.exports = {
-    theme: {
-        stylisticSets: {
-            'open-digits': 'ss01',
-            disambiguate: 'ss02',
-            'curved-r': 'ss03',
-        },
-        extend: {
-            stylisticSets: {
-                '04': 'ss04',
-            },
-        },
-    },
+	theme: {
+		stylisticSets: {
+			'open-digits': 'ss01',
+			disambiguate: 'ss02',
+			'curved-r': 'ss03',
+		},
+		extend: {
+			stylisticSets: {
+				'04': 'ss04',
+			},
+		},
+	},
 }
 ```

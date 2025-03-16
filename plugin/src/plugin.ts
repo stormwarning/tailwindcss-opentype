@@ -1,11 +1,11 @@
-import plugin from 'tailwindcss/plugin'
+import plugin from 'tailwindcss/plugin.js'
 
 const JIT_FONT_FEATURE_DEFAULTS = {
 	'@defaults font-feature-settings': {},
 	'font-feature-settings': 'var(--ot-features)',
 }
 
-export = plugin.withOptions(
+const opentypePlugin = plugin.withOptions(
 	() =>
 		function ({ addBase, addUtilities, matchUtilities, theme }) {
 			addUtilities({
@@ -122,3 +122,5 @@ export = plugin.withOptions(
 			)
 		},
 )
+
+export default opentypePlugin

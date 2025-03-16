@@ -1,0 +1,36 @@
+{
+	"name": "docs",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "eleventy --config=eleventy.config.js",
+		"dev": "TAILWIND_MODE=watch eleventy --config=eleventy.config.js --serve"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "3.0.0",
+		"@11ty/eleventy-navigation": "0.3.5",
+		"@11ty/eleventy-plugin-syntaxhighlight": "5.0.0",
+		"@fec/eleventy-plugin-remark": "4.0.0",
+		"@tailwindcss/typography": "0.5.2",
+		"@types/hast": "3.0.4",
+		"@types/mdast": "4.0.4",
+		"autoprefixer": "10.3.4",
+		"dedent": "1.5.3",
+		"hastscript": "9.0.1",
+		"mdast-util-to-hast": "13.2.0",
+		"postcss": "8.4.23",
+		"postcss-cli": "8.3.1",
+		"prismjs": "1.30.0",
+		"rehype": "13.0.2",
+		"rehype-autolink-headings": "7.1.0",
+		"rehype-parse": "9.0.1",
+		"rehype-slug": "6.0.0",
+		"remark": "15.0.1",
+		"remark-directive": "4.0.0",
+		"tailwindcss": "3.3.2",
+		"tailwindcss-opentype": "workspace:*",
+		"unified": "11.0.5",
+		"unist-util-visit": "5.0.0"
+	}
+}

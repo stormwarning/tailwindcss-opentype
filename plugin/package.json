@@ -1,0 +1,42 @@
+{
+	"name": "tailwindcss-opentype",
+	"version": "1.1.0",
+	"description": "Tailwind CSS utility classes for advanced typographic features.",
+	"keywords": [
+		"tailwindcss",
+		"tailwindcss-plugin",
+		"opentype",
+		"font features",
+		"typography"
+	],
+	"homepage": "https://tailwindcss-opentype.netlify.app",
+	"repository": "stormwarning/tailwindcss-opentype",
+	"license": "ISC",
+	"author": "Jeff (https://tidaltheory.io)",
+	"type": "commonjs",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsc -b tsconfig.build.json",
+		"prepare": "npm run build",
+		"release": "npm run build && changeset publish",
+		"test": "vitest run"
+	},
+	"devDependencies": {
+		"jest-diff": "29.7.0",
+		"postcss": "8.4.23",
+		"postcss-cli": "8.3.1",
+		"tailwindcss": "3.3.2",
+		"typescript": "5.8.2",
+		"vitest": "3.0.8"
+	},
+	"peerDependencies": {
+		"tailwindcss": ">=3"
+	},
+	"engines": {
+		"node": ">=16"
+	}
+}

@@ -4,8 +4,8 @@ title: Position
 description: Utilities for controlling alternate, smaller glyphs that are positioned as superscript or subscript.
 tags: ot-feature
 eleventyNavigation:
-    key: Position
-    order: 5
+  key: Position
+  order: 5
 classData: position
 ---
 
@@ -23,13 +23,13 @@ This feature replaces lining or oldstyle figures with superscript figures, often
 
 ```html emerald
 <template preview>
-    <p class="font-warnock text-4xl opacity-70">
-        M<sup>me</sup> <sup>3</sup>He <sup>$</sup>2
-    </p>
-    <p class="font-warnock text-4xl">
-        M<mark class="sups">me</mark> <mark class="sups">3</mark>He
-        <mark class="sups">$</mark>2
-    </p>
+	<p class="font-warnock text-4xl opacity-70">
+		M<sup>me</sup> <sup>3</sup>He <sup>$</sup>2
+	</p>
+	<p class="font-warnock text-4xl">
+		M<mark class="sups">me</mark> <mark class="sups">3</mark>He
+		<mark class="sups">$</mark>2
+	</p>
 </template>
 
 <p>M<sup class="font-features **sups**">me</sup></p>
@@ -44,10 +44,10 @@ Perhaps the most familiar example of subscripts is in chemical formulas.
 
 ```html orange
 <template preview>
-    <p class="font-hypatia text-4xl opacity-70">H<sub>2</sub>O x<sub>0</sub></p>
-    <p class="font-hypatia text-4xl">
-        H<mark class="subs">2</mark>O x<mark class="subs">0</mark>
-    </p>
+	<p class="font-hypatia text-4xl opacity-70">H<sub>2</sub>O x<sub>0</sub></p>
+	<p class="font-hypatia text-4xl">
+		H<mark class="subs">2</mark>O x<mark class="subs">0</mark>
+	</p>
 </template>
 
 <p>H<sub class="font-features **subs**">2</sub>O</p>
@@ -59,16 +59,16 @@ Scientific inferior are for chemical and mathematical typesetting, and include o
 
 ```html rose
 <template preview>
-    <p class="font-warnock text-4xl opacity-70">
-        H<sub>2</sub>O YC<sub>b</sub>C<sub>r</sub> ν<sub>μ</sub>
-    </p>
-    <p class="font-warnock text-4xl">
-        H<mark class="sinf">2</mark>O YC<mark class="sinf">b</mark>C<mark
-            class="sinf"
-            >r</mark
-        >
-        ν<mark class="sinf">μ</mark>
-    </p>
+	<p class="font-warnock text-4xl opacity-70">
+		H<sub>2</sub>O YC<sub>b</sub>C<sub>r</sub> ν<sub>μ</sub>
+	</p>
+	<p class="font-warnock text-4xl">
+		H<mark class="sinf">2</mark>O YC<mark class="sinf">b</mark>C<mark
+			class="sinf"
+			>r</mark
+		>
+		ν<mark class="sinf">μ</mark>
+	</p>
 </template>
 
 <p class="font-features **sinf**">H2O YCbCr νμ</p>

@@ -1,6 +1,6 @@
-const dedent = require('dedent')
+import dedent from 'dedent'
 
-module.exports = {
+const ligatures = {
 	'common-ligatures': dedent`--ot-liga: common-ligatures;
                                font-variant-ligatures: var(--ot-liga) var(--ot-dlig) var(--ot-calt);`,
 	'no-common-ligatures': dedent`--ot-liga: no-common-ligatures;
@@ -14,3 +14,5 @@ module.exports = {
 	'no-contextual': dedent`--ot-calt: no-contextual;
                             font-variant-ligatures: var(--ot-liga) var(--ot-dlig) var(--ot-calt);`,
 }
+
+export default ligatures

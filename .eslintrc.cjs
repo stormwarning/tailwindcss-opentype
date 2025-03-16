@@ -8,13 +8,20 @@ const config = {
 	env: {
 		node: true,
 	},
-	ignorePatterns: ['dist', 'docs' /* , '!.eleventy.js' */],
+	ignorePatterns: ['dist'],
 	rules: {
 		'@typescript-eslint/ban-types': 'off',
 		'@typescript-eslint/lines-between-class-members': 'off',
 		'@typescript-eslint/padding-line-between-statements': 'off',
 
+		/**
+		 * Currently conflicting with 'yoda' and 'unicorn/explicit-length-check'.
+		 */
+		'etc/prefer-less-than': 'off',
+
 		'n/file-extension-in-import': ['error', 'always'],
+
+		'no-multi-assign': 'off',
 	},
 	overrides: [
 		{
@@ -32,6 +39,12 @@ const config = {
 			rules: {
 				// Prevent conflicts with `import/no-mutable-exports`.
 				'prefer-let/prefer-let': 'off',
+			},
+		},
+		{
+			files: ['docs/**/*.js'],
+			rules: {
+				'import/no-extraneous-dependencies': 'off',
 			},
 		},
 	],
