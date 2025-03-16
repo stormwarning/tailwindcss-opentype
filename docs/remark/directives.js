@@ -33,6 +33,7 @@ export function remarkDirectives() {
 								${tags.map((tag) => markupTagText(tag))}
 							`
 								.replaceAll('\n', '')
+								.replaceAll('\t', '')
 								.replace(',', ' ')
 
 							let parsed = unified().use(parse).parse(features)
