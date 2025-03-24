@@ -33,8 +33,8 @@ const config = {
 					css: {
 						// MaxWidth: 'none',
 						color: theme('colors.grey.500'),
-						'> :first-child': { marginTop: '-' },
-						'> :last-child': { marginBottom: '-' },
+						'> :first-child': { marginTop: '0' },
+						'> :last-child': { marginBottom: '0' },
 						'&:first-child > :first-child': { marginTop: '0' },
 						'&:last-child > :last-child': { marginBottom: '0' },
 						'h1, h2': {
