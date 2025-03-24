@@ -4,8 +4,8 @@ title: Font Variant Caps
 description: Utilities for controlling alternate glyphs for capital letters.
 tags: font-variant
 eleventyNavigation:
-    key: Font Variant Caps
-    order: 2
+  key: Font Variant Caps
+  order: 2
 classData: caps
 ---
 
@@ -19,11 +19,11 @@ This feature turns lowercase characters into small capitals.
 
 ```html amber
 <template preview>
-    <p class="font-warnock text-4xl opacity-70">Not all caps are Small Caps.</p>
-    <p class="font-warnock small-caps text-4xl">
-        N<mark>ot all caps are</mark> S<mark>mall</mark>
-        C<mark>aps</mark>.
-    </p>
+	<p class="font-warnock text-4xl opacity-70">Not all caps are Small Caps.</p>
+	<p class="font-warnock small-caps text-4xl">
+		N<mark>ot all caps are</mark> S<mark>mall</mark>
+		C<mark>aps</mark>.
+	</p>
 </template>
 
 <p class="**small-caps**">Not all caps are Small Caps.</p>
@@ -35,10 +35,10 @@ Like `small-caps` but transforms uppercase characters into small capitals as wel
 
 ```html orange
 <template preview>
-    <p class="font-warnock text-4xl opacity-70">All caps are Small Caps.</p>
-    <p class="font-warnock all-small-caps text-4xl">
-        <mark>All caps are Small Caps</mark>.
-    </p>
+	<p class="font-warnock text-4xl opacity-70">All caps are Small Caps.</p>
+	<p class="font-warnock all-small-caps text-4xl">
+		<mark>All caps are Small Caps</mark>.
+	</p>
 </template>
 
 <p class="**all-small-caps**">All caps are Small Caps.</p>
@@ -52,11 +52,11 @@ Note: This feature is not _exclusively_ for capital letters, but for any forms b
 
 ```html emerald
 <template preview>
-    <p class="font-allan text-4xl opacity-70">Quick, Brown, Lazy, Grumpy</p>
-    <p class="font-allan titling-caps text-4xl opacity-70">
-        Q<mark>u</mark>ick, B<mark>r</mark>own, Laz<mark>y</mark>,
-        G<mark>ru</mark>mp<mark>y</mark>
-    </p>
+	<p class="font-allan text-4xl opacity-70">Quick, Brown, Lazy, Grumpy</p>
+	<p class="font-allan titling-caps text-4xl opacity-70">
+		Q<mark>u</mark>ick, B<mark>r</mark>own, Laz<mark>y</mark>,
+		G<mark>ru</mark>mp<mark>y</mark>
+	</p>
 </template>
 
 <p class="**titling-caps**">Quick Brown Lazy Grumpy</p>

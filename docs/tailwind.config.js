@@ -1,14 +1,15 @@
-const typographyPlugin = require('@tailwindcss/typography')
-const colors = require('tailwindcss/colors')
-const defaultTheme = require('tailwindcss/defaultTheme')
+/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call */
+import typographyPlugin from '@tailwindcss/typography'
+import opentypePlugin from 'tailwindcss-opentype'
+import colors from 'tailwindcss/colors'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
-const opentypePlugin = require('../dist/index')
-
-module.exports = {
+/** @type {import('tailwindcss').Config} */
+const config = {
 	content: [
-		'./docs/src/**/*.{html,md,njk}',
-		'./docs/.eleventy.js',
-		'./docs/remark/*.js',
+		'./src/**/*.{html,md,njk}',
+		'./eleventy.config.js',
+		'./remark/*.js',
 	],
 	theme: {
 		extend: {
@@ -30,10 +31,10 @@ module.exports = {
 			typography: (theme) => ({
 				DEFAULT: {
 					css: {
-						// maxWidth: 'none',
+						// MaxWidth: 'none',
 						color: theme('colors.grey.500'),
-						'> :first-child': { marginTop: '-' },
-						'> :last-child': { marginBottom: '-' },
+						'> :first-child': { marginTop: '0' },
+						'> :last-child': { marginBottom: '0' },
 						'&:first-child > :first-child': { marginTop: '0' },
 						'&:last-child > :last-child': { marginBottom: '0' },
 						'h1, h2': {
@@ -123,3 +124,5 @@ module.exports = {
 	variants: {},
 	plugins: [typographyPlugin, opentypePlugin],
 }
+
+export default config

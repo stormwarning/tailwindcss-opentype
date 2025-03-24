@@ -1,37 +1,20 @@
 {
-	"name": "tailwindcss-opentype",
-	"version": "1.1.0",
-	"description": "Tailwind CSS utility classes for advanced typographic features.",
-	"keywords": [
-		"tailwindcss",
-		"tailwindcss-plugin",
-		"opentype",
-		"font features",
-		"typography"
-	],
+	"name": "tailwindcss-opentype-monorepo",
+	"version": "0.0.0",
+	"private": true,
 	"homepage": "https://tailwindcss-opentype.netlify.app",
 	"repository": "stormwarning/tailwindcss-opentype",
 	"license": "ISC",
 	"author": "Jeff Nelson (https://tidaltheory.io)",
-	"type": "commonjs",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
-	"files": [
-		"dist"
-	],
+	"type": "module",
 	"scripts": {
-		"build": "tsc -b tsconfig.build.json",
-		"build:docs": "NODE_ENV=production npm run build && eleventy --config=docs/.eleventy.js",
+		"build": "pnpm run -F './plugin' build",
+		"build:docs": "pnpm run -F './docs' build",
 		"changeset": "changeset add",
-		"dev": "TAILWIND_MODE=watch eleventy --config=docs/.eleventy.js --serve",
-		"prepare": "npm run build",
+		"dev": "pnpm run -F './docs' dev",
+		"prepare": "husky",
 		"release": "npm run build && changeset publish",
-		"test": "vitest run"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
+		"test": "pnpm run -F './plugin' test"
 	},
 	"lint-staged": {
 		"*.{js,cjs,ts}": [
@@ -42,39 +25,21 @@
 	},
 	"prettier": "@zazen/prettier-config",
 	"devDependencies": {
-		"@11ty/eleventy": "0.12.1",
-		"@11ty/eleventy-navigation": "0.3.2",
-		"@11ty/eleventy-plugin-syntaxhighlight": "3.1.2",
 		"@changesets/cli": "2.17.0",
-		"@fec/eleventy-plugin-remark": "2.2.1",
-		"@tailwindcss/typography": "0.5.2",
-		"@types/prettier": "2.7.2",
+		"@types/node": "22.13.10",
 		"@zazen/changesets-changelog": "2.0.3",
 		"@zazen/eslint-config": "6.10.0",
 		"@zazen/prettier-config": "1.1.1",
-		"autoprefixer": "10.3.4",
-		"dedent": "0.7.0",
 		"eslint": "8.57.1",
-		"husky": "4.3.8",
-		"jest-diff": "29.7.0",
-		"lint-staged": "11.1.1",
-		"postcss": "8.4.23",
-		"postcss-cli": "8.3.1",
+		"eslint-import-resolver-node": "0.3.9",
+		"husky": "9.1.7",
+		"lint-staged": "15.5.0",
 		"prettier": "3.2.5",
-		"prismjs": "1.24.0",
-		"rehype-parse": "7.0.1",
-		"remark-autolink-headings": "6.1.0",
-		"remark-directive": "1.0.1",
-		"remark-slug": "6.1.0",
-		"tailwindcss": "3.3.2",
-		"typescript": "5.0.4",
-		"unified": "9.2.1",
+		"typescript": "5.8.2",
 		"vitest": "3.0.8"
 	},
-	"peerDependencies": {
-		"tailwindcss": ">= 3"
-	},
+	"packageManager": "pnpm@10.6.3",
 	"engines": {
-		"node": ">=12"
+		"node": ">=16"
 	}
 }

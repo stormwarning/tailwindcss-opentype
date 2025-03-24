@@ -1,7 +1,10 @@
-const fs = require('fs').promises
-const postcss = require('postcss')
+import fs from 'node:fs/promises'
 
-module.exports = class {
+import autoprefixer from 'autoprefixer'
+import postcss from 'postcss'
+import tailwindcss from 'tailwindcss'
+
+export default class Styles {
 	async data() {
 		return {
 			permalink: 'assets/styles.css',
@@ -9,13 +12,13 @@ module.exports = class {
 	}
 
 	async render() {
-		return await postcss([
-			require('tailwindcss')('./docs/tailwind.config.js'),
-			require('autoprefixer'),
-		])
-			.process(await fs.readFile('./docs/src/assets/main.css'), {
-				from: undefined,
-			})
-			.then((result) => result.css)
+		let processed = await postcss([
+			tailwindcss('./tailwind.config.js'),
+			autoprefixer,
+		]).process(await fs.readFile('./src/assets/main.css'), {
+			from: undefined,
+		})
+
+		return processed.css
 	}
 }

@@ -4,8 +4,8 @@ title: Ligatures
 description: Utilities for controlling ligatures and contextual forms.
 tags: ot-feature
 eleventyNavigation:
-    key: Ligatures
-    order: 1
+  key: Ligatures
+  order: 1
 classData: ot-ligatures
 ---
 
@@ -21,10 +21,10 @@ Depending on the font, historical ligatures may need to have [historical forms](
 
 ```html emerald
 <template preview>
-    <p class="font-garamond text-4xl opacity-70">Lost lesson</p>
-    <p class="font-garamond historical-forms hlig text-4xl">
-        Lo<mark>st</mark> le<mark>ss</mark>on
-    </p>
+	<p class="font-garamond text-4xl opacity-70">Lost lesson</p>
+	<p class="font-garamond historical-forms hlig text-4xl">
+		Lo<mark>st</mark> le<mark>ss</mark>on
+	</p>
 </template>
 
 <p class="historical-forms **hlig**">Lost lesson</p>

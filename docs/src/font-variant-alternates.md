@@ -4,8 +4,8 @@ title: Font Variant Alternates
 description: Utilities for controlling the usage of alternate glyphs.
 tags: font-variant
 eleventyNavigation:
-    key: Font Variant Alternates
-    order: 3
+  key: Font Variant Alternates
+  order: 3
 classData: alternates
 ---
 
@@ -19,10 +19,10 @@ Historical glyph variants may not be useful in everyday typesetting situations, 
 
 ```html fuchsia
 <template preview>
-    <p class="font-garamond text-4xl opacity-70">Jesuit</p>
-    <p class="font-garamond historical-forms text-4xl">
-        <mark>J</mark>e<mark>s</mark>uit
-    </p>
+	<p class="font-garamond text-4xl opacity-70">Jesuit</p>
+	<p class="font-garamond historical-forms text-4xl">
+		<mark>J</mark>e<mark>s</mark>uit
+	</p>
 </template>
 
 <p class="**historical-forms**">Jesuit</p>

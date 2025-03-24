@@ -1,17 +1,21 @@
-const visit = require('unist-util-visit')
+import { visit } from 'unist-util-visit'
 
-function headingClasses() {
+export function remarkHeadings() {
+	/** @param {import('@types/mdast').Root} tree */
 	return (tree) => {
-		visit(tree, 'heading', (node) => {
-			if (node.depth === 1) return
+		visit(
+			tree,
+			'heading',
+			/** @param {import('@types/mdast').Heading} node */ (node) => {
+				if (node.depth === 1) return
 
-			let data = node.data || (node.data = {})
-			let props = data.hProperties || (data.hProperties = {})
-			let classes = props.class || (props.class = [])
+				let data = (node.data ??= {})
+				let properties = (data.hProperties ??= {})
+				/** @type {string[]} */
+				let classes = (properties.class ??= [])
 
-			classes.push('group flex whitespace-pre-wrap')
-		})
+				classes.push('group flex whitespace-pre-wrap')
+			},
+		)
 	}
 }
-
-module.exports = headingClasses

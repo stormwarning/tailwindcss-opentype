@@ -1,4 +1,4 @@
-module.exports = {
+const position = {
 	// 'super-position': '--ot-sups: "sups"',
 	// 'sub-position': '--ot-subs: "subs"',
 	// 'inferior-position': '--ot-sinf: "sinf"',
@@ -6,3 +6,5 @@ module.exports = {
 	subs: '--ot-subs: "subs" 1',
 	sinf: '--ot-sinf: "sinf" 1',
 }
+
+export default position
