@@ -8,7 +8,7 @@ const config = {
 	env: {
 		node: true,
 	},
-	ignorePatterns: ['dist'],
+	ignorePatterns: ['dist', '*.njk'],
 	rules: {
 		'@typescript-eslint/ban-types': 'off',
 		'@typescript-eslint/lines-between-class-members': 'off',
@@ -42,7 +42,7 @@ const config = {
 			},
 		},
 		{
-			files: ['docs/**/*.js'],
+			files: ['docs/**/*.js', '*.config.js'],
 			rules: {
 				'import/no-extraneous-dependencies': 'off',
 			},
