@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Font Kerning
+title: font-kerning
 description: Utilities to set the use of the kerning information stored in a font.
 tags: typography
 eleventyNavigation:
-  key: Font Kerning
+  key: font-kerning
   order: 1
 classData: kerning
 ---

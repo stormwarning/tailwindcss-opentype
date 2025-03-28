@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Font Variant Alternates
+title: font-variant-alternates
 description: Utilities for controlling the usage of alternate glyphs.
 tags: font-variant
 eleventyNavigation:
-  key: Font Variant Alternates
+  key: font-variant-alternates
   order: 3
 classData: alternates
 ---

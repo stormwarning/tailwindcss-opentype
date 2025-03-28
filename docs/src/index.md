@@ -1,6 +1,8 @@
 ---
 layout: home
 title: TailwindCSS OpenType — utility classes for advanced typographic features.
+eleventyNavigation:
+  key: home
 ---
 
 :::figure

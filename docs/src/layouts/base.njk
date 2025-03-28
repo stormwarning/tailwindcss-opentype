@@ -1,90 +1,68 @@
 <!doctype html>
-<html lang="en">
-<head>
-    {% include 'site-head.njk' %}
-</head>
-<body class="font-sans text-grey-500 antialiased bg-white" x-data="{ navIsOpen: false }">
-    <script>
-        (function() {
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                var icons = document.getElementsByClassName('js-favicon')
-                for (var i = 0; i < icons.length; i++) {
-                    icons[i].setAttribute('href', icons[i].getAttribute('href').replace('favicon', 'favicon-dark'))
-                }
-                document.getElementById('mask-icon').setAttribute('color', '#fff')
-            }
-        })()
-    </script>
-    {% include 'menu-button.njk' %}
-    <div class="w-full max-w-8xl mx-auto">
-        <div class="lg:flex">
-            <aside
-                class="fixed z-40 inset-0 flex-none h-full bg-black bg-opacity-25 w-full lg:bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block"
-                :class="{ hidden: !navIsOpen }"
-                id="sidebar"
-                @click="navIsOpen = false"
-            >
-                <div
-                    class="h-full overflow-y-auto scrolling-touch lg:h-auto lg:block relative lg:sticky lg:bg-transparent overflow-hidden lg:top-18 bg-white mr-24 lg:mr-0"
-                    id="navWrapper"
-                    @click="$event.stopPropagation()"
-                >
-                    <nav
-                        class="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)"
-                        id="nav"
-                    >
-                        <a class="inline-flex px-3" href="{{ '/' | url }}">
-                            <div class="w-12 h-12 rounded-xl mb-8 bg-gradient-to-br flex items-center justify-center from-cyan-400 to-sky-500">
-                                {% include 'logo.njk' %}
-                            </div>
-                        </a>
-
-                        <h5 class="px-3 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs text-grey-900">
-                            Typography
-                        </h5>
-                        {% set navPages = collections['typography'] | eleventyNavigation %}
-                        <ul>
-                        {%- for entry in navPages %}
-                            {% navitem entry.url | url, entry.url == page.url, entry.inactive %}
-                                {{ entry.title }}
-                            {% endnavitem %}
-                        {%- endfor %}
-                        </ul>
-
-                        <h5 class="px-3 mt-8 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs text-grey-900">
-                            Font Variants
-                        </h5>
-                        {% set navPages = collections['font-variant'] | eleventyNavigation %}
-                        <ul>
-                        {%- for entry in navPages %}
-                            {% navitem entry.url | url, entry.url == page.url, entry.inactive %}
-                                {{ entry.title }}
-                            {% endnavitem %}
-                        {%- endfor %}
-                        </ul>
-
-                        <h5 class="px-3 mt-8 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs text-grey-900">
-                            OpenType Features
-                        </h5>
-                        {% set navPages = collections['ot-feature'] | eleventyNavigation %}
-                        <ul>
-                        {%- for entry in navPages %}
-                            {% navitem entry.url | url, entry.url == page.url, entry.inactive %}
-                                {{ entry.title }}
-                            {% endnavitem %}
-                        {%- endfor %}
-                        </ul>
-                    </nav>
-                </div>
-            </aside>
-            <main class="min-w-0 w-full flex-auto lg:static lg:max-h-full lg:overflow-visible">
-                <div class="w-full flex">
-                    <div class="min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16">
-                        {{ content | safe }}
-                    </div>
-                </div>
-            </main>
-        </div>
-    </div>
-</body>
+<html class="antialiased bg-white dark:bg-gray-950" lang="en">
+	<head>
+		{% include 'site-head.njk' %}
+	</head>
+	<body class="font-sans" x-data="{ navIsOpen: false }">
+		<script>
+			;(function () {
+				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					var icons = document.getElementsByClassName('js-favicon')
+					for (var i = 0; i < icons.length; i++) {
+						icons[i].setAttribute(
+							'href',
+							icons[i].getAttribute('href').replace('favicon', 'favicon-dark'),
+						)
+					}
+					document.getElementById('mask-icon').setAttribute('color', '#fff')
+				}
+			})()
+		</script>
+		<div
+			class="sticky inset-x-0 top-0 z-10 border-b border-gray-950/5 dark:border-white/10 bg-white dark:bg-gray-950"
+		>
+			<a class="inline-flex px-3" href="{{ '/' | url }}">
+				<div
+					class="w-12 h-12 rounded-xl bg-gradient-to-br flex items-center justify-center from-cyan-400 to-sky-500"
+				>
+					{% include 'logo.njk' %}
+				</div>
+			</a>
+		</div>
+		<!-- <main
+			class="grid min-h-dvh grid-cols-1 grid-rows-[1fr_1px_auto_1px_auto] justify-center pt-14.25 [--gutter-width:2.5rem] md:-mx-4 md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)] lg:mx-0"
+		>
+			{{ content | safe }}
+		</main> -->
+		{% include 'menu-button.njk' %}
+		<div class="w-full max-w-8xl mx-auto">
+			<div class="lg:flex">
+				<aside
+					class="fixed z-40 inset-0 flex-none h-full bg-opacity-25 w-full lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block"
+					:class="{ hidden: !navIsOpen }"
+					id="sidebar"
+					@click="navIsOpen = false"
+				>
+					<div
+						class="h-full overflow-y-auto scrolling-touch lg:h-auto lg:block relative lg:sticky lg:bg-transparent overflow-hidden lg:top-18 bg-white mr-24 lg:mr-0"
+						id="navWrapper"
+						@click="$event.stopPropagation()"
+					>
+						{% include 'site-nav.njk' %}
+					</div>
+				</aside>
+				<main
+					class="min-w-0 w-full flex-auto lg:static lg:max-h-full lg:overflow-visible"
+				>
+					<div class="w-full flex">
+						<div
+							class="min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16"
+						>
+							{{ content | safe }}
+						</div>
+					</div>
+				</main>
+			</div>
+		</div>
+	</body>
 </html>

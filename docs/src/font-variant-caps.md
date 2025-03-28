@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Font Variant Caps
+title: font-variant-caps
 description: Utilities for controlling alternate glyphs for capital letters.
 tags: font-variant
 eleventyNavigation:
-  key: Font Variant Caps
+  key: font-variant-caps
   order: 2
 classData: caps
 ---
