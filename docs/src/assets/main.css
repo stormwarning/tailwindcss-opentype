@@ -74,6 +74,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./typography.css" layer(components);
+
 @layer base {
 	@font-face {
 		font-family: "Inter var";
