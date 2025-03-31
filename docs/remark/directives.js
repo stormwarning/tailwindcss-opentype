@@ -29,7 +29,7 @@ export function remarkDirectives() {
 									? node.children[0].value.split(',')
 									: undefined
 							let features = dedent`
-								<span aria-hidden="true" class="inline-flex self-center mx-4 h-6 w-px align-middle bg-grey-700 bg-opacity-20"></span>
+								<span aria-hidden="true" class="inline-flex self-center mx-4 h-6 w-px align-middle dark:bg-[color-mix(in_oklab,_var(--color-gray-900),white_20%)] bg-[color-mix(in_oklab,_var(--color-gray-900),white_90%)]"></span>
 								${tags.map((tag) => markupTagText(tag))}
 							`
 								.replaceAll('\n', '')
@@ -38,11 +38,15 @@ export function remarkDirectives() {
 
 							let parsed = unified().use(parse).parse(features)
 							let html = parsed.children[0]
+
 							/** @todo Fix type information here. */
 							// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 							children = html.children[1].children
 
 							hast = h(node.name, node.attributes, [children])
+							data.hProperties = {
+								class: 'not-prose',
+							}
 							data.hChildren = hast.children
 							break
 						}
@@ -82,7 +86,7 @@ export function remarkDirectives() {
 }
 
 function markupTagText(tag) {
-	return dedent`<span class="align-middle inline-flex items-center px-3 py-1 rounded-full text-sm font-medium leading-4 bg-grey-50 text-grey-600 tracking-tight">
+	return dedent`<span class="align-middle inline-flex items-center px-3 py-1 rounded-full text-xs font-medium leading-4 bg-grey-50 text-grey-600 tracking-tight dark:bg-grey-900 dark:text-gray-400">
 		<kbd>${tag}</kbd>
 	</span>`
 }

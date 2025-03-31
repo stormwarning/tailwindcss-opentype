@@ -1,4 +1,4 @@
-@tailwind base;
+@import "tailwindcss";
 
 /*! purgecss start ignore */
 .token.tag,
@@ -55,7 +55,7 @@
 
 .token.deleted:not(.prefix)::after {
 	content: "";
-	@apply pointer-events-none absolute inset-0 block bg-rose-400 bg-opacity-25;
+	@apply pointer-events-none absolute inset-0 block bg-rose-400/25;
 }
 
 .token.deleted.prefix {
@@ -63,18 +63,19 @@
 }
 
 .token.inserted:not(.prefix) {
-	@apply block bg-emerald-700 bg-opacity-50 -mx-4 px-4;
+	@apply block bg-emerald-700/50 -mx-4 px-4;
 }
 
 .token.inserted.prefix {
-	@apply text-emerald-200 text-opacity-75 select-none;
+	@apply text-emerald-200/75 select-none;
 }
 /*! purgecss end ignore */
 
-@tailwind components;
-@tailwind utilities;
+/* @tailwind components;
+@tailwind utilities; */
 
-@import "./typography.css" layer(components);
+/* @import "./typography.css" layer(components); */
+@config "../../tailwind.config.js";
 
 @layer base {
 	@font-face {
@@ -138,6 +139,14 @@
 }
 
 @layer utilities {
+	.code-sample p {
+		margin: 0;
+	}
+	.code-sample mark {
+		color: var(--accent-color);
+		background: none;
+	}
+
 	.accent-amber {
 		--accent-color: theme("colors.amber.600");
 	}
@@ -145,7 +154,7 @@
 		--accent-color: theme("colors.orange.600");
 	}
 	.accent-rose {
-		--accent-color: theme("colors.rose.600");
+		--accent-color: light-dark(theme("colors.rose.600"), theme("colors.rose.400"));
 	}
 	.accent-fuchsia {
 		--accent-color: theme("colors.fuchsia.600");
@@ -154,7 +163,7 @@
 		--accent-color: theme("colors.indigo.600");
 	}
 	.accent-emerald {
-		--accent-color: theme("colors.emerald.600");
+		--accent-color: light-dark(theme("colors.emerald.600"), theme("colors.emerald.400"));
 	}
 
 	.code-highlight {

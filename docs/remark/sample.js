@@ -8,12 +8,12 @@ import { visit } from 'unist-util-visit'
 loadLanguages()
 
 const previewBackground = {
-	amber: 'bg-gradient-to-r from-amber-50 to-amber-100 accent-amber',
-	orange: 'bg-gradient-to-r from-orange-50 to-orange-100 accent-orange',
-	rose: 'bg-gradient-to-r from-rose-50 to-rose-100 accent-rose',
-	fuchsia: 'bg-gradient-to-r from-fuchsia-50 to-fuchsia-100 accent-fuchsia',
-	indigo: 'bg-gradient-to-r from-indigo-50 to-indigo-100 accent-indigo',
-	emerald: 'bg-gradient-to-r from-emerald-50 to-teal-100 accent-emerald',
+	amber: 'accent-amber',
+	orange: 'accent-orange',
+	rose: 'accent-rose',
+	fuchsia: 'accent-fuchsia',
+	indigo: 'accent-indigo',
+	emerald: 'accent-emerald',
 }
 
 /**
@@ -84,31 +84,19 @@ export function remarkSample() {
 				type: 'element',
 				tagName: 'div',
 				properties: {
-					class: [
-						'rounded-t-xl overflow-hidden code-sample',
-						previewBackground[color],
-					],
+					class: ['code-sample', previewBackground[color]],
 				},
 				children: [
 					{
 						type: 'element',
 						tagName: 'div',
 						properties: {
-							class: 'flex overflow-x-auto',
+							class:
+								'not-prose text-grey-600 whitespace-nowrap overflow-auto rounded-lg bg-white outline outline-white/5 dark:text-gray-400 dark:bg-gray-950/50 p-8',
 						},
-						children: [
-							{
-								type: 'element',
-								tagName: 'div',
-								properties: {
-									class:
-										'p-10 text-grey-600 mix-blend-multiply whitespace-nowrap',
-								},
-								/** @todo Fix type information here. */
-								// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-								children: previewHast.children[0].children[1].children,
-							},
-						],
+						/** @todo Fix type information here. */
+						// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+						children: previewHast.children[0].children[1].children,
 					},
 				],
 			}
@@ -116,26 +104,58 @@ export function remarkSample() {
 			let snippet = {
 				type: 'element',
 				tagName: 'div',
-				properties: { class: 'overflow-hidden rounded-b-xl' },
+				properties: {
+					class:
+						'dark:bg-white/5 dark:inset-ring dark:inset-ring-white/10 not-prose p-1 rounded-xl scheme-dark text-sm',
+				},
 				children: [
 					{
 						type: 'element',
-						tagName: 'pre',
+						tagName: 'div',
 						properties: {
-							class: `scrollbar-none overflow-x-auto !m-0 !p-6 text-sm leading-snug !rounded-none language-${node.lang} text-white`,
+							class:
+								'*:flex *:*:max-w-none *:*:shrink-0 *:*:grow *:overflow-auto *:rounded-lg *:bg-white/10! *:p-5 dark:*:bg-white/5! **:[.line]:isolate **:[.line]:not-last:min-h-[1lh] *:inset-ring *:inset-ring-white/10 dark:*:inset-ring-white/5',
 						},
 						children: [
 							{
 								type: 'element',
-								tagName: 'code',
-								properties: { class: 'language-html' },
-								children: node.data?.hChildren ?? [
-									snippetHast.children[0].children[1],
+								tagName: 'pre',
+								properties: {
+									class: `scrollbar-none overflow-x-auto !m-0 !p-6 text-sm leading-snug language-${node.lang} text-white`,
+								},
+								children: [
+									{
+										type: 'element',
+										tagName: 'code',
+										properties: { class: 'language-html' },
+										children: node.data?.hChildren ?? [
+											snippetHast.children[0].children[1],
+										],
+									},
 								],
 							},
 						],
 					},
 				],
+			}
+
+			let codeBlock = {
+				type: 'element',
+				tagName: 'div',
+				properties: {
+					class: 'bg-gray-950 -mb-1 -mx-1 rounded-xl',
+				},
+				children: [snippet],
+			}
+
+			let figure = {
+				type: 'element',
+				tagName: 'figure',
+				properties: {
+					class:
+						'flex flex-col gap-1 rounded-xl bg-gray-950/5 p-1 inset-ring inset-ring-gray-950/5 dark:bg-white/10 dark:inset-ring-white/10',
+				},
+				children: [preview, codeBlock],
 			}
 
 			let n = node
@@ -145,9 +165,9 @@ export function remarkSample() {
 
 			n.data.hName = 'div'
 			n.data.hProperties = {
-				className: ['relative overflow-hidden mb-8'],
+				className: ['not-prose isolate'],
 			}
-			n.data.hChildren = [preview, snippet]
+			n.data.hChildren = [figure]
 		})
 	}
 }
