@@ -8,24 +8,24 @@
 		>
 			Typography
 		</h5>
-		{{ collections['typography'] | eleventyNavigation | eleventyNavigationToHtml({ listClass: classnames.listClass, listItemClass: classnames.listItemClass, anchorClass: classnames.anchorClass, useAriaCurrentAttr: true, activeKey: navKey }) | safe }}
+		{{ collections['Typography'] | eleventyNavigation | eleventyNavigationToHtml({ listClass: classnames.listClass, listItemClass: classnames.listItemClass, anchorClass: classnames.anchorClass, useAriaCurrentAttr: true, activeKey: navKey }) | safe }}
 	</div>
 
 	<div class="flex flex-col gap-3">
 		<h5
 			class="font-mono text-sm/6 font-medium tracking-widest text-gray-500 uppercase sm:text-xs/6 dark:text-gray-400"
 		>
-			Font Variants
+			Font variants
 		</h5>
-		{{ collections['font-variant'] | eleventyNavigation | eleventyNavigationToHtml({ listClass: classnames.listClass, listItemClass: classnames.listItemClass, anchorClass: classnames.anchorClass, useAriaCurrentAttr: true, activeKey: navKey }) | safe }}
+		{{ collections['Font variants'] | eleventyNavigation | eleventyNavigationToHtml({ listClass: classnames.listClass, listItemClass: classnames.listItemClass, anchorClass: classnames.anchorClass, useAriaCurrentAttr: true, activeKey: navKey }) | safe }}
 	</div>
 
 	<div class="flex flex-col gap-3">
 		<h5
 			class="font-mono text-sm/6 font-medium tracking-widest text-gray-500 uppercase sm:text-xs/6 dark:text-gray-400"
 		>
-			OpenType Features
+			OpenType features
 		</h5>
-		{{ collections['ot-feature'] | eleventyNavigation | eleventyNavigationToHtml({ listClass: classnames.listClass, listItemClass: classnames.listItemClass, anchorClass: classnames.anchorClass, useAriaCurrentAttr: true, activeKey: navKey }) | safe }}
+		{{ collections['OpenType features'] | eleventyNavigation | eleventyNavigationToHtml({ listClass: classnames.listClass, listItemClass: classnames.listItemClass, anchorClass: classnames.anchorClass, useAriaCurrentAttr: true, activeKey: navKey }) | safe }}
 	</div>
 </nav>

@@ -2,7 +2,7 @@
 layout: page
 title: Alternates
 description: Utilities for controlling the usage of alternate glyphs.
-tags: ot-feature
+tags: OpenType features
 eleventyNavigation:
   key: Alternates
   order: 3

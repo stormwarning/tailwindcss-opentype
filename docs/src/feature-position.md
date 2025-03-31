@@ -2,7 +2,7 @@
 layout: page
 title: Position
 description: Utilities for controlling alternate, smaller glyphs that are positioned as superscript or subscript.
-tags: ot-feature
+tags: OpenType features
 eleventyNavigation:
   key: Position
   order: 5

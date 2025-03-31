@@ -2,7 +2,7 @@
 layout: page
 title: font-variant-caps
 description: Utilities for controlling alternate glyphs for capital letters.
-tags: font-variant
+tags: Font variants
 eleventyNavigation:
   key: font-variant-caps
   order: 2

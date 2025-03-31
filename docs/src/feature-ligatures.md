@@ -2,7 +2,7 @@
 layout: page
 title: Ligatures
 description: Utilities for controlling ligatures and contextual forms.
-tags: ot-feature
+tags: OpenType features
 eleventyNavigation:
   key: Ligatures
   order: 1

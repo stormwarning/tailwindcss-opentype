@@ -19,23 +19,86 @@
 			})()
 		</script>
 		<div
-			class="sticky inset-x-0 top-0 z-10 border-b border-gray-950/5 dark:border-white/10 bg-white dark:bg-gray-950"
+			class="sticky inset-x-0 top-0 z-10 border-b border-gray-950/5 dark:border-white/10"
 		>
-			<a class="inline-flex px-3" href="{{ '/' | url }}">
-				<div
-					class="w-12 h-12 rounded-xl bg-gradient-to-br flex items-center justify-center from-cyan-400 to-sky-500"
-				>
-					{% include 'logo.njk' %}
+			<div class="bg-white dark:bg-gray-950">
+				<div class="flex h-14 items-center justify-between gap-8 px-4 sm:px-6">
+					<a class="inline-flex" href="{{ '/' | url }}">
+						<div
+							class="w-8 h-8 rounded-lg bg-gradient-to-br flex items-center justify-center from-cyan-400 to-sky-500"
+						>
+							{% include 'logo.njk' %}
+						</div>
+					</a>
 				</div>
-			</a>
+			</div>
+			<div
+				class="flex h-14 items-center border-t border-gray-950/5 bg-white px-4 sm:px-6 lg:hidden dark:border-white/10 dark:bg-gray-950"
+			>
+				<button
+					type="button"
+					class="relative inline-grid size-7 place-items-center rounded-md text-gray-950 hover:bg-gray-950/5 dark:text-white dark:hover:bg-white/10 -ml-1.5"
+					aria-label="Open navigation menu"
+				>
+					<span
+						class="absolute top-1/2 left-1/2 size-11 -translate-1/2 [@media(pointer:fine)]:hidden"
+					></span
+					><svg viewBox="0 0 16 16" fill="currentColor" class="size-4">
+						<path
+							fill-rule="evenodd"
+							d="M2 4.75A.75.75 0 0 1 2.75 4h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75Zm0 6.5a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z"
+							clip-rule="evenodd"
+						></path>
+					</svg>
+				</button>
+
+				<ol
+					class="sticky ml-4 flex min-w-0 items-center gap-2 text-sm/6 whitespace-nowrap"
+				>
+					<li class="flex items-center gap-2">
+						<span class="text-gray-500 dark:text-gray-400">{{ tags }}</span>
+						<svg
+							viewBox="0 0 16 16"
+							class="size-4 fill-gray-950 dark:fill-gray-500"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+								clip-rule="evenodd"
+							></path>
+						</svg>
+					</li>
+					<li class="truncate text-gray-950 dark:text-white">{{ title }}</li>
+				</ol>
+			</div>
 		</div>
-		<!-- <main
-			class="grid min-h-dvh grid-cols-1 grid-rows-[1fr_1px_auto_1px_auto] justify-center pt-14.25 [--gutter-width:2.5rem] md:-mx-4 md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)] lg:mx-0"
+		<div
+			class="grid min-h-dvh grid-cols-1 grid-rows-[1fr_1px_auto_1px_auto] lg:grid-cols-[var(--container-2xs)_2.5rem_minmax(0,1fr)_2.5rem] xl:grid-cols-[var(--container-2xs)_2.5rem_minmax(0,1fr)_2.5rem]"
 		>
-			{{ content | safe }}
-		</main> -->
-		{% include 'menu-button.njk' %}
-		<div class="w-full max-w-8xl mx-auto">
+			<div class="relative col-start-1 row-span-full row-start-1 max-lg:hidden">
+				<div class="absolute inset-0">
+					<div
+						class="sticky top-14.25 bottom-0 left-0 h-full max-h-[calc(100dvh-(var(--spacing)*14.25))] w-2xs overflow-y-auto p-6 pt-10"
+					>
+						<div>{% include 'site-nav.njk' %}</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- <div
+				class="col-start-2 row-span-5 row-start-1 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-gray-950)]/5 max-lg:hidden dark:[--pattern-fg:var(--color-white)]/10"
+			></div> -->
+
+			<main class="relative row-start-1 grid grid-cols-subgrid lg:col-start-3">
+				{{ content | safe }}
+			</main>
+
+			<!-- <div
+				class="col-start-4 row-span-5 row-start-1 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-gray-950)]/5 max-lg:hidden dark:[--pattern-fg:var(--color-white)]/10"
+			></div> -->
+		</div>
+
+		<!-- <div class="w-full max-w-8xl mx-auto">
 			<div class="lg:flex">
 				<aside
 					class="fixed z-40 inset-0 flex-none h-full w-full lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block"
@@ -63,6 +126,6 @@
 					</div>
 				</main>
 			</div>
-		</div>
+		</div> -->
 	</body>
 </html>
