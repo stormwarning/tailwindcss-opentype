@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
+const path = require('node:path')
+
 /** @type {import('eslint').Linter.Config} */
 const config = {
 	extends: [
@@ -9,6 +12,9 @@ const config = {
 		node: true,
 	},
 	ignorePatterns: ['dist', '*.njk'],
+	parserOptions: {
+		project: [path.resolve(__dirname, 'tsconfig.json')],
+	},
 	rules: {
 		'@typescript-eslint/ban-types': 'off',
 		'@typescript-eslint/lines-between-class-members': 'off',
