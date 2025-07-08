@@ -28,7 +28,7 @@ const config = {
 				violet: colors.violet,
 			},
 
-			typography: (theme) => ({
+			typography: ({ theme }) => ({
 				DEFAULT: {
 					css: {
 						'--tw-prose-body': 'var(--color-gray-700)',
@@ -174,7 +174,7 @@ const config = {
 				'8xl': '90rem',
 			},
 
-			maxHeight: (theme) => ({
+			maxHeight: ({ theme }) => ({
 				sm: '30rem',
 				'(screen-18)': `calc(100vh - ${theme('spacing.18')})`,
 			}),
@@ -184,7 +184,6 @@ const config = {
 			},
 		},
 	},
-	variants: {},
 	plugins: [typographyPlugin, opentypePlugin],
 }
 
