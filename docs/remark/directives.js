@@ -29,7 +29,7 @@ export function remarkDirectives() {
 									? node.children[0].value.split(',')
 									: undefined
 							let features = dedent`
-								<span aria-hidden="true" class="inline-flex self-center mx-4 h-6 w-px align-middle dark:bg-[color-mix(in_oklab,_var(--color-gray-900),white_20%)] bg-[color-mix(in_oklab,_var(--color-gray-900),white_90%)]"></span>
+								<span aria-hidden="true" class="inline-flex self-center mx-4 h-6 w-px align-middle bg-grey-900/10 dark:bg-white/15"></span>
 								${tags.map((tag) => markupTagText(tag))}
 							`
 								.replaceAll('\n', '')
