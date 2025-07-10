@@ -15,7 +15,7 @@ Although a well-designed typeface has consistent inter-glyph spacing overall, so
 
 ### Kerning :feat[kern]
 
-```html emerald
+```html /kerning/
 <template preview>
 	<p class="font-warnock text-4xl opacity-70 kerning-none">You Will Try</p>
 	<p class="font-warnock text-4xl kerning">
@@ -23,7 +23,7 @@ Although a well-designed typeface has consistent inter-glyph spacing overall, so
 	</p>
 </template>
 
-<p class="**kerning**">You Will Try</p>
+<p class="kerning">You Will Try</p>
 ```
 
 Kerning often defaults to `auto` in the browser, which may disable kerning at smaller font sizes. It can be disabled manually if needed using `.kerning-none`, or force-enabled using `.kerning-normal`.

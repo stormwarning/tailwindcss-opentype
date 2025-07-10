@@ -6,7 +6,6 @@ import dedent from 'dedent'
 import { rehype } from 'rehype'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
-import { remark } from 'remark'
 import remarkDirective from 'remark-directive'
 
 import { remarkDirectives } from './remark/directives.js'

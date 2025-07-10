@@ -1,80 +1,4 @@
 @import "tailwindcss";
-
-/*! purgecss start ignore */
-.token.tag,
-.token.class-name,
-.token.selector,
-.token.selector .class,
-.token.function {
-	@apply text-fuchsia-400;
-}
-
-.token.attr-name,
-.token.keyword,
-.token.rule,
-.token.operator,
-.token.pseudo-class,
-.token.important {
-	@apply text-cyan-400;
-}
-
-.token.attr-value,
-.token.class,
-.token.string,
-.token.number,
-.token.unit,
-.token.color {
-	@apply text-lime-300;
-}
-
-.token.punctuation,
-.token.module,
-.token.property {
-	@apply text-sky-200;
-}
-
-.token.atapply .token:not(.rule):not(.important) {
-	color: inherit;
-}
-
-.language-shell .token:not(.comment) {
-	color: inherit;
-}
-
-.language-css .token.function {
-	color: inherit;
-}
-
-.token.comment {
-	@apply text-gray-400;
-}
-
-.token.deleted:not(.prefix) {
-	@apply relative block -mx-4 px-4;
-}
-
-.token.deleted:not(.prefix)::after {
-	content: "";
-	@apply pointer-events-none absolute inset-0 block bg-rose-400/25;
-}
-
-.token.deleted.prefix {
-	@apply text-gray-400 select-none;
-}
-
-.token.inserted:not(.prefix) {
-	@apply block bg-emerald-700/50 -mx-4 px-4;
-}
-
-.token.inserted.prefix {
-	@apply text-emerald-200/75 select-none;
-}
-/*! purgecss end ignore */
-
-/* @tailwind components;
-@tailwind utilities; */
-
-/* @import "./typography.css" layer(components); */
 @config "../../tailwind.config.js";
 
 @layer base {
@@ -143,35 +67,14 @@
 		margin: 0;
 	}
 	.code-sample mark {
-		color: var(--accent-color);
+		color: light-dark(theme("colors.cyan.600"), theme("colors.cyan.400"));
 		background: none;
-	}
-
-	.accent-amber {
-		--accent-color: theme("colors.amber.600");
-	}
-	.accent-orange {
-		--accent-color: theme("colors.orange.600");
-	}
-	.accent-rose {
-		--accent-color: light-dark(theme("colors.rose.600"), theme("colors.rose.400"));
-	}
-	.accent-fuchsia {
-		--accent-color: theme("colors.fuchsia.600");
-	}
-	.accent-indigo {
-		--accent-color: theme("colors.indigo.600");
-	}
-	.accent-emerald {
-		--accent-color: light-dark(theme("colors.emerald.600"), theme("colors.emerald.400"));
 	}
 
 	.code-highlight {
 		border-radius: 0.1875rem;
 		padding: 0.0625rem 0.1875rem;
 		margin: 0 -0.1875rem;
-	}
-	.bg-code-highlight {
-		background-color: rgba(134, 239, 172, 0.25);
+		background-color: color-mix(in srgb, currentColor, transparent 70%);
 	}
 }

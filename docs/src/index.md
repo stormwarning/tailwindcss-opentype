@@ -22,7 +22,7 @@ After installing the plugin, include it your Tailwind config and the utility cla
 ```js
 // tailwind.config.js
 module.exports = {
-    ...
+    // ...
     plugins: [
         require('tailwindcss-opentype'),
     ],

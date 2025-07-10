@@ -17,7 +17,7 @@ Use the `font-variant-alternates` utilities to access alternative styles for dif
 
 Historical glyph variants may not be useful in everyday typesetting situations, but can prove useful when referencing the past.
 
-```html fuchsia
+```html /historical-forms/
 <template preview>
 	<p class="font-garamond text-4xl opacity-70">Jesuit</p>
 	<p class="font-garamond historical-forms text-4xl">
@@ -25,5 +25,5 @@ Historical glyph variants may not be useful in everyday typesetting situations, 
 	</p>
 </template>
 
-<p class="**historical-forms**">Jesuit</p>
+<p class="historical-forms">Jesuit</p>
 ```
