@@ -14,9 +14,8 @@
 		"start:css": "npx @tailwindcss/cli -i ./src/assets/main.css -o ./dist/assets/styles.css --watch"
 	},
 	"devDependencies": {
-		"@11ty/eleventy": "3.0.0",
-		"@11ty/eleventy-navigation": "1.0.2",
-		"@11ty/eleventy-plugin-syntaxhighlight": "5.0.0",
+		"@11ty/eleventy": "3.1.2",
+		"@11ty/eleventy-navigation": "1.0.4",
 		"@fec/eleventy-plugin-remark": "4.0.0",
 		"@shikijs/transformers": "3.7.0",
 		"@tailwindcss/cli": "4.0.17",
