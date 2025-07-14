@@ -13,6 +13,8 @@ classData: ot-alternates
 
 These utilities provide access to OpenType alternate glyph features not currently available via the higher-level CSS properties. For other alternate glyph features, use the [Font Variant Alternates](/font-variant-alternates) utilities.
 
+## Examples
+
 ### Stylistic alternates :feat[salt]
 
 Sometimes a significant portion of a typeface’s unique character comes from a few specific glyphs. Stylistic Alternates offer an opportunity to change these, and change the tone of the typeface.
@@ -46,6 +48,8 @@ This feature replaces sets of default character glyphs with stylistic variants. 
 ```
 
 Note that fonts may employ stylistic sets in completely arbitrary and individual ways. In this example, Inter uses `ss02` to change a series of glyphs into less ambiguous forms, but the same stylistic set in another font could produce completely different changes.
+
+### Custom names for stylistic sets
 
 The OpenType spec allows for as many as 20 different sets to be defined in a font; by default this plugin includes utilities for `ss01` through `ss04`. To add additional sets or to change the label of the utility class for specific sets, use the `stylisticSets` key in your `theme` or `extends` config.
 

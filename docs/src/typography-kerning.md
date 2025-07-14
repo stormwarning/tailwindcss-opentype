@@ -13,6 +13,8 @@ classData: kerning
 
 Although a well-designed typeface has consistent inter-glyph spacing overall, some glyph combinations require adjustment for improved legibility. If the `letter-spacing` property is defined, kerning adjustments are considered part of the default spacing and letter spacing adjustments are made _after_ kerning has been applied.
 
+## Examples
+
 ### Kerning :feat[kern]
 
 ```html /kerning/

@@ -13,7 +13,7 @@ classData: ligatures
 
 Use the `font-variant-ligatures` utilities to enable ligatures and contextual forms in textual content. Each setting can be disabled by prefixing the class with `no-`.
 
-These utilities are composable so you can enable multiple `font-variant-ligatures` features by combining multiple classes in your HTML:
+## Examples
 
 ### Common ligatures :feat[liga]
 
@@ -64,11 +64,19 @@ Like ligatures (though not strictly a ligature feature), contextual alternates a
 	<p class="font-caflisch no-contextual text-4xl opacity-70">
 		The bloom has gone off the rose
 	</p>
-	<p class="font-caflisch contextual text-4xl opacity-70">
+	<p class="font-caflisch contextual text-4xl">
 		The <mark>bloom</mark> has g<mark>one</mark> off the
 		<mark>rose</mark>
 	</p>
 </template>
 
 <p class="contextual">The bloom has gone off the rose</p>
+```
+
+### Stacking multiple utilities
+
+These utilities are composable so you can enable multiple `font-variant-ligatures` features by combining multiple classes in your HTML:
+
+```html /discretionary-ligatures/ /no-contextual/
+<p class="discretionary-ligatures no-contextual">Lorem ipsum...</p>
 ```

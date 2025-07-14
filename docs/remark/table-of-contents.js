@@ -45,22 +45,19 @@ export function rehypeTableOfContents() {
 						children: [],
 					}
 
-					console.log(newHeading.text)
-					console.log('HAS HEADINGS', headings.length > 0)
-					console.log('LAST PARENT', headings?.[lastIndex])
-					console.log(
-						'SHOULD BE NESTED',
-						rank > (headings[lastIndex].rank ?? 2),
-					)
+					if (headings.length > 0) {
+						let parentIndex = headings.length - 1
 
-					if (
-						headings.length > 0 &&
-						headings[lastIndex] &&
-						rank > (headings[lastIndex].rank ?? 2)
-					) {
-						headings[lastIndex].children.push(newHeading)
+						while (parentIndex >= 0) {
+							if (headings[parentIndex].rank < rank) {
+								headings[parentIndex].children.push(newHeading)
+								break
+							}
+							parentIndex--
+						}
+
+						if (parentIndex < 0) headings.push(newHeading)
 					} else {
-						lastIndex = Number(index)
 						headings.push(newHeading)
 					}
 				}

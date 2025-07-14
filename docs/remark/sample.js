@@ -25,7 +25,7 @@ export function remarkSample() {
 			let figureContents = []
 			let snippetCode = node.value
 
-			if (node.lang === 'html') {
+			if (node.lang === 'html' && node.value.includes('<template')) {
 				let previewCode
 
 				snippetCode = node.value

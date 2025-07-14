@@ -13,6 +13,8 @@ classData: caps
 
 Use the `font-variant-caps` utilities to transform letters into optimised capital forms. Small Caps are less distracting than all capitals for longer form text settings. They also provide an additional way to apply emphasis within text.
 
+## Examples
+
 ### Small caps :feat[cmcp]
 
 This feature turns lowercase characters into small capitals.

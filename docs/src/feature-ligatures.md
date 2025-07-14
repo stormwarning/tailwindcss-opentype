@@ -13,6 +13,8 @@ classData: ot-ligatures
 
 These utilities provide access to OpenType ligature features not currently available via the higher-level CSS properties. For other ligature features, use the [Font Variant Ligatures](/font-variant-ligatures) utilities.
 
+## Examples
+
 ### Historical ligatures :feat[hlig]
 
 Some ligatures were in common use in the past, but appear anachronistic today. Some fonts include the historical forms as alternates, so they can be used for a “period” effect. The most common example is the long s paired with most ascenders, while a tz ligature is also found in German blackletter type.
