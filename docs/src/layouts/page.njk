@@ -24,7 +24,14 @@ layout: base
 		<div
 			className="sticky top-14 max-h-[calc(100svh-3.5rem)] overflow-x-hidden px-6 pt-10 pb-24"
 		>
-			TOC
+			<div class="flex flex-col gap-3">
+				<h5
+					class="font-mono text-sm/6 font-medium tracking-widest text-gray-500 uppercase sm:text-xs/6 dark:text-gray-400"
+				>
+					On this page
+				</h5>
+				{{ content | toc | safe }}
+			</div>
 		</div>
 	</div>
 </div>

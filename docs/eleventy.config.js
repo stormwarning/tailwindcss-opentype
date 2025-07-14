@@ -8,6 +8,7 @@ import remarkDirective from 'remark-directive'
 import { remarkDirectives } from './remark/directives.js'
 import { remarkHeadings } from './remark/headings.js'
 import { remarkSample } from './remark/sample.js'
+import { rehypeTableOfContents } from './remark/table-of-contents.js'
 
 /** @param {import('@11ty/eleventy/UserConfig').default} eleventyConfig */
 export default async function config(eleventyConfig) {
@@ -47,7 +48,8 @@ export default async function config(eleventyConfig) {
 							return (
 								parent?.type === 'element' &&
 								parent?.tagName !== 'nav' &&
-								element.tagName !== 'h1'
+								element.tagName !== 'h1' &&
+								element.tagName !== 'h5'
 							)
 						},
 						properties: {
@@ -65,6 +67,18 @@ export default async function config(eleventyConfig) {
 			}
 
 			return newContent
+		},
+	)
+
+	eleventyConfig.addAsyncFilter(
+		'toc',
+		/** @param {string} content */ async (content) => {
+			let output = await rehype()
+				.data('settings', { fragment: true })
+				.use(rehypeSlug)
+				.use(rehypeTableOfContents)
+				.process(content)
+			return output.toString()
 		},
 	)
 

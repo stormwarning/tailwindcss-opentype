@@ -17,6 +17,8 @@ Using `<sup>` or `<sub>` elements has its own pitfalls, however. Common "reset" 
 
 The examples below use `<sub>` and `<sup>` with the default Tailwind CSS reset styles for the initial result, and `<span>` elements with the utility classes added for the final result, in order to show the difference between the "synthesized" characters and the specifically designed forms.
 
+## Examples
+
 ### Superscript :feat[sups]
 
 This feature replaces lining or oldstyle figures with superscript figures, often used for footnote indication, and replaces lowercase letters with superscript letters.

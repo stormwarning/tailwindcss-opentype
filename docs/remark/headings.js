@@ -9,13 +9,18 @@ export function remarkHeadings() {
 			/** @param {import('mdast').Heading} node */ (node) => {
 				if (node.depth === 1) return
 
-				let data = (node.data ??= {})
-				let properties = (data.hProperties ??= {})
-				/** @type {string[]} */
-				let classes =
-					typeof properties.class === 'string' ? [properties.class] : []
+				node.data ??= {}
+				node.data.hProperties = {
+					className: ['group flex whitespace-pre-wrap'],
+				}
 
-				classes.push('group flex whitespace-pre-wrap')
+				// Let data = (node.data ??= {})
+				// let properties = (data.hProperties ??= {})
+				// /** @type {string[]} */
+				// let classes =
+				// 	typeof properties.className === 'string' ? [properties.className] : []
+
+				// classes.push('group flex whitespace-pre-wrap')
 			},
 		)
 	}

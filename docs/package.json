@@ -25,6 +25,7 @@
 		"@types/mdast": "4.0.4",
 		"autoprefixer": "10.3.4",
 		"dedent": "1.5.3",
+		"hast-util-heading-rank": "3.0.0",
 		"hastscript": "9.0.1",
 		"mdast-util-to-hast": "13.2.0",
 		"postcss": "8.4.23",
@@ -39,6 +40,7 @@
 		"tailwindcss": "4.0.17",
 		"tailwindcss-opentype": "workspace:*",
 		"unified": "11.0.5",
+		"unist-util-remove": "4.0.0",
 		"unist-util-visit": "5.0.0"
 	}
 }
