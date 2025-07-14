@@ -43,7 +43,7 @@ export function remarkDirectives() {
 
 							hast = h(node.name, properties, parsed)
 							data.hProperties = {
-								class: 'not-prose',
+								class: 'not-prose inline',
 							}
 							data.hChildren = hast.children
 							break

@@ -60,6 +60,10 @@
 		src: url(/assets/fonts/warnock-pro-bold.woff2) format("woff2");
 		font-display: swap;
 	}
+
+	:root {
+		color-scheme: light dark;
+	}
 }
 
 @layer utilities {
