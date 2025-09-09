@@ -1,5 +1,13 @@
 # tailwindcss-opentype
 
+## 1.2.0
+
+### Minor Changes
+
+- Update plugin for Tailwind v4 support ([#98](https://github.com/stormwarning/tailwindcss-opentype/pull/98))
+
+  CSS output increased slightly for features that rely on the `font-feature-settings` property.
+
 ## 1.1.0 — 2022-08-12
 
 #### 🎁 Added
