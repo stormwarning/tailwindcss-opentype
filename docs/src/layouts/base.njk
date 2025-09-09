@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="antialiased bg-white dark:bg-gray-950" lang="en">
+<html class="antialiased bg-white dark:bg-gray-950 has-open:overflow-hidden" lang="en">
 	<head>
 		{% include 'site-head.njk' %}
 	</head>
@@ -30,6 +30,10 @@
 							{% include 'logo.njk' %}
 						</div>
 					</a>
+					<div class="flex items-center gap-6">
+						<a class="text-sm/6 text-gray-950 dark:text-white" href="/font-variant-ligatures/">Docs</a>
+						<a aria-label="GitHub repository" href="https://github.com/stormwarning/tailwindcss-opentype"><svg viewBox="0 0 20 20" class="size-5 fill-black/40 dark:fill-gray-400"><path d="M10 0C4.475 0 0 4.475 0 10a9.994 9.994 0 006.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.287-.6-1.175-1.025-1.412-.35-.188-.85-.65-.013-.663.788-.013 1.35.725 1.538 1.025.9 1.512 2.337 1.087 2.912.825.088-.65.35-1.088.638-1.338-2.225-.25-4.55-1.112-4.55-4.937 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.274.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 012.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0020 10c0-5.525-4.475-10-10-10z"></path></svg></a>
+					</div>
 				</div>
 			</div>
 
@@ -41,6 +45,7 @@
 					type="button"
 					class="relative inline-grid size-7 place-items-center rounded-md text-gray-950 hover:bg-gray-950/5 dark:text-white dark:hover:bg-white/10 -ml-1.5"
 					aria-label="Open navigation menu"
+					onclick="navDialog.showModal()"
 				>
 					<span
 						class="absolute top-1/2 left-1/2 size-11 -translate-1/2 [@media(pointer:fine)]:hidden"
@@ -73,6 +78,19 @@
 					<li class="truncate text-gray-950 dark:text-white">{{ title }}</li>
 				</ol>
 			</div>
+			<dialog id="navDialog" class=" max-h-full h-screen bg-transparent backdrop:bg-white/90 backdrop:dark:bg-gray-950/5">
+				<div
+					class="bg-white dark:bg-gray-950 border-r border-gray-950/5 dark:border-white/10 sticky top-28.25  bottom-0 left-0 h-full max-h-[calc(100dvh-(var(--spacing)*28.25))] w-2xs overflow-y-auto p-6 pt-6.25"
+				>
+					{% include 'site-nav.njk' %}
+					<div class="absolute top-6 right-6 flex">
+						<button
+							class="inline-flex rounded-md bg-gray-950/2 px-2 py-0.5 font-sans text-xs/5 text-gray-500 inset-ring inset-ring-gray-950/8 dark:bg-white/4 dark:inset-ring-white/16"
+							type="button"
+							onclick="navDialog.close()">esc</button>
+					</div>
+				</div>
+			</dialog>
 			{% endif %}
 		</div>
 		<div
@@ -88,47 +106,19 @@
 				</div>
 			</div>
 
-			<!-- <div
-				class="col-start-2 row-span-5 row-start-1 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-gray-950)]/5 max-lg:hidden dark:[--pattern-fg:var(--color-white)]/10"
-			></div> -->
-
 			<main class="relative row-start-1 grid grid-cols-subgrid lg:col-start-3">
 				{{ content | safe }}
 			</main>
-
-			<!-- <div
-				class="col-start-4 row-span-5 row-start-1 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-gray-950)]/5 max-lg:hidden dark:[--pattern-fg:var(--color-white)]/10"
-			></div> -->
 		</div>
 
-		<!-- <div class="w-full max-w-8xl mx-auto">
-			<div class="lg:flex">
-				<aside
-					class="fixed z-40 inset-0 flex-none h-full w-full lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block"
-					:class="{ hidden: !navIsOpen }"
-					id="sidebar"
-					@click="navIsOpen = false"
-				>
-					<div
-						class="h-full overflow-y-auto scrolling-touch lg:h-auto lg:block relative lg:sticky lg:bg-transparent overflow-hidden lg:top-18 bg-white mr-24 lg:mr-0"
-						id="navWrapper"
-						@click="$event.stopPropagation()"
-					>
-						{% include 'site-nav.njk' %}
-					</div>
-				</aside>
-				<main
-					class="min-w-0 w-full flex-auto lg:static lg:max-h-full lg:overflow-visible"
-				>
-					<div class="w-full flex">
-						<div
-							class="min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16"
-						>
-							{{ content | safe }}
-						</div>
-					</div>
-				</main>
-			</div>
-		</div> -->
+		<script>
+			const lightDismiss = ({ target: dialog }) => {
+				if (dialog.nodeName === "DIALOG") dialog.close("dismiss");
+			}
+
+			if (document.getElementById("navDialog")) {
+				navDialog.addEventListener("click", lightDismiss);
+			}
+		</script>
 	</body>
 </html>
