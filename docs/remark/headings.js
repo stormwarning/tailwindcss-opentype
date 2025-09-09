@@ -13,14 +13,6 @@ export function remarkHeadings() {
 				node.data.hProperties = {
 					className: ['group flex whitespace-pre-wrap'],
 				}
-
-				// Let data = (node.data ??= {})
-				// let properties = (data.hProperties ??= {})
-				// /** @type {string[]} */
-				// let classes =
-				// 	typeof properties.className === 'string' ? [properties.className] : []
-
-				// classes.push('group flex whitespace-pre-wrap')
 			},
 		)
 	}

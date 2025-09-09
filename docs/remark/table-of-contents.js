@@ -28,8 +28,6 @@ export function rehypeTableOfContents() {
 				!HEADINGS.has(/** @type {string} */ (node.tagName)),
 		)
 
-		let lastIndex = 0
-
 		visit(
 			tree,
 			'element',
