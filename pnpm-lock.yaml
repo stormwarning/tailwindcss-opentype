@@ -125,6 +125,9 @@ importers:
       tailwindcss:
         specifier: 4.0.17
         version: 4.0.17
+      tailwindcss-capsize:
+        specifier: 4.0.1
+        version: 4.0.1(tailwindcss@4.0.17)
       tailwindcss-opentype:
         specifier: workspace:*
         version: link:../plugin
@@ -3693,6 +3696,12 @@ packages:
   synckit@0.9.0:
     resolution: {integrity: sha512-7RnqIMq572L8PeEzKeBINYEJDDxpcH8JEgLwUqBd3TkofhFRbkq4QLR0u+36avGAhCRbk2nnmjcW9SE531hPDg==}
     engines: {node: ^14.18.0 || >=16.0.0}
+
+  tailwindcss-capsize@4.0.1:
+    resolution: {integrity: sha512-EdEGdmFvmM7XUFsRDS8b2KqMaK9EMrLpbDOlHBSwFcAj2GY2t07ECZL7TMY0FJeVZLF2S0zYG4LNSpWWHw2uAg==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      tailwindcss: '>=3'
 
   tailwindcss@3.3.2:
     resolution: {integrity: sha512-9jPkMiIBXvPc2KywkraqsUfbfj+dHDb+JPWtSJa9MLFdrPyazI7q6WX2sUrm7R9eVR7qqv3Pas7EvQFzxKnI6w==}
@@ -8126,6 +8135,10 @@ snapshots:
     dependencies:
       '@pkgr/core': 0.1.1
       tslib: 2.8.1
+
+  tailwindcss-capsize@4.0.1(tailwindcss@4.0.17):
+    dependencies:
+      tailwindcss: 4.0.17
 
   tailwindcss@3.3.2:
     dependencies:

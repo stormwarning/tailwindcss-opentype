@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import typographyPlugin from '@tailwindcss/typography'
+import capsizePlugin from 'tailwindcss-capsize'
 import opentypePlugin from 'tailwindcss-opentype'
 import colors from 'tailwindcss/colors'
 import defaultTheme from 'tailwindcss/defaultTheme'
@@ -12,6 +13,16 @@ const config = {
 		'./remark/*.js',
 	],
 	theme: {
+		fontMetrics: {
+			sans: {
+				capHeight: 2048,
+				ascent: 2728,
+				descent: -680,
+				lineGap: 0,
+				unitsPerEm: 2816,
+			},
+		},
+
 		extend: {
 			colors: {
 				grey: colors.gray,
@@ -184,7 +195,7 @@ const config = {
 			},
 		},
 	},
-	plugins: [typographyPlugin, opentypePlugin],
+	plugins: [typographyPlugin, capsizePlugin, opentypePlugin],
 }
 
 export default config
