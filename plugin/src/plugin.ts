@@ -1,7 +1,6 @@
 import plugin from 'tailwindcss/plugin.js'
 
 const JIT_FONT_FEATURE_DEFAULTS = {
-	'@defaults font-feature-settings': {},
 	'font-feature-settings': 'var(--ot-features)',
 }
 
@@ -68,7 +67,7 @@ const opentypePlugin = plugin.withOptions(
 			}
 
 			addBase({
-				'@defaults font-feature-settings': {
+				':root, :host': {
 					'--ot-sups': '"sups" 0',
 					'--ot-subs': '"subs" 0',
 					'--ot-sinf': '"sinf" 0',
@@ -86,25 +85,41 @@ const opentypePlugin = plugin.withOptions(
 				},
 			})
 
+			let fontFeatureProperties = {
+				'--ot-features': [
+					'var(--ot-sups)',
+					'var(--ot-subs)',
+					'var(--ot-sinf)',
+					'var(--ot-hlig)',
+					'var(--ot-salt)',
+					...stylisticSetsProperties,
+				].join(', '),
+			}
+
 			addUtilities({
 				'.sups': {
 					'--ot-sups': '"sups" 1',
+					...fontFeatureProperties,
 					...JIT_FONT_FEATURE_DEFAULTS,
 				},
 				'.subs': {
 					'--ot-subs': '"subs" 1',
+					...fontFeatureProperties,
 					...JIT_FONT_FEATURE_DEFAULTS,
 				},
 				'.sinf': {
 					'--ot-sinf': '"sinf" 1',
+					...fontFeatureProperties,
 					...JIT_FONT_FEATURE_DEFAULTS,
 				},
 				'.hlig': {
 					'--ot-hlig': '"hlig" 1',
+					...fontFeatureProperties,
 					...JIT_FONT_FEATURE_DEFAULTS,
 				},
 				'.salt': {
 					'--ot-salt': '"salt" 1',
+					...fontFeatureProperties,
 					...JIT_FONT_FEATURE_DEFAULTS,
 				},
 			})
@@ -113,6 +128,7 @@ const opentypePlugin = plugin.withOptions(
 				{
 					ss: (value: string) => ({
 						[`--ot-${value}`]: `"${value}" 1`,
+						...fontFeatureProperties,
 						...JIT_FONT_FEATURE_DEFAULTS,
 					}),
 				},

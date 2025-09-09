@@ -86,36 +86,43 @@ describe('Plugin', () => {
 
 			.sups {
 				--ot-sups: "sups" 1;
+				--ot-features: var(--ot-sups), var(--ot-subs), var(--ot-sinf), var(--ot-hlig), var(--ot-salt), var(--ot-ss01), var(--ot-ss02), var(--ot-ss03);
 				font-feature-settings: var(--ot-features);
 			}
 
 			.subs {
 				--ot-subs: "subs" 1;
+				--ot-features: var(--ot-sups), var(--ot-subs), var(--ot-sinf), var(--ot-hlig), var(--ot-salt), var(--ot-ss01), var(--ot-ss02), var(--ot-ss03);
 				font-feature-settings: var(--ot-features);
 			}
 
 			.sinf {
 				--ot-sinf: "sinf" 1;
+				--ot-features: var(--ot-sups), var(--ot-subs), var(--ot-sinf), var(--ot-hlig), var(--ot-salt), var(--ot-ss01), var(--ot-ss02), var(--ot-ss03);
 				font-feature-settings: var(--ot-features);
 			}
 
 			.hlig {
 				--ot-hlig: "hlig" 1;
+				--ot-features: var(--ot-sups), var(--ot-subs), var(--ot-sinf), var(--ot-hlig), var(--ot-salt), var(--ot-ss01), var(--ot-ss02), var(--ot-ss03);
 				font-feature-settings: var(--ot-features);
 			}
 
 			.ss-01 {
 				--ot-ss01: "ss01" 1;
+				--ot-features: var(--ot-sups), var(--ot-subs), var(--ot-sinf), var(--ot-hlig), var(--ot-salt), var(--ot-ss01), var(--ot-ss02), var(--ot-ss03);
 				font-feature-settings: var(--ot-features);
 			}
 
 			.ss-03 {
 				--ot-ss03: "ss03" 1;
+				--ot-features: var(--ot-sups), var(--ot-subs), var(--ot-sinf), var(--ot-hlig), var(--ot-salt), var(--ot-ss01), var(--ot-ss02), var(--ot-ss03);
 				font-feature-settings: var(--ot-features);
 			}
 
 			.ss-named {
 				--ot-ss02: "ss02" 1;
+				--ot-features: var(--ot-sups), var(--ot-subs), var(--ot-sinf), var(--ot-hlig), var(--ot-salt), var(--ot-ss01), var(--ot-ss02), var(--ot-ss03);
 				font-feature-settings: var(--ot-features);
 			}
 		`)
