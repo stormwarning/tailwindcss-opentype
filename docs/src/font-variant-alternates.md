@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Font Variant Alternates
+title: font-variant-alternates
 description: Utilities for controlling the usage of alternate glyphs.
-tags: font-variant
+tags: Font variants
 eleventyNavigation:
-  key: Font Variant Alternates
+  key: font-variant-alternates
   order: 3
 classData: alternates
 ---
@@ -13,11 +13,13 @@ classData: alternates
 
 Use the `font-variant-alternates` utilities to access alternative styles for different characters. These can be applied to blocks of text, in the case of historical forms or stylesets, or to individual characters, as with swash glyphs or character variants.
 
+## Examples
+
 ### Historical forms :feat[hist]
 
 Historical glyph variants may not be useful in everyday typesetting situations, but can prove useful when referencing the past.
 
-```html fuchsia
+```html /historical-forms/
 <template preview>
 	<p class="font-garamond text-4xl opacity-70">Jesuit</p>
 	<p class="font-garamond historical-forms text-4xl">
@@ -25,5 +27,5 @@ Historical glyph variants may not be useful in everyday typesetting situations, 
 	</p>
 </template>
 
-<p class="**historical-forms**">Jesuit</p>
+<p class="historical-forms">Jesuit</p>
 ```

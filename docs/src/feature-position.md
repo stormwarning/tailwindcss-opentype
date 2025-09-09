@@ -2,7 +2,7 @@
 layout: page
 title: Position
 description: Utilities for controlling alternate, smaller glyphs that are positioned as superscript or subscript.
-tags: ot-feature
+tags: OpenType features
 eleventyNavigation:
   key: Position
   order: 5
@@ -17,11 +17,13 @@ Using `<sup>` or `<sub>` elements has its own pitfalls, however. Common "reset" 
 
 The examples below use `<sub>` and `<sup>` with the default Tailwind CSS reset styles for the initial result, and `<span>` elements with the utility classes added for the final result, in order to show the difference between the "synthesized" characters and the specifically designed forms.
 
+## Examples
+
 ### Superscript :feat[sups]
 
 This feature replaces lining or oldstyle figures with superscript figures, often used for footnote indication, and replaces lowercase letters with superscript letters.
 
-```html emerald
+```html /sups/
 <template preview>
 	<p class="font-warnock text-4xl opacity-70">
 		M<sup>me</sup> <sup>3</sup>He <sup>$</sup>2
@@ -32,7 +34,7 @@ This feature replaces lining or oldstyle figures with superscript figures, often
 	</p>
 </template>
 
-<p>M<sup class="font-features **sups**">me</sup></p>
+<p>M<sup class="font-features sups">me</sup></p>
 ```
 
 This illustrates a case where blanket application of the feature wouldn't work:
@@ -42,7 +44,7 @@ in **:span[3]{.sups}He** we want the :kbd[3] superscripted, but not the lowercas
 
 Perhaps the most familiar example of subscripts is in chemical formulas.
 
-```html orange
+```html /subs/
 <template preview>
 	<p class="font-hypatia text-4xl opacity-70">H<sub>2</sub>O x<sub>0</sub></p>
 	<p class="font-hypatia text-4xl">
@@ -50,14 +52,14 @@ Perhaps the most familiar example of subscripts is in chemical formulas.
 	</p>
 </template>
 
-<p>H<sub class="font-features **subs**">2</sub>O</p>
+<p>H<sub class="font-features subs">2</sub>O</p>
 ```
 
 ### Scientific inferior :feat[sinf]
 
 Scientific inferior are for chemical and mathematical typesetting, and include optically corrected letters and numbers. This feature is often conflated with subscripts and may not be fully supported for every scientific notation form. For optimal results, something like [LaTeX](https://katex.org/) may be a better option.
 
-```html rose
+```html /sinf/
 <template preview>
 	<p class="font-warnock text-4xl opacity-70">
 		H<sub>2</sub>O YC<sub>b</sub>C<sub>r</sub> ν<sub>μ</sub>
@@ -71,5 +73,5 @@ Scientific inferior are for chemical and mathematical typesetting, and include o
 	</p>
 </template>
 
-<p class="font-features **sinf**">H2O YCbCr νμ</p>
+<p class="font-features sinf">H2O YCbCr νμ</p>
 ```

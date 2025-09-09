@@ -2,16 +2,23 @@
 layout: base
 isHome: true
 ---
-<h1 class="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-cyan-500 mb-3">
-    TailwindCSS × OpenType
-</h1>
-<h1 class="text-3xl sm:text-5xl lg:text-6xl leading-none font-extrabold text-grey-900 tracking-tight mb-8">
-    Tailwind CSS utility classes for advanced typographic features.
-</h1>
-<p class="max-w-4xl text-lg sm:text-2xl font-medium sm:leading-10 space-y-6 mb-6">
-    These utilities help you make the most of the font that you are using &amp;
-    make your web typography truly sing.
-</p>
-<div class="prose">
-    {{ content | safe }}
+
+<div className="px-4 pt-10 pb-24 sm:px-6 xl:pr-0">
+	<p
+		class="text-sky-500 dark:text-sky-400 font-mono text-sm/6 font-semibold tracking-widest uppercase mb-3 max-2xl:mb-4 sm:text-xs/6"
+	>
+		TailwindCSS × OpenType
+	</p>
+	<h1
+		class="capsize text-gray-950 dark:text-white text-4xl tracking-tighter text-balance max-lg:font-medium sm:text-5xl lg:text-6xl xl:text-8xl mb-8"
+	>
+		Tailwind CSS utility classes for advanced typographic features.
+	</h1>
+	<p
+		class="mb-6 max-w-(--breakpoint-md) text-lg/7 font-medium text-gray-600 dark:text-gray-400"
+	>
+		These utilities help you make the most of the font that you are using &amp;
+		make your web typography truly sing.
+	</p>
+	<div class="prose dark:prose-invert">{{ content | safe }}</div>
 </div>

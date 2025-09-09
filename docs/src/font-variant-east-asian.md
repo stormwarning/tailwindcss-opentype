@@ -1,10 +1,9 @@
 ---
 layout: page
-title: Font Variant East Asian
+title: font-variant-east-asian
 description: Utilities for controlling alternate glyphs for East Asian scripts, like Japanese and Chinese.
-tags: font-variant
-eleventyNavigation:
-  key: Font Variant East Asian
-  order: 4
-  inactive: true
+# tags: Font variants
+# eleventyNavigation:
+#   key: font-variant-east-asian
+#   order: 4
 ---

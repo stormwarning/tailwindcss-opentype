@@ -1,6 +1,8 @@
 ---
 layout: home
 title: TailwindCSS OpenType — utility classes for advanced typographic features.
+eleventyNavigation:
+  key: home
 ---
 
 :::figure
@@ -20,7 +22,7 @@ After installing the plugin, include it your Tailwind config and the utility cla
 ```js
 // tailwind.config.js
 module.exports = {
-    ...
+    // ...
     plugins: [
         require('tailwindcss-opentype'),
     ],
