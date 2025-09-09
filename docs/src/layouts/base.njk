@@ -32,6 +32,8 @@
 					</a>
 				</div>
 			</div>
+
+			{% if tags %}
 			<div
 				class="flex h-14 items-center border-t border-gray-950/5 bg-white px-4 sm:px-6 lg:hidden dark:border-white/10 dark:bg-gray-950"
 			>
@@ -71,6 +73,7 @@
 					<li class="truncate text-gray-950 dark:text-white">{{ title }}</li>
 				</ol>
 			</div>
+			{% endif %}
 		</div>
 		<div
 			class="grid min-h-dvh grid-cols-1 grid-rows-[1fr_1px_auto_1px_auto] lg:grid-cols-[var(--container-2xs)_2.5rem_minmax(0,1fr)_2.5rem] xl:grid-cols-[var(--container-2xs)_2.5rem_minmax(0,1fr)_2.5rem]"
