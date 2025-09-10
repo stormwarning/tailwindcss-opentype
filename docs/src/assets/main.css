@@ -64,6 +64,19 @@
 	:root {
 		color-scheme: light dark;
 	}
+
+	figcaption strong {
+		font-weight: 550;
+	}
+
+	figcaption a {
+		text-decoration: underline;
+		text-underline-offset: 2px;
+
+		&:not(:is(:hover, :focus)) {
+			text-decoration-color: color-mix(in srgb, currentColor, transparent 65%);
+		}
+	}
 }
 
 @layer utilities {

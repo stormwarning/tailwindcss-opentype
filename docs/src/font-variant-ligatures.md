@@ -20,7 +20,7 @@ Use the `font-variant-ligatures` utilities to enable ligatures and contextual fo
 Most common ligatures mitigate spacing issues between specific combinations of letters within a typeface, often by connecting glyphs that might otherwise collide. Common ligatures are usually enabled by default in fonts that support them, and can be disabled if needed.
 
 ```html /no-common-ligatures/
-<template preview>
+<template credit="warnock" preview>
 	<p class="font-warnock common-ligatures text-4xl opacity-70">
 		fi ff fl ffi Th
 	</p>
@@ -41,7 +41,7 @@ Most common ligatures mitigate spacing issues between specific combinations of l
 Discretionary ligatures’ defining characteristic is that they are available to enable at your discretion: they are disabled by default. Often, these are additional ligatures that might be considered too attention-grabbing or unconventional to be enabled in many situations.
 
 ```html /discretionary-ligatures/
-<template preview>
+<template credit="warnock" preview>
 	<p class="font-warnock no-discretionary-ligatures text-4xl opacity-70">
 		ct sp st
 	</p>
@@ -60,7 +60,7 @@ Discretionary ligatures’ defining characteristic is that they are available to
 Like ligatures (though not strictly a ligature feature), contextual alternates are commonly used to harmonize the shapes of glyphs with the surrounding context. This feature is also enabled by default, except in Chrome, and cannot be disabled in Safari.
 
 ```html /contextual/
-<template preview>
+<template credit="caflisch" preview>
 	<p class="font-caflisch no-contextual text-4xl opacity-70">
 		The bloom has gone off the rose
 	</p>

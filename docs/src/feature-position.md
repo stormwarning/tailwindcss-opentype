@@ -24,7 +24,7 @@ The examples below use `<sub>` and `<sup>` with the default Tailwind CSS reset s
 This feature replaces lining or oldstyle figures with superscript figures, often used for footnote indication, and replaces lowercase letters with superscript letters.
 
 ```html /sups/
-<template preview>
+<template credit="warnock" preview>
 	<p class="font-warnock text-4xl opacity-70">
 		M<sup>me</sup> <sup>3</sup>He <sup>$</sup>2
 	</p>
@@ -45,7 +45,7 @@ in **:span[3]{.sups}He** we want the :kbd[3] superscripted, but not the lowercas
 Perhaps the most familiar example of subscripts is in chemical formulas.
 
 ```html /subs/
-<template preview>
+<template credit="hypatia" preview>
 	<p class="font-hypatia text-4xl opacity-70">H<sub>2</sub>O x<sub>0</sub></p>
 	<p class="font-hypatia text-4xl">
 		H<mark class="subs">2</mark>O x<mark class="subs">0</mark>
@@ -60,7 +60,7 @@ Perhaps the most familiar example of subscripts is in chemical formulas.
 Scientific inferior are for chemical and mathematical typesetting, and include optically corrected letters and numbers. This feature is often conflated with subscripts and may not be fully supported for every scientific notation form. For optimal results, something like [LaTeX](https://katex.org/) may be a better option.
 
 ```html /sinf/
-<template preview>
+<template credit="warnock" preview>
 	<p class="font-warnock text-4xl opacity-70">
 		H<sub>2</sub>O YC<sub>b</sub>C<sub>r</sub> ν<sub>μ</sub>
 	</p>

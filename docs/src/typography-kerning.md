@@ -18,7 +18,7 @@ Although a well-designed typeface has consistent inter-glyph spacing overall, so
 ### Kerning :feat[kern]
 
 ```html /kerning/
-<template preview>
+<template credit="warnock" preview>
 	<p class="font-warnock text-4xl opacity-70 kerning-none">You Will Try</p>
 	<p class="font-warnock text-4xl kerning">
 		<mark>Yo</mark>u <mark>Wi</mark>ll <mark>Try</mark>

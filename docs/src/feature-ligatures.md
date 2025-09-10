@@ -22,7 +22,7 @@ Some ligatures were in common use in the past, but appear anachronistic today. S
 Depending on the font, historical ligatures may need to have [historical forms](/font-variant-alternates/#historical-forms-hist) enabled as well. Alternatively, using the actual historical glyph (`ſ` for the long `s` in this example) should apply the ligature without having to apply the historical forms for the entire run of text.
 
 ```html /hlig/
-<template preview>
+<template credit="garamond" preview>
 	<p class="font-garamond text-4xl opacity-70">Lost lesson</p>
 	<p class="font-garamond historical-forms hlig text-4xl">
 		Lo<mark>st</mark> le<mark>ss</mark>on

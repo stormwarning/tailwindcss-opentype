@@ -20,7 +20,7 @@ Use the `font-variant-alternates` utilities to access alternative styles for dif
 Historical glyph variants may not be useful in everyday typesetting situations, but can prove useful when referencing the past.
 
 ```html /historical-forms/
-<template preview>
+<template credit="garamond" preview>
 	<p class="font-garamond text-4xl opacity-70">Jesuit</p>
 	<p class="font-garamond historical-forms text-4xl">
 		<mark>J</mark>e<mark>s</mark>uit
