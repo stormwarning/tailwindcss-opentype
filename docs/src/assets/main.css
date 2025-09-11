@@ -94,4 +94,19 @@
 		margin: 0 -0.1875rem;
 		background-color: color-mix(in srgb, currentColor, transparent 70%);
 	}
+
+	.sidebar-nav {
+		scroll-target-group: auto;
+
+		a:target-current {
+			font-weight: 600;
+			color: theme("colors.gray.900");
+			border-color: theme("colors.gray.900");
+
+			@media (prefers-color-scheme: dark) {
+				color: theme("colors.white");
+				border-color: theme("colors.white");
+			}
+		}
+	}
 }
