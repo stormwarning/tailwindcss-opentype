@@ -130,8 +130,47 @@ const config = {
 							fontWeight: 'inherit',
 							color: 'inherit',
 						},
-						'h3 code::before': { content: 'none' },
-						'h3 code::after': { content: 'none' },
+						'code::before': { content: 'none' },
+						'code::after': { content: 'none' },
+						a: {
+							textUnderlineOffset: '2px',
+						},
+						'a:not(:is(:hover, :focus))': {
+							textDecorationColor:
+								'color-mix(in srgb, currentColor, transparent 50%)',
+						},
+						'figure:has(blockquote)': {
+							margin: '4rem 0',
+							figcaption: {
+								textAlign: 'end',
+							},
+						},
+						blockquote: {
+							fontSize: 'var(--text-xl)',
+							fontStyle: 'normal',
+							fontWeight: '500',
+							lineHeight: 'calc(var(--spacing) * 9)',
+							letterSpacing: 'var(--tracking-tight)',
+							border: '0',
+							'@media (min-width: 40rem)': {
+								fontSize: 'var(--text-2xl)',
+								lineHeight: 'calc(var(--spacing) * 10)',
+							},
+						},
+						'blockquote p': { position: 'relative' },
+						'blockquote p::before': {
+							position: 'absolute',
+							top: '1rem',
+							left: '-1.5rem',
+							fontSize: '6rem',
+							color:
+								'light-dark(color-mix(in oklab, var(--color-gray-950) 10%, transparent), color-mix(in oklab, #fff 10%, transparent))',
+							content: '“',
+							pointerEvents: 'none',
+							'@media (min-width: 64rem)': {
+								fontSize: '8rem',
+							},
+						},
 						table: {
 							fontSize: theme('fontSize.sm')[0],
 							lineHeight: theme('fontSize.sm')[1].lineHeight,
