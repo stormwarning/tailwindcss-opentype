@@ -3,6 +3,7 @@ import eleventyRemark from '@fec/eleventy-plugin-remark'
 import { rehype } from 'rehype'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
+import rehypeTypeset from 'rehype-typeset'
 import remarkDirective from 'remark-directive'
 
 import { remarkDirectives } from './remark/directives.js'
@@ -61,6 +62,7 @@ export default async function config(eleventyConfig) {
 							value: '¶',
 						},
 					})
+					.use(rehypeTypeset)
 					.process(content)
 
 				newContent = result.toString()
