@@ -11,7 +11,7 @@ export function remarkHeadings() {
 
 				node.data ??= {}
 				node.data.hProperties = {
-					className: ['group flex whitespace-pre-wrap'],
+					className: ['group flex gap-4 whitespace-pre-wrap'],
 				}
 			},
 		)

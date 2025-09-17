@@ -19,6 +19,27 @@
 		font-display: swap;
 	}
 	@font-face {
+		font-family: "Iosevka";
+		font-weight: 400;
+		font-style: normal;
+		src: url(/assets/fonts/iosevka-regular.woff2) format("woff2");
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "Iosevka";
+		font-weight: 400;
+		font-style: italic;
+		src: url(/assets/fonts/iosevka-italic.woff2) format("woff2");
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "Iosevka";
+		font-weight: 500;
+		font-style: normal;
+		src: url(/assets/fonts/iosevka-medium.woff2) format("woff2");
+		font-display: swap;
+	}
+	@font-face {
 		font-family: "Allan";
 		font-weight: 400;
 		src: url(/assets/fonts/allan-regular.woff2) format("woff2");
@@ -92,7 +113,7 @@
 		border-radius: 0.1875rem;
 		padding: 0.0625rem 0.1875rem;
 		margin: 0 -0.1875rem;
-		background-color: color-mix(in srgb, currentColor, transparent 70%);
+		background-color: color-mix(in srgb, currentColor 25%, transparent);
 	}
 
 	.sidebar-nav {

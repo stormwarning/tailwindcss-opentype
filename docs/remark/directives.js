@@ -30,7 +30,7 @@ export function remarkDirectives() {
 									? node.children[0].value.split(',')
 									: undefined
 							let features = dedent`
-								<span aria-hidden="true" class="inline-flex self-center mx-4 h-6 w-px align-middle bg-grey-900/10 dark:bg-white/15"></span>
+								<!-- span aria-hidden="true" class="inline-flex self-center mx-4 h-6 w-px align-middle bg-grey-900/10 dark:bg-white/15"></span -->
 								${tags?.map((tag) => markupTagText(tag))}
 							`
 								.replaceAll('\n', '')
@@ -85,7 +85,7 @@ export function remarkDirectives() {
  * @param {string} tag
  */
 function markupTagText(tag) {
-	return dedent`<span class="align-middle inline-flex items-center px-3 py-1 rounded-full text-xs font-medium leading-4 bg-grey-50 text-grey-600 tracking-tight dark:bg-grey-900 dark:text-gray-400">
+	return dedent`<span class="align-middle inline-flex items-center px-2 py-1 rounded-full text-xs font-medium leading-4 bg-grey-950/2 text-grey-600 inset-ring inset-ring-grey-950/8 dark:bg-white/2 dark:text-gray-400 dark:inset-ring-white/8">
 		<kbd>${tag}</kbd>
 	</span>`
 }

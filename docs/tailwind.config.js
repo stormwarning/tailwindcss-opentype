@@ -21,6 +21,13 @@ const config = {
 				lineGap: 0,
 				unitsPerEm: 2816,
 			},
+			mono: {
+				capHeight: 735,
+				ascent: 965,
+				descent: -215,
+				lineGap: 70,
+				unitsPerEm: 1000,
+			},
 		},
 
 		extend: {
@@ -87,7 +94,7 @@ const config = {
 							'font-size': 'var(--text-xs)',
 							'line-height': '2',
 							'font-weight': 'var(--font-weight-medium)',
-							'font-family': 'var(--font-mono)',
+							'font-family': theme('fontFamily.mono'),
 							'font-variant-ligatures': 'none',
 							'letter-spacing': '0.1em',
 							color: 'var(--tw-prose-body)',
@@ -129,6 +136,10 @@ const config = {
 						'h3 code': {
 							fontWeight: 'inherit',
 							color: 'inherit',
+						},
+						code: {
+							fontSize: '0.9375em',
+							fontWeight: '500',
 						},
 						'code::before': { content: 'none' },
 						'code::after': { content: 'none' },
@@ -205,7 +216,8 @@ const config = {
 			},
 
 			fontFamily: {
-				sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+				sans: ['Inter var', ...defaultTheme.fontFamily.sans].join(', '),
+				mono: ['Iosevka', ...defaultTheme.fontFamily.mono].join(', '),
 				allan: 'Allan',
 				caflisch: 'Caflisch Script',
 				exo: 'Exo',
