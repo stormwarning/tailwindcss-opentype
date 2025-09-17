@@ -98,6 +98,20 @@
 			text-decoration-color: color-mix(in srgb, currentColor, transparent 65%);
 		}
 	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		@view-transition {
+			navigation: auto;
+		}
+
+		html {
+			interpolate-size: allow-keywords;
+
+			&:focus-within {
+				scroll-behavior: smooth;
+			}
+		}
+	}
 }
 
 @layer utilities {

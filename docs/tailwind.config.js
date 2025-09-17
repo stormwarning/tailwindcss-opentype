@@ -137,6 +137,9 @@ const config = {
 							fontWeight: 'inherit',
 							color: 'inherit',
 						},
+						p: {
+							textWrap: 'pretty',
+						},
 						code: {
 							fontSize: '0.9375em',
 							fontWeight: '500',
