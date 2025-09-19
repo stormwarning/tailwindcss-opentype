@@ -12,13 +12,18 @@ isHome: true
 	<h1
 		class="capsize text-gray-950 dark:text-white text-4xl tracking-tighter text-balance max-lg:font-medium sm:text-5xl lg:text-6xl xl:text-8xl mb-10"
 	>
-		Tailwind CSS utility classes for advanced typographic features.
+		{{ headline | safe }}
 	</h1>
 	<p
 		class="mb-6 max-w-(--breakpoint-md) text-lg/7 tracking-tight font-medium text-gray-600 dark:text-gray-400"
 	>
-		These utilities help you make the most of the font that you are using &amp;
-		make your web typography truly sing.
+		{{ subhead | safe }}
 	</p>
+	<a
+		class="z-1 max-sm:hidden inline-block rounded-4xl bg-black px-4 py-2 text-sm/6 font-semibold text-white hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600"
+		href="/installation/"
+	>
+		Get started
+	</a>
 	<div class="prose dark:prose-invert">{{ content | safe }}</div>
 </div>
