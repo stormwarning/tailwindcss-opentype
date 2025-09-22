@@ -41,7 +41,7 @@ export default async function config(eleventyConfig) {
 		async (content, outputPath) => {
 			let newContent = content
 
-			if (outputPath?.endsWith('.html')) {
+			if (String(outputPath)?.endsWith('.html')) {
 				let result = await rehype()
 					.use(rehypeSlug)
 					.use(rehypeAutolinkHeadings, {

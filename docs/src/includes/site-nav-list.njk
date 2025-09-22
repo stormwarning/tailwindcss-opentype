@@ -1,0 +1,18 @@
+{% macro navList(collection, currentKey) %}
+	<ul class="flex flex-col gap-2 border-l dark:border-[color-mix(in_oklab,_var(--color-gray-900),white_20%)] border-[color-mix(in_oklab,_var(--color-gray-900),white_90%)]">
+	{%- for item in collection %}
+		<li class="{{ classnames.listItemClass }}">
+		{%- if item.url %}
+			<a
+				class="{{ classnames.commonTextClass }} {{ classnames.anchorClass }}"
+				href="{{ item.url }}"
+				{% if item.key === currentKey %}aria-current="page"{% endif %}
+			>
+				{{ item.title }}
+			</a>
+		{%- else %}
+			<span class="{{ classnames.commonTextClass }} text-gray-600/50 dark:text-gray-300/50 cursor-default">{{ item.title }}</span>
+		{%- endif %}
+	{%- endfor %}
+	</ul>
+{% endmacro %}

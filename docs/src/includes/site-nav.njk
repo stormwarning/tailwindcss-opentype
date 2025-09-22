@@ -1,3 +1,5 @@
+{% from 'site-nav-list.njk' import navList with context %}
+
 <nav class="flex flex-col gap-8" id="nav">
 	{%- if eleventyNavigation -%}
 		{%- set navKey = eleventyNavigation.key -%}
@@ -6,9 +8,18 @@
 		<h5
 			class="font-mono text-sm/6 font-medium tracking-widest text-gray-500 uppercase sm:text-xs/6 dark:text-gray-400"
 		>
+			Getting started
+		</h5>
+		{{ navList(collections['Getting started'] | eleventyNavigation, navKey) }}
+	</div>
+
+	<div class="flex flex-col gap-3">
+		<h5
+			class="font-mono text-sm/6 font-medium tracking-widest text-gray-500 uppercase sm:text-xs/6 dark:text-gray-400"
+		>
 			Typography
 		</h5>
-		{{ collections['Typography'] | eleventyNavigation | eleventyNavigationToHtml({ listClass: classnames.listClass, listItemClass: classnames.listItemClass, anchorClass: classnames.anchorClass, useAriaCurrentAttr: true, activeKey: navKey }) | safe }}
+		{{ navList(collections['Typography'] | eleventyNavigation, navKey) }}
 	</div>
 
 	<div class="flex flex-col gap-3">
@@ -17,7 +28,7 @@
 		>
 			Font variants
 		</h5>
-		{{ collections['Font variants'] | eleventyNavigation | eleventyNavigationToHtml({ listClass: classnames.listClass, listItemClass: classnames.listItemClass, anchorClass: classnames.anchorClass, useAriaCurrentAttr: true, activeKey: navKey }) | safe }}
+		{{ navList(collections['Font variants'] | eleventyNavigation, navKey) }}
 	</div>
 
 	<div class="flex flex-col gap-3">
@@ -26,6 +37,6 @@
 		>
 			OpenType features
 		</h5>
-		{{ collections['OpenType features'] | eleventyNavigation | eleventyNavigationToHtml({ listClass: classnames.listClass, listItemClass: classnames.listItemClass, anchorClass: classnames.anchorClass, useAriaCurrentAttr: true, activeKey: navKey }) | safe }}
+		{{ navList(collections['OpenType features'] | eleventyNavigation, navKey) }}
 	</div>
 </nav>

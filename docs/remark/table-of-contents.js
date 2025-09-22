@@ -15,7 +15,7 @@ import classnames from '../src/data/classnames.js'
 
 const HEADINGS = new Set(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
 
-export function rehypeTableOfContents() {
+export function rehypeTableOfContents(hasReference = false) {
 	/** @param {import('hast').Root} tree */
 	return (tree) => {
 		/** @type {HeadingObject[]} */
@@ -69,16 +69,18 @@ export function rehypeTableOfContents() {
 		 * @returns
 		 */
 		function buildAnchor(id, text, nested = false) {
-			let classNames = `${classnames.anchorClass} ${nested ? 'sm:pl-7.5' : ''}`
+			let classNames = `${classnames.commonTextClass} ${classnames.anchorClass} ${nested ? 'sm:pl-7.5' : ''}`
 			return h('a', { class: classNames, href: `#${id}` }, [text])
 		}
 
 		visit(tree, 'root', (node) => {
 			node.children = [
 				h('ul', { class: classnames.listClass }, [
-					h('li', { class: classnames.listItemClass }, [
-						buildAnchor('quick-reference', 'Quick reference'),
-					]),
+					hasReference
+						? h('li', { class: classnames.listItemClass }, [
+								buildAnchor('quick-reference', 'Quick reference'),
+							])
+						: undefined,
 					headings.map((item, index) =>
 						h('li', { class: classnames.listItemClass }, [
 							buildAnchor(item.id, item.text),
