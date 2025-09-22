@@ -60,7 +60,7 @@ const FONT_CREDITS = {
 
 const highlighter = await createHighlighter({
 	themes: ['dracula'],
-	langs: ['html', 'js'],
+	langs: ['css', 'html', 'js', 'sh'],
 })
 
 export function remarkSample() {

@@ -8,21 +8,48 @@ eleventyNavigation:
   order: 1
 ---
 
-After installing the plugin, include it your Tailwind config and the utility classes will be available.
+First, follow the [steps to install Tailwind CSS] first, if you haven’t already.
 
-```js
-// tailwind.config.js
-module.exports = {
-    // ...
-    plugins: [
-        require('tailwindcss-opentype'),
-    ],
-}
+[steps to install Tailwind CSS]: https://tailwindcss.com/docs/installation/using-vite
+
+Install the plugin using your favourite JavaScript package manager.
+
+```sh
+npm install tailwindcss-opentype
 ```
 
-Don’t forget to use PurgeCSS or Tailwind’s JIT mode to ensure only the classes you need are included in your production code.
+Include the plugin in your CSS using the `@plugin` directive. This will enable the plugin with it’s default settings, which should be all you need for most cases.
 
-The styles applied by these classes don’t enable these features in any and every font. There may be some cases where the browser will try to synthesize some features like small caps, but for best (or indeed, any) results, check which feature your chosen font supports. Each OpenType feature has a corresponding four-letter code — check for these in your typeface documentation or with your font provider to see which ones are available.
+```css
+@import "tailwindcss";
+@plugin "tailwindcss-opentype";
+```
+
+If you’re using TailwindCSS v3, or if you’d like to add or customize some utilities, you can import the plugin in a JavaScript config file.
+
+```css
+@import "tailwindcss";
+@config "../tailwind.config.js";
+```
+
+```js
+import opentypePlugin from 'tailwindcss-opentype'
+
+/** @type {import('tailwindcss').Config} */
+const config = {
+	plugins: [opentypePlugin],
+}
+
+export default config
+```
+
+The [Stylistic sets documentation] has more detail on customizing the utility classes for that feature.
+
+[Stylistic sets documentation]: /feature-alternates/#stylistic-sets-ss01ss20
+
+## Feature availability
+
+The styles applied by these classes don’t enable these features in any and every font. There may be some cases where the browser will try to synthesize some features like small caps, but for best (or indeed, any) results, check which feature your chosen font supports. Each OpenType feature has a corresponding four-letter code — check for these in your typeface documentation or with your font provider to see which features are available.
 
 ## Compatibility
 
