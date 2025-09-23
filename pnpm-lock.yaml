@@ -114,8 +114,8 @@ importers:
         specifier: 6.0.0
         version: 6.0.0
       rehype-typeset:
-        specifier: 0.1.1
-        version: 0.1.1
+        specifier: 0.1.2
+        version: 0.1.2
       remark:
         specifier: 15.0.1
         version: 15.0.1
@@ -3197,8 +3197,8 @@ packages:
   rehype-stringify@10.0.1:
     resolution: {integrity: sha512-k9ecfXHmIPuFVI61B9DeLPN0qFHfawM6RsuX48hoqlaKSF61RskNjSm1lI8PhBEM0MRdLxVVm4WmTqJQccH9mA==}
 
-  rehype-typeset@0.1.1:
-    resolution: {integrity: sha512-B5cqhsjjDsgi7ksqYa+Is89Th47OGtJcJ8K5jGKqDfzTXudQLGag5eRJmBlfnGFfPk1p9R3NZafC1aetnSJD3A==}
+  rehype-typeset@0.1.2:
+    resolution: {integrity: sha512-KTk6mgBWWYZOw0kO7ZSr1D7HyBevk9gMsIve5uxFOfHQFungNovPTs/WIPTmC8Lb1h+44quqUT1QFC7LTbssbw==}
 
   rehype@13.0.2:
     resolution: {integrity: sha512-j31mdaRFrwFRUIlxGeuPXXKWQxet52RBQRvCmzl5eCefn/KGbomK5GMHNMsOJf55fgo3qw5tST5neDuarDYR2A==}
@@ -7289,7 +7289,7 @@ snapshots:
       hast-util-to-html: 9.0.5
       unified: 11.0.5
 
-  rehype-typeset@0.1.1:
+  rehype-typeset@0.1.2:
     dependencies:
       hast-util-to-string: 3.0.1
       unist-util-visit: 5.0.0
