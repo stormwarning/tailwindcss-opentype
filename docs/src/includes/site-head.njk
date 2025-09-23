@@ -1,11 +1,11 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>
-    {% if isHome %}{{ title }}{% else %}{{ title }} — TailwindCSS OpenType{% endif %}
+	{% if isHome %}{{ title }}{% else %}{{ title }} — TailwindCSS OpenType{% endif %}
 </title>
 <meta
-    name="description"
-    content="{{ description }}"
+	name="description"
+	content="{{ description }}"
 />
 
 <link rel="preload" href="/assets/fonts/Inter-roman.var.woff2?v=4.1" as="font" type="font/woff2" crossorigin="">
@@ -18,25 +18,24 @@
 <link class="js-favicon" rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="TailwindCSS OpenType">
-<meta name="twitter:description" content="Tailwind CSS utility classes for advanced typographic features.">
-<meta name="twitter:image" content="https://tailwindcss-opentype.netlify.app/assets/images/og-image.png">
+<meta name="twitter:description" content="{% if isHome %}Tailwind CSS utility classes for advanced typographic features.{% else %}{{ description }}{% endif %}">
+<meta name="twitter:image" content="https://tailwindcss-opentype.netlify.app/assets/images/og-image.png?v4">
 <meta name="twitter:image:type" content="image/png">
 <meta name="twitter:image:width" content="1200">
 <meta name="twitter:image:height" content="630">
 <meta property="og:url" content="https://tailwindcss-opentype.netlify.app/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TailwindCSS OpenType">
-<meta property="og:description" content="Tailwind CSS utility classes for advanced typographic features.">
-<meta property="og:image" content="https://tailwindcss-opentype.netlify.app/assets/images/og-image.png">
+<meta property="og:title" content="{% if isHome %}TailwindCSS OpenType{% else %}{{ title }} — TailwindCSS OpenType{% endif %}">
+<meta property="og:description" content="{% if isHome %}Tailwind CSS utility classes for advanced typographic features.{% else %}{{ description }}{% endif %}">
+<meta property="og:image" content="https://tailwindcss-opentype.netlify.app/assets/images/og-image.png?v4">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5RLKV9QZ6"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
 
-    gtag('config', 'G-Y5RLKV9QZ6');
+	gtag('config', 'G-Y5RLKV9QZ6');
 </script>
